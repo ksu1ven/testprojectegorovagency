@@ -1,4 +1,4 @@
-cd www/testproject.e2qr.com/
+cd www/testproject.e2qr.com/wp-content/themes/testproject/
 
 git fetch --all
 git branch backup-branch
