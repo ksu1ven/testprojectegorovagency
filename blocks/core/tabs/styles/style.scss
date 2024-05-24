@@ -1,0 +1,111 @@
+@import "./resources/scss/generic/variables";
+@import "./resources/scss/generic/functions";
+@import "./resources/scss/generic/mixins";
+
+.tabs {
+	background: $white;
+
+	&__nav {
+
+	}
+
+	&__content {
+
+	}
+}
+
+.tabs-nav-line {
+	display: flex;
+	margin-bottom: rem(32);
+	width: 100%;
+	overflow-y: hidden;
+	overflow-x: auto;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+
+	@include breakpoint-down(mobile) {
+		margin-bottom: rem(24);
+	}
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	&__item {
+		position: relative;
+		flex: 0 0 auto;
+		padding: rem(7) rem(24);
+		color: $deepCove60;
+		font-family: $montserrat;
+		font-weight: 500;
+		font-size: rem(16);
+		line-height: rem(22);
+		background-color: transparent;
+		border-left: 2px solid;
+		border-color: $deepCove10;
+		cursor: pointer;
+		overflow: hidden;
+		transition: background-color $transition-default, border-color $transition-default, color $transition-default;
+
+		&:last-child {
+			border-right: 2px solid;
+			border-color: $deepCove10;
+		}
+
+		&.active {
+			color: $deepCove80;
+			background-color: $wildSand;
+			border-color: $cerulean;
+
+			& + .tabs-nav-line__item {
+				border-left-color: $cerulean;
+			}
+		}
+
+		&:hover {
+			color: $deepSapphire;
+
+			.item-delete {
+				right: 0;
+			}
+		}
+
+		.item-delete {
+			position: absolute;
+			top: 0;
+			right: rem(-12);
+			z-index: 1;
+			width: rem(12);
+			height: 100%;
+			display: block;
+			border: none;
+			border-radius: 0;
+			background: #ff1847;
+			color: $white;
+			transition: all $transition-default;
+
+			&:hover {
+				background: red;
+			}
+		}
+	}
+
+	.add_new {
+		border: none;
+		padding: rem(7);
+		color: $white;
+		background: $scienceBlue;
+
+		&:hover {
+			background: $cerulean;
+		}
+	}
+}
+
+.tabs-content__tab {
+	display: none;
+
+	&.active {
+		display: block;
+	}
+}

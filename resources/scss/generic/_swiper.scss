@@ -1,0 +1,20 @@
+@import "variables";
+@import "../../../node_modules/swiper/swiper-vars";
+@import "../../../node_modules/swiper/swiper";
+@import "../../../node_modules/swiper/modules/navigation/navigation";
+
+:root {
+	//--swiper-pagination-color: #000000;
+	--swiper-pagination-bullet-size: 20px;
+	--swiper-pagination-bullet-width: 20px;
+	--swiper-pagination-bullet-height: 4px;
+	--swiper-pagination-bullet-inactive-color: rgba(0, 0, 0, 0.1);
+	--swiper-pagination-bullet-inactive-opacity: 1;
+	--swiper-pagination-bullet-opacity: 1;
+	--swiper-pagination-bullet-horizontal-gap: 10px;
+	--swiper-pagination-bullet-vertical-gap: 10px;
+}
+
+@import "../../../node_modules/swiper/modules/pagination/pagination";
+@import "../../../node_modules/swiper/modules/grid/grid";
+@import "../../../node_modules/swiper/modules/effect-fade/effect-fade";

@@ -1,0 +1,73 @@
+@import "../generic/functions";
+@import "../generic/mixins";
+
+$white: #ffffff;
+$white10: rgba($white, 0.1);
+$white20: rgba($white, 0.2);
+$white30: rgba($white, 0.3);
+$white40: rgba($white, 0.4);
+$white50: rgba($white, 0.5);
+$white60: rgba($white, 0.6);
+$white70: rgba($white, 0.7);
+$white80: rgba($white, 0.8);
+$white90: rgba($white, 0.9);
+$lightGray: #E6E9EB;
+$cerulean: #00AEEF;
+$deepSapphire: #003C71;
+$scienceBlue: #0971CE;
+$deepCove: #021729;
+$deepCove5: rgba(5, 30, 57, 0.05);
+$deepCove10: rgba(5, 30, 57, 0.1);
+$deepCove20: rgba(5, 30, 57, 0.2);
+$deepCove60: rgba(5, 30, 57, 0.6);
+$deepCove80: rgba(5, 30, 57, 0.8);
+$texasRose: #FFC149;
+$wildSand: #F6F6F6;
+$black: #000000;
+$gray20: rgba(59, 61, 75, 0.2);
+
+$responsive-ios: 812px;
+
+$drukWide: 'Druk Wide Web';
+$montserrat: 'Montserrat';
+
+// Transitions
+$transition-duration-default: 0.3s;
+$transition-delay-default: 0.3s;
+$transition-default: 0.3s ease-in-out;
+
+$breakpoints: (
+	mobile-small: 575px,
+	mobile: 767px,
+	admin-bar: 782px,
+	tablet: 1023px,
+	small-desktop: 1279px,
+	desktop: 1439px,
+	large-desktop: 1719px,
+);
+
+// Other
+$headerTwoLinesHeightDesktop: rem(128);
+$headerTwoLinesHeightTablet: rem(108);
+$headerTwoLinesHeightMobile: rem(100);
+
+$headerThreeLinesHeightDesktop: rem(200);
+$headerThreeLinesHeightTablet: rem(156);
+$headerThreeLinesHeightMobile: rem(148);
+
+// Admin panel
+$adminbarHeightDesktop: 32px;
+$adminbarHeightMobile: 46px;
+
+// Paddings
+$padding-default: rem(144);
+$padding-default-table: rem(96);
+$padding-default-mobile: rem(72);
+
+$padding-medium: rem(72);
+$padding-medium-table: rem(56);
+$padding-medium-mobile: rem(48);
+
+$padding-small: rem(36);
+$padding-small-table: rem(28);
+$padding-small-mobile: rem(24);

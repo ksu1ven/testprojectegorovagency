@@ -1,0 +1,14 @@
+{
+  "apiVersion": 2,
+  "name": "ea-component/tab",
+  "title": "Tab",
+  "category": "hm-components",
+  "parent": [
+    "ea-component/tabs"
+  ],
+  "icon": "block-default",
+  "description": "Create tabs.",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

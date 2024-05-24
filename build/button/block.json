@@ -1,0 +1,12 @@
+{
+  "apiVersion": 2,
+  "name": "ea-component/button",
+  "title": "Button",
+  "category": "hm-components",
+  "icon": "block-default",
+  "description": "Display button.",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "script": ""
+}

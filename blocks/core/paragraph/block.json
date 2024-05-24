@@ -1,0 +1,45 @@
+{
+  "apiVersion": 2,
+  "name": "ea-core/paragraph",
+  "title": "Paragraph",
+  "category": "hm-components",
+  "icon": "block-default",
+  "description": "",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "script": "",
+  "keywords": [ "text" ],
+  "textdomain": "bnt",
+  "supports": {
+	"anchor": true,
+	"className": false,
+	"color": {
+	  "gradients": true,
+	  "link": true,
+	  "__experimentalDefaultControls": {
+		"background": true,
+		"text": true
+	  }
+	},
+	"spacing": {
+	  "margin": true,
+	  "padding": true
+	},
+	"typography": {
+	  "fontSize": true,
+	  "lineHeight": true,
+	  "__experimentalFontFamily": true,
+	  "__experimentalTextDecoration": true,
+	  "__experimentalFontStyle": true,
+	  "__experimentalFontWeight": true,
+	  "__experimentalLetterSpacing": true,
+	  "__experimentalTextTransform": true,
+	  "__experimentalDefaultControls": {
+		"fontSize": true
+	  }
+	},
+	"__experimentalSelector": "p",
+	"__unstablePasteTextInline": true
+  }
+}

@@ -1,0 +1,316 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Blocks: Section Hero
+\* ------------------------------------------------------------ */
+
+.acf-block-preview .section-hero * {
+	pointer-events: none !important;
+
+	& .post-empty-message a {
+		pointer-events: auto !important;
+	}
+}
+
+.section-hero,
+.acf-block-preview .section-hero {
+	&.section {
+		overflow: visible;
+	}
+
+	&__background.section__bg {
+		&.menu-two-lines {
+			top: calc(#{$headerTwoLinesHeightDesktop} * -1);
+			height: calc(100% + #{$headerTwoLinesHeightDesktop});
+
+			@include breakpoint-down(small-desktop) {
+				top: calc(#{$headerTwoLinesHeightTablet} * -1);
+				height: calc(100% + #{$headerTwoLinesHeightTablet});
+			}
+
+			@include breakpoint-down(mobile) {
+				top: calc(#{$headerTwoLinesHeightMobile} * -1);
+				height: calc(100% + #{$headerTwoLinesHeightMobile});
+			}
+		}
+
+		&.menu-three-lines {
+			top: calc(#{$headerThreeLinesHeightDesktop} * -1);
+			height: calc(100% + #{$headerThreeLinesHeightDesktop});
+
+			@include breakpoint-down(small-desktop) {
+				top: calc(#{$headerThreeLinesHeightTablet} * -1);
+				height: calc(100% + #{$headerThreeLinesHeightTablet});
+			}
+
+			@include breakpoint-down(mobile) {
+				top: calc(#{$headerThreeLinesHeightMobile} * -1);
+				height: calc(100% + #{$headerThreeLinesHeightMobile});
+			}
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		min-height: calc(var(--vh, 1vh) * 100 - #{rem(128)});
+
+		@include breakpoint-down(small-desktop) {
+			min-height: calc(var(--vh, 1vh) * 100 - #{rem(108)});
+		}
+
+		@include breakpoint-down(mobile) {
+			min-height: calc(var(--vh, 1vh) * 100 - #{rem(100)});
+		}
+
+		.admin-bar & {
+			min-height: calc(var(--vh, 1vh) * 100 - #{rem(128)} - 32px);
+
+			@include breakpoint-down(admin-bar) {
+				min-height: calc(var(--vh, 1vh) * 100 - #{rem(108)} - 46px);
+			}
+		}
+	}
+
+	&__top {
+		margin-top: rem(12);
+		margin-bottom: rem(72);
+
+		@include breakpoint-down(small-desktop) {
+			margin-bottom: rem(56);
+		}
+
+		@include breakpoint-down(mobile) {
+			margin-bottom: rem(24);
+		}
+	}
+
+	&__bread-crumbs {
+		margin-top: rem(12);
+		color: $white;
+		font-size: rem(14);
+		line-height: rem(20);
+
+		span {
+			span {
+				a {
+					color: $white40;
+					text-decoration: underline;
+					text-decoration-color: transparent;
+					transition: text-decoration-color $transition-default;
+
+					&:hover {
+						color: $white;
+						text-decoration-color: $white;
+					}
+				}
+			}
+		}
+
+		.breadcrumb_last {
+			color: $white;
+		}
+	}
+
+	&__main {
+		position: relative;
+		margin-bottom: rem(56);
+		padding-left: rem(135);
+
+		@include breakpoint-down(small-desktop) {
+			margin-bottom: rem(48);
+			padding-left: rem(70);
+		}
+
+		@include breakpoint-down(mobile) {
+			margin-bottom: rem(32);
+			padding-left: rem(28);
+		}
+
+		&.decor-line::before {
+			left: 0;
+			width: 4px;
+			height: 100%;
+		}
+	}
+
+	&__title {
+		margin-bottom: rem(24);
+
+		@include breakpoint-down(small-desktop) {
+			margin-bottom: rem(16);
+		}
+	}
+
+	&__image-container {
+		max-width: rem(670);
+		max-height: rem(200);
+		font-size: 0;
+		line-height: 0;
+
+		& svg {
+			width: 100%;
+			height: 100%;
+		}
+
+		@include breakpoint-down(small-desktop) {
+			max-width: rem(510);
+			max-height: rem(150);
+		}
+
+		@include breakpoint-down(mobile) {
+			max-width: rem(300);
+			max-height: rem(100);
+		}
+	}
+
+	&__buttons-container {
+		margin-top: rem(40);
+
+		@include breakpoint-down(small-desktop) {
+			margin-top: rem(24);
+		}
+
+		& .button--bordered {
+			color: $white;
+		}
+	}
+
+	&__description {
+		margin-top: rem(20);
+
+		@include breakpoint-down(small-desktop) {
+			margin-top: rem(12);
+		}
+	}
+
+	&__scroll {
+		margin-top: auto;
+	}
+
+	&--without-bg {
+		.section-hero {
+			&__content {
+				min-height: auto;
+			}
+
+			&__background {
+				overflow: hidden;
+
+				.container {
+					position: relative;
+					width: 100%;
+					height: 100%;
+				}
+
+				&::before {
+					display: none;
+				}
+
+				svg {
+					display: block;
+					width: rem(1620);
+					height: rem(557);
+					position: absolute;
+					z-index: 0;
+					left: 74.8%;
+					opacity: 0.15;
+
+					@include breakpoint-down(small-desktop) {
+						left: 58.7%;
+					}
+
+					@include breakpoint-down(mobile) {
+						width: rem(878);
+						height: rem(302);
+						left: 43.5%;
+					}
+
+					.path-1 {
+						fill: $deepSapphire;
+					}
+
+					.path-2 {
+						fill: $scienceBlue;
+					}
+
+					.path-3 {
+						fill: $cerulean;
+					}
+				}
+
+				&.menu-two-lines {
+					& svg {
+						top: rem(28);
+
+						@include breakpoint-down(small-desktop) {
+							top: rem(-110);
+						}
+
+						@include breakpoint-down(mobile) {
+							top: rem(38);
+						}
+					}
+				}
+
+				&.menu-three-lines {
+					& svg {
+						top: rem(28);
+
+						@include breakpoint-down(small-desktop) {
+							top: rem(-210);
+						}
+
+						@include breakpoint-down(mobile) {
+							top: rem(38);
+						}
+					}
+				}
+			}
+
+			&__bread-crumbs {
+				margin-top: rem(12);
+				color: $deepCove20;
+				font-size: rem(14);
+				line-height: rem(20);
+
+				span {
+					span {
+						a {
+							color: $deepCove20;
+							text-decoration: underline;
+							text-decoration-color: transparent;
+							transition: text-decoration-color $transition-default;
+
+							&:hover {
+								color: $deepCove20;
+								text-decoration-color: $deepCove20;
+							}
+						}
+					}
+				}
+
+				.breadcrumb_last {
+					color: $deepCove80;
+				}
+			}
+
+			&__buttons-container {
+				& .button--bordered {
+					color: $cerulean;
+
+					&:hover {
+						color: $scienceBlue;
+					}
+				}
+			}
+		}
+	}
+}

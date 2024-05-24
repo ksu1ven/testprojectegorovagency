@@ -1,0 +1,94 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Component: Video
+\* ------------------------------------------------------------ */
+
+.block-video,
+.acf-block-preview .block-video {
+	margin-top: rem(20);
+	margin-bottom: rem(20);
+	width: rem(800);
+	max-width: 100%;
+
+	&__inner {
+		position: relative;
+		width: 100%;
+		height: 0;
+		padding-bottom: 55%;
+		border-radius: rem(8);
+		overflow: hidden;
+	}
+
+	&__poster {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		transition: all $transition-default;
+		will-change: transform;
+
+		img {
+			margin: 0 !important;
+		}
+	}
+
+	&__play-button {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		@media (hover: hover) {
+			&:hover {
+				+ .block-video__poster,
+				~ * .block-video__poster{
+					transform: scale(1.03);
+				}
+			}
+		}
+
+		.icon {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: rem(32);
+			height: rem(32);
+			padding: rem(20);
+			box-sizing: content-box;
+			border-radius: 50%;
+			background: $cerulean;
+			transition: all $transition-default;
+			cursor: pointer;
+			box-shadow: 0 0 rem(60) rgba(0, 174, 239, 0.25);
+
+			@include breakpoint-down(mobile) {
+				padding: rem(12);
+			}
+
+			svg {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+
+			@media (hover: hover) {
+				&:hover {
+					background: $scienceBlue;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,30 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Component: Button
+\* ------------------------------------------------------------ */
+
+.editor-popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 999999999;
+	background: rgba( $black, .5 );
+
+	&__modal {
+		display: block !important;
+
+		.modal-dialog {
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+	}
+}

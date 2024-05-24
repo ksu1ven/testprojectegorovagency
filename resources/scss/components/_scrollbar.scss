@@ -1,0 +1,40 @@
+@import "../../../node_modules/jquery.scrollbar/sass/jquery.scrollbar.scss";
+@import "../generic/variables";
+
+.scrollbar-outer > .scroll-element {
+	background-color: transparent;
+}
+
+.scrollbar-outer > .scroll-element.scroll-x {
+	height: 4px;
+}
+
+.scrollbar-outer > .scroll-element.scroll-y {
+	width: 4px;
+}
+
+.scrollbar-outer > .scroll-element.scroll-x .scroll-element_outer {
+	height: 4px;
+	top: 0;
+}
+
+.scrollbar-outer > .scroll-element.scroll-y .scroll-element_outer {
+	left: 0;
+	width: 4px;
+}
+
+.scrollbar-outer > .scroll-element .scroll-element_track {
+	background-color: transparent;
+}
+
+.scrollbar-outer > .scroll-element .scroll-bar {
+	background-color: $cerulean;
+}
+
+.scrollbar-outer > .scroll-element .scroll-bar:hover {
+	background-color: $deepSapphire;
+}
+
+.scrollbar-outer > .scroll-element.scroll-draggable .scroll-bar {
+	background-color: $deepSapphire;
+}

@@ -1,0 +1,187 @@
+.nf-form-cont {
+	// remove form padding
+	.nf-form-content {
+		padding: 0;
+	}
+
+	// hide labels
+	.nf-form-content .nf-field-label,
+	.nf-form-content .label-above .nf-field-label {
+		margin: 0 !important;
+		overflow: hidden;
+		max-height: 0;
+	}
+
+	// set space between columns
+	.nf-row {
+		margin-left: rem(-8);
+		margin-right: rem(-8);
+
+		@include breakpoint-down(small-desktop) {
+			margin-left: rem(-10);
+			margin-right: rem(-10);
+		}
+	}
+
+	// set margin for fields
+	.nf-field-container {
+		margin-bottom: rem(16);
+
+		@include breakpoint-down(mobile) {
+			margin-bottom: rem(12);
+		}
+	}
+
+	.nf-row:last-child .nf-field-container {
+		margin-bottom: 0;
+	}
+
+	// hide redundant form elements
+	.nf-form-fields-required,
+	.nf-after-form-content,
+	.nf-error.field-wrap .nf-field-element:after,
+	.nf-pass.field-wrap .nf-field-element:after,
+	.nf-input-limit {
+		display: none !important;
+	}
+
+	// textarea styles
+	.nf-form-content textarea.ninja-forms-field {
+		padding-top: rem(18);
+		display: block;
+		resize: none;
+		height: rem(112) !important;
+
+		@include breakpoint-down(mobile) {
+			padding-top: rem(14);
+			height: rem(90) !important;
+		}
+	}
+
+	// hide response message from form 
+	.nf-response-msg {
+		display: none !important;
+	}
+
+	.nf-form-content input:not([type=button]),
+	.nf-form-content select.ninja-forms-field {
+		background-color: $wildSand !important;
+		border: 1px solid $deepCove20 !important;
+
+		&:focus {
+			transition: background-color 0s;
+		}
+
+		&:-webkit-autofill {
+			transition: background-color 600000s ease-in-out 600000s,border 0.3s ease-in-out,text-fill-color 0.3s ease-in-out,box-shadow 0.3s ease-in-out !important;
+			border-color: $deepCove20 !important;
+			-webkit-text-fill-color: $deepCove80 !important;
+			-webkit-box-shadow: 0 0 0 1000px rgba($white, 1) inset !important;
+			background-color: $wildSand !important;
+
+			&:hover,
+			&:focus,
+			&:active {
+				-webkit-text-fill-color: $deepCove80 !important;
+				border-color: $deepCove20 !important;
+			}
+		}
+	}
+
+	.nf-form-fields-required {
+		display: none;
+	}
+
+	.nf-field-container {
+
+		.field-wrap {
+			display: block;
+			position: relative;
+			width: 100%;
+
+			&.field-wrap.nf-error {
+				.nf-field-element {
+					.nf-element:not([type="button"]) {
+						border-color: #e80000;
+					}
+				}
+			}
+
+			&.submit-wrap {
+				.button {
+					width: 100%;
+
+					&[disabled] {
+						opacity: 0.8;
+
+						&:hover {
+							background-color: $cerulean;
+						}
+					}
+				}
+			}
+		}
+		.nf-input-limit {
+			margin: 0;
+			padding: 0;
+		}
+		.nf-after-field {
+			position: relative;
+			.nf-error-wrap {
+				.nf-error-msg {
+					margin: 5px 0 0;
+					font-size: 1.2rem;
+					font-weight: 600;
+					text-transform: uppercase;
+					line-height: 1;
+
+					// position: absolute;
+					width: 100%;
+					// right: 0;
+					// top: 0;
+				}
+			}
+		}
+	}
+
+	.nf-field-element {
+		.nf-element:not([type="button"]):not(.button) {
+			display: block;
+			height: rem(56);
+			padding: rem(18) rem(16);
+			background: $wildSand;
+			border: 1px solid $deepCove5;
+			border-radius: 4px;
+			font-family: $montserrat;
+			font-style: normal;
+			font-weight: 500;
+			font-size: rem(14);
+			line-height: 1.4;
+			color: $deepCove;
+			transition: all $transition-default;
+
+			@include breakpoint-down(mobile-small) {
+				height: rem(48);
+				padding: rem(14) rem(16);
+			}
+
+			&::placeholder {
+				color: $deepCove60;
+			}
+
+			&:focus {
+				border: 1px solid $deepCove20;
+			}
+		}
+	}
+
+	.nf-after-form-content {
+		padding: rem(10) 8px 0;
+		.nf-form-errors {
+			text-transform: uppercase;
+			font-size: 1.4rem;
+			font-weight: 600;
+		}
+	}
+
+}

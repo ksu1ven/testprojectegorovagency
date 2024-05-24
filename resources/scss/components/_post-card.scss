@@ -1,0 +1,147 @@
+.post__card {
+	position: relative;
+	display: flex;
+	height: rem(460);
+	overflow: hidden;
+
+	@include breakpoint-down(small-desktop) {
+		height: rem(340);
+	}
+
+	&-bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+	}
+
+	&-content {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		flex: 0 0 100%;
+		margin-top: auto;
+		padding: rem(32) rem(24) rem(40);
+		height: 100%;
+		max-height: rem(182);
+		background: linear-gradient(180deg, rgba(5, 30, 57, 0) 0%, #0971CE 100%);
+		-webkit-backdrop-filter: blur(20px);
+		backdrop-filter: blur(20px);
+		transition: max-height $transition-default $transition-delay-default;
+
+		@include breakpoint-down(small-desktop) {
+			max-height: rem(148);
+			padding: rem(20) rem(24);
+		}
+
+		@include breakpoint-down(mobile) {
+			padding: rem(20) rem(20) rem(20) rem(24);
+		}
+
+		&.decor-line::before {
+			width: 4px;
+			height: 100%;
+			left: 0;
+			top: 0;
+		}
+	}
+
+	&-body {
+		overflow: hidden;
+		flex: 0 0 auto;
+
+		&--hidden {
+			flex: 1 0 auto;
+			display: flex;
+			flex-direction: column;
+			pointer-events: none;
+			opacity: 0;
+			transition: opacity $transition-default;
+		}
+	}
+
+	&:hover {
+		.post__card-content {
+			max-height: rem(460);
+			transition: max-height $transition-default;
+		}
+
+		.post__card-body--hidden {
+			pointer-events: auto;
+			opacity: 1;
+			transition: opacity $transition-default $transition-delay-default;
+		}
+	}
+
+	&-date {
+		margin-bottom: rem(8);
+		font-family: $montserrat;
+		font-weight: 500;
+		font-size: rem(14);
+		line-height: rem(20);
+		color: $white60;
+	}
+
+	&-title {
+		margin-bottom: rem(8);
+
+		& h3 {
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+
+			@include breakpoint-down(small-desktop) {
+				-webkit-line-clamp: 2;
+			}
+		}
+	}
+
+	&-author {
+		font-family: $montserrat;
+		font-weight: 500;
+		font-size: rem(14);
+		line-height: rem(20);
+
+		& > span {
+			color: $white60;
+		}
+
+		& > a {
+			color: $white;
+			text-decoration-color: transparent;
+
+			&:hover {
+				color: $white;
+				text-decoration-color: $white;
+			}
+		}
+	}
+
+	&-description {
+		margin-top: rem(16);
+		margin-bottom: rem(16);
+		display: -webkit-box;
+		-webkit-line-clamp: 6;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+
+		@include breakpoint-down(small-desktop) {
+			-webkit-line-clamp: 4;
+		}
+	}
+
+	&-button-wrapper {
+		margin-top: auto;
+
+		& .button--fill {
+			@media (hover: hover) {
+				&:hover {
+					background-color: $deepSapphire;
+				}
+			}
+		}
+	}
+}

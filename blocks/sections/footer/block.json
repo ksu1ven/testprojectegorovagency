@@ -1,0 +1,44 @@
+{
+	"name": "footer",
+	"title": "Footer",
+	"description": "",
+	"style": ["file:../../../dist/css/blocks/footer/scss/block-footer.css"],
+  	"script": "block-footer",
+	"category": "hm-sections",
+	"icon": "block-default",
+	"apiVersion": 2,
+	"keywords": [],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "template.php"
+	},
+	"styles": [],
+	"supports": {
+		"align": false,
+		"anchor": false,
+		"alignContent": false,
+		"color": {
+			"text": false,
+			"background": false,
+			"link": false
+		},
+		"alignText": false,
+		"fullHeight": false
+	},
+	"attributes": {
+		"mode": {
+			"type": "string"
+		},
+		"data": {
+			"type": "object"
+		}
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"block_preview_images": "block-footer.png"
+			}
+		}
+	}
+}

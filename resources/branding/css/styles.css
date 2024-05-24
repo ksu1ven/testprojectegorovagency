@@ -1,0 +1,38 @@
+.login h1 a {
+	width: 90%;
+	height: 70px;
+	background-size: contain;
+	background-position: center;
+	background-image: var(--theme-logo-url);
+}
+
+#wp-admin-bar-theme-logo a {
+	display: flex !important;
+	align-items: center;
+}
+
+#wp-admin-bar-theme-logo img {
+	width: 20px;
+	height: auto;
+	margin-top: 0;
+}
+
+#footer-thankyou a {
+	display: inline-block;
+	width: 100px;
+	margin-left: 5px;
+	vertical-align: middle;
+	-webkit-transition: opacity 0.3s ease;
+	-o-transition: opacity 0.3s ease;
+	-moz-transition: opacity 0.3s ease;
+	transition: opacity 0.3s ease;
+}
+
+#footer-thankyou a:hover {
+	opacity: 0.6;
+}
+
+#footer-thankyou svg {
+	display: block;
+	width: 100%;
+}

@@ -1,0 +1,12 @@
+{
+  "apiVersion": 2,
+  "name": "ea-core/{{name}}",
+  "title": "{{Name}}",
+  "category": "hm-sections",
+  "icon": "block-default",
+  "description": "",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "script": ""
+}

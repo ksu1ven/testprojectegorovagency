@@ -1,0 +1,24 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../resources/scss/generic/variables";
+@import "../../../resources/scss/generic/functions";
+@import "../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Block: Section {{name}}
+\* ------------------------------------------------------------ */
+
+.acf-block-preview .section-{{name}} * {
+	pointer-events: none !important;
+
+	& .post-empty-message a {
+		pointer-events: auto !important;
+	}
+}
+
+.section-{{name}},
+.acf-block-preview .section-{{name}} {
+
+}

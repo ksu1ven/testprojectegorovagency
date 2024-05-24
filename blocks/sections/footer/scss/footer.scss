@@ -1,0 +1,400 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Blocks: Section Footer
+\* ------------------------------------------------------------ */
+
+.footer {
+
+	position: relative;
+	overflow: hidden;
+	background: $cerulean;
+	color: $white;
+
+	&__bg-decor {
+		position: absolute;
+		z-index: 0;
+		top: 25%;
+		left: 54%;
+		width: rem(1880);
+		height: rem(647);
+		opacity: 0.15;
+
+		@include breakpoint-down(small-desktop) {
+			top: auto;
+			bottom: rem(-67);
+			left: rem(174);
+		}
+
+		@include breakpoint-down(mobile) {
+			width: rem(1444);
+			height: rem(496);
+			bottom: rem(-73);
+			left: rem(33);
+		}
+
+		svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		.path-1,
+		.path-2,
+		.path-3 {
+
+		}
+	}
+
+	&__main {
+		position: relative;
+		z-index: 1;
+		padding: rem(72) 0;
+
+		@include breakpoint-down(small-desktop) {
+			padding: rem(40) 0;
+		}
+
+		@include breakpoint-down(tablet) {
+			padding: rem(40) 0 rem(32);
+		}
+
+		@include breakpoint-down(mobile) {
+			padding: rem(32) 0 rem(32);
+		}
+	}
+
+	&__bottom {
+		position: relative;
+		z-index: 1;
+
+		&-content {
+			display: flex;
+			padding: rem(20) 0;
+			border-top: 1px solid $white20;
+			color: $white60;
+			font-size: rem(14);
+			line-height: 1.4;
+
+			@include breakpoint-down(tablet) {
+				padding: rem(16) 0;
+			}
+
+			@include breakpoint-down(mobile) {
+				flex-flow: column;
+			}
+		}
+
+		&-col {
+			width: 25%;
+			padding-right: 5%;
+
+			@include breakpoint-down(small-desktop) {
+				width: 50%;
+			}
+
+			@include breakpoint-down(mobile) {
+				width: 100%;
+				+ .footer__bottom-col {
+					margin-top: rem(24);
+				}
+			}
+
+			&:nth-last-child(2) {
+				padding-right: 0;
+			}
+
+			&--desktop-only {
+				@include breakpoint-down(small-desktop) {
+					display: none;
+				}
+			}
+
+			&--desktop-hidden {
+				display: none;
+				@include breakpoint-down(small-desktop) {
+					display: block;
+				}
+			}
+		}
+
+		&-links {
+
+			@include breakpoint-down(small-desktop) {
+				display: flex;
+				flex-flow: column;
+				align-items: flex-end;
+			}
+			@include breakpoint-down(mobile-small) {
+				align-items: flex-start;
+			}
+
+			.footer__bottom-link {
+
+				@include breakpoint-down(small-desktop) {
+					text-decoration: underline;
+				}
+
+				+ .footer__bottom-link {
+					@include breakpoint-down(small-desktop) {
+						margin-top: rem(6);
+					}
+				}
+			}
+		}
+
+		&-link {
+			color: $white60;
+			transition: all $transition-default;
+			text-decoration: none;
+
+			&:hover {
+				color: $white;
+			}
+		}
+	}
+
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	&__map {
+		width: 47.5%;
+		height: rem(380);
+		border-radius: 4px;
+		overflow: hidden;
+
+		@include breakpoint-down(small-desktop) {
+			width: 100%;
+		}
+
+		@include breakpoint-down(mobile) {
+			height: rem(320);
+		}
+
+		&-inner {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__menus {
+		width: 50%;
+		display: flex;
+		justify-content: space-between;
+
+		@include breakpoint-down(small-desktop) {
+			width: 100%;
+			margin-top: rem(32);
+		}
+
+		@include breakpoint-down(mobile) {
+			flex-flow: column;
+		}
+	}
+
+	&__contacts {
+		display: flex;
+		margin-top: rem(40);
+		width: 100%;
+
+		@include breakpoint-down(small-desktop) {
+			flex-wrap: wrap;
+			margin-top: rem(32);
+		}
+	}
+
+	&__logo {
+		width: rem(350);
+		height: rem(52);
+		color: $white;
+
+		@include breakpoint-down(desktop) {
+			width: rem(310);
+			height: rem(48);
+		}
+
+		@include breakpoint-down(small-desktop) {
+			margin-top: rem(40);
+		}
+
+		@include breakpoint-down(tablet) {
+			width: rem(317);
+			height: rem(48);
+		}
+
+		&.footer__logo--mobile-only {
+			display: none;
+
+			@include breakpoint-down(small-desktop) {
+				display: block;
+			}
+
+		}
+
+		svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+		&:hover {
+			color: $scienceBlue;
+		}
+	}
+
+	&__copyright {
+		margin: 0;
+	}
+}
+
+.footer-menu {
+	width: 50%;
+	padding-right: 9%;
+
+	@include breakpoint-down(small-desktop) {
+		padding-right: rem(30);
+	}
+
+	@include breakpoint-down(mobile) {
+		width: 100%;
+		padding-right: 0;
+
+		+ .footer-menu {
+			margin-top: rem(32);
+		}
+	}
+
+	&__title {
+		@include breakpoint-down(mobile) {
+			font-size: rem(20) !important;
+		}
+	}
+
+	&__main {
+		margin: rem(24) 0 0;
+
+		ul {
+			padding: 0;
+			margin: 0;
+
+			li {
+				list-style: none;
+
+				+ li {
+					margin-top: rem(16);
+				}
+
+				a {
+					color: $white70;
+					transition: all $transition-default;
+					text-decoration: none;
+
+					&:hover {
+						color: $white;
+					}
+				}
+
+				&.current-menu-item {
+					a {
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+}
+
+.footer-contact-item {
+	display: block;
+	width: 25%;
+
+	@include breakpoint-down(small-desktop) {
+		width: 50%;
+		margin-top: rem(32);
+		&:nth-child(2) {
+			margin-top: 0;
+			padding-right: rem(50);
+		}
+		&:nth-child(3) {
+			margin-top: 0;
+		}
+	}
+
+	@include breakpoint-down(mobile-small) {
+		width: 100%;
+		padding-right: 0 !important;
+		margin-top: rem(24);
+
+		&:nth-child(2) {
+			margin-top: 0;
+		}
+		&:nth-child(3) {
+			margin-top: rem(24);
+		}
+	}
+
+	&.footer-contact-item--desktop-only {
+		@include breakpoint-down(small-desktop) {
+			display: none;
+		}
+	}
+
+	.footer-contact-item__title {
+		font-weight: 700;
+		color: $white;
+	}
+
+	&__main {
+		display: flex;
+		flex-flow: column;
+		margin: rem(16) 0 0;
+		font-style: normal;
+		padding: 0;
+		font-weight: 400;
+	}
+
+	&__link {
+		color: $white70;
+		transition: all $transition-default;
+		text-decoration: none;
+
+		+ .footer-contact-item__link {
+			margin-top: rem(16);
+		}
+
+		&:hover {
+			color: $white;
+		}
+	}
+}
+
+.footer-social-links {
+	display: flex;
+	flex-flow: row;
+}
+
+.footer-social-link {
+	width: rem(24);
+	height: rem(24);
+	padding: rem(5);
+	margin: rem(-5);
+	color: $white;
+	box-sizing: content-box;
+
+	+ .footer-social-link {
+		margin-left: rem(16);
+	}
+
+	&:hover {
+		color: $scienceBlue;
+	}
+}

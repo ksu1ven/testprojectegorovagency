@@ -1,0 +1,56 @@
+@import "../generic/variables";
+@import "../generic/functions";
+@import "../generic/mixins";
+
+.tabs-navigation-line {
+	display: flex;
+	margin-bottom: rem(32);
+	width: 100%;
+	overflow-y: hidden;
+	overflow-x: auto;	
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+
+	@include breakpoint-down(mobile) {
+		margin-bottom: rem(24);
+	}
+	
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	&__item {
+		position: relative;
+		flex: 0 0 auto;
+		padding: rem(7) rem(24);
+		color: $deepCove60;
+		font-family: $montserrat;
+		font-weight: 500;
+		font-size: rem(16);
+		line-height: rem(22);
+		background-color: transparent;
+		border-left: 2px solid;
+		border-color: $deepCove10;
+		cursor: pointer;
+		transition: background-color $transition-default, border-color $transition-default, color $transition-default;
+
+		&:last-child {
+			border-right: 2px solid;
+			border-color: $deepCove10;
+		}
+
+		&.active {
+			color: $deepCove80;
+			background-color: $wildSand;
+			border-color: $cerulean;
+
+			& + .tabs-navigation-line__item {
+				border-left-color: $cerulean;
+			}
+		}
+
+		&:hover {
+			color: $deepSapphire;
+		}
+	}
+}

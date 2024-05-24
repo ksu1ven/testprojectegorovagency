@@ -1,0 +1,139 @@
+@import "../generic/variables";
+@import "../generic/functions";
+@import "../generic/mixins";
+
+.awards-throw-the-years {
+	&__collapses-container {
+		max-width: rem(1200);
+	}
+
+	&__collapse {
+		width: 100%;
+		margin-bottom: rem(32);
+
+		@include breakpoint-down(small-desktop) {
+			margin-bottom: rem(24);
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+
+			@include breakpoint-down(small-desktop) {
+				margin-bottom: 0;
+			}
+		}
+	}
+	
+	&__header {
+		position: relative;
+		display: flex;
+		padding: rem(14) rem(24) rem(14) rem(32);
+		justify-content: space-between;
+		background-color: $wildSand;
+
+		@include breakpoint-down(small-desktop) {
+			padding: rem(14) rem(15) rem(14) rem(32);
+		}
+
+		@include breakpoint-down(mobile) {
+			padding: rem(14) rem(12) rem(16) rem(24);
+		}
+
+		&.decor-line::before {
+			width: 100%;
+			max-width: 100%;
+			height: 4px;
+			top: 0;
+			left: 0;
+			transition: max-width $transition-default, left $transition-default;
+		}
+
+		&.collapsed.decor-line::before {
+			left: rem(32);				
+			max-width: rem(130);
+
+			@include breakpoint-down(mobile) {
+				left: rem(24);
+			}
+		}
+	}
+
+	&__title {
+		flex: 0 0 auto;
+		margin-right: rem(40);
+	}
+
+	&__header-icon {
+		position: relative;
+		flex: 0 0 rem(24);
+		width: rem(24);
+		height: rem(24);
+
+		&::before,
+		&::after {
+			position: absolute;
+			content: "";
+			top: 50%;
+			left: 50%;
+			width: rem(14);
+			height: 2px;
+			background-color: $cerulean;
+			transform: translate(-50%, -50%);
+			border-radius: 1px;
+			transition: transform $transition-default;
+		}
+
+		&::after {
+			transform: translate(-50%, -50%) rotate(0);
+		}
+
+		.collapsed & {
+			&::after {
+				transform: translate(-50%, -50%) rotate(90deg);
+			}
+		}
+	}
+
+	&__award-item {
+		display: flex;
+		align-items: center;
+		padding: rem(20) rem(32) rem(18);
+		border: 1px solid $lightGray;
+
+		@include breakpoint-down(mobile) {
+			padding: rem(20) rem(24) ;
+		}
+	}
+
+	&__award-icon {
+		display: inline-block;
+		align-self: flex-start;
+		width: rem(22);
+		height: rem(22);
+		color: $texasRose;
+
+		svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+			
+			& > * {
+				fill: currentColor;
+			}
+		}
+	}
+
+	&__award-text {
+		margin-left: rem(10);
+		font-family: $montserrat;
+		font-weight: 500;
+		font-size: rem(16);
+		line-height: rem(22);
+		color: $cerulean;
+		text-decoration: none;
+
+		&:hover {
+			color: $scienceBlue;
+		}
+	}
+}

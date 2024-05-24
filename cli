@@ -1,0 +1,66 @@
+#!/usr/bin/env php
+<?php
+
+if ( isset( $argv[1] ) ) {
+	if ( empty( $argv[2] ) ) {
+		echo 'Please provide a name for the section.';
+		return;
+	}
+
+	switch ( $argv[1] ) {
+		case 'make:section':
+			if ( file_exists( __DIR__ . '/blocks/sections/' . $argv[2] ) ) {
+				echo "Section already exists.";
+				return;
+			}
+
+			recurse_copy_template( __DIR__ . '/lib/cli/section', __DIR__ . '/blocks/sections/' . $argv[2], $argv[2] );
+			break;
+		case 'make:component':
+			if ( file_exists( __DIR__ . '/blocks/components/' . $argv[2] ) ) {
+				echo "Section already exists.";
+				return;
+			}
+
+			recurse_copy_template( __DIR__ . '/lib/cli/component', __DIR__ . '/blocks/components/' . $argv[2], $argv[2] );
+			break;
+		case 'make:core':
+			if ( file_exists( __DIR__ . '/blocks/core/' . $argv[2] ) ) {
+				echo "Section already exists.";
+				return;
+			}
+
+			recurse_copy_template( __DIR__ . '/lib/cli/core/js', __DIR__ . '/blocks/core/' . $argv[2], $argv[2] );
+			break;
+		case 'make:core-ts':
+			if ( file_exists( __DIR__ . '/blocks/core/' . $argv[2] ) ) {
+				echo "Section already exists.";
+				return;
+			}
+
+			recurse_copy_template( __DIR__ . '/lib/cli/core/ts', __DIR__ . '/blocks/core/' . $argv[2], $argv[2] );
+			break;
+	}
+}
+
+
+function recurse_copy_template( $src, $dst, $templateName ) {
+	$dir = opendir( $src );
+	@mkdir( $dst );
+	while ( false !== ($file = readdir( $dir )) ) {
+		if ( ($file != '.') && ($file != '..') ) {
+			$new_file_name = str_replace( '{{name}}', $templateName, $file );
+
+			if ( is_dir( $src . '/' . $file ) ) {
+				recurse_copy_template( $src . '/' . $file, $dst . '/' . $new_file_name, $templateName );
+			} else {
+				$file_contents = file_get_contents( $src . '/' . $file );
+				$file_contents = str_replace( '{{name}}', $templateName, $file_contents );
+				$file_contents = str_replace( '{{Name}}', ucfirst( $templateName ), $file_contents );
+				file_put_contents( $dst . '/' . $new_file_name, $file_contents );
+			}
+		}
+	}
+	closedir( $dir );
+}
+

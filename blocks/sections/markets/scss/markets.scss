@@ -1,0 +1,429 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Blocks: Section Markets
+\* ------------------------------------------------------------ */
+
+.section-markets,
+.acf-block-preview .section-markets {
+	background: $white;
+	overflow: hidden;
+
+	.section__content {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		padding: rem(72) 0 rem(72);
+
+		@include breakpoint-down(small-desktop) {
+			flex-flow: column;
+			padding: rem(52) 0 0;
+		}
+
+		@include breakpoint-down(mobile-small) {
+			padding: rem(44) 0 0;
+		}
+
+		@include breakpoint-down(mobile) {
+			padding: rem(42) 0 0;
+		}
+	}
+
+	.section__bg {
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			z-index: 1;
+			width: 3000px;
+			height: 100%;
+			top: 0;
+			left: 75%;
+			background: $wildSand;
+
+			@include breakpoint-down(small-desktop) {
+				display: none;
+			}
+		}
+	}
+
+	.section__left {
+		position: relative;
+		z-index: 1;
+	}
+
+	.section__title {
+		max-width: 66.5%;
+
+		@include breakpoint-down(small-desktop) {
+			max-width: 100%;
+		}
+	}
+
+	.section__description {
+		max-width: 66.5%;
+		margin: rem(24) 0 rem(56);
+
+		@include breakpoint-down(small-desktop) {
+			max-width: 100%;
+		}
+
+		@include breakpoint-down(tablet) {
+			margin: rem(19) 0 rem(40);
+		}
+
+		@include breakpoint-down(mobile) {
+			margin: rem(19) 0 rem(30);
+		}
+	}
+}
+
+/* ------------------------------------------------------------ *\
+	Markets Accordion
+\* ------------------------------------------------------------ */
+
+.markets-accordion,
+.acf-block-preview .markets-accordion {
+	@include breakpoint-up(small-desktop) {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		height: rem(600);
+		overflow: auto;
+
+		&.scroll-wrapper {
+			& > .scroll-content {
+				position: initial !important;
+
+				&.scroll-scrolly_visible {
+					left: 0;
+				}
+			}
+
+			& > :first-child:not(.scroll-content) {
+				position: relative;
+			}
+		}
+
+		&::after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			z-index: -3;
+			content: '';
+			background-color: $scienceBlue;
+		}
+	}
+
+	.accordion-item {
+		@include breakpoint-up(small-desktop) {
+			width: rem(521);
+		}
+
+		&__wrapper {}
+
+		.accordion-spine {
+			position: relative;
+			padding-top: rem(30);
+			padding-bottom: rem(30);
+			overflow: hidden;
+			cursor: pointer;
+
+			@include breakpoint-down(mobile) {
+				padding-top: rem(20);
+				padding-bottom: rem(20);
+			}
+
+			&:hover {
+				.accordion-spine {
+					&__title {
+						&::after {
+							background-color: $scienceBlue;
+						}
+					}
+				}
+			}
+
+			&::before,
+			&::after {
+				position: absolute;
+				top: 0;
+				width: rem(4);
+				height: 100%;
+				z-index: 0;
+				content: '';
+				background-color: $cerulean;
+				transition: all $transition-default;
+			}
+
+			&::before {
+				left: rem(-4);
+			}
+
+			&::after {
+				right: rem(-4);
+			}
+
+			&__bg {
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: -2;
+				width: 100%;
+				height: 100%;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				overflow: hidden;
+			}
+
+			&__title {
+				position: relative;
+				padding-top: rem(7);
+				padding-bottom: rem(7);
+				padding-left: rem(32);
+				display: block;
+				width: 100%;
+				color: $white;
+				font-family: $drukWide;
+				font-style: normal;
+				font-weight: 500;
+				font-size: rem(18);
+				line-height: rem(26);
+
+				& > span {
+					display: block;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+
+				@include breakpoint-down(mobile) {
+					padding-top: rem(8);
+					padding-bottom: rem(8);
+					padding-left: rem(20);
+				}
+
+				&::before {
+					position: absolute;
+					top: 0;
+					left: 0;
+					bottom: 0;
+					right: 0;
+					z-index: -1;
+					content: '';
+					background-color: $gray20;
+					backdrop-filter: blur(rem(20));
+					border: rem(1) solid $white10;
+				}
+
+				&::after {
+					position: absolute;
+					top: rem(-30);
+					left: 0;
+					bottom: rem(-30);
+					right: 0;
+					z-index: -1;
+					content: '';
+					background: linear-gradient(to left, rgba($scienceBlue, .6), $scienceBlue);
+					transition: background-color $transition-default, opacity $transition-default;
+				}
+			}
+		}
+
+		.accordion-info {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: calc(100% - #{rem(521)});
+			height: 100%;
+			overflow: hidden;
+			opacity: 0;
+			visibility: hidden;
+			transition: all $transition-default;
+
+			@include breakpoint-down(small-desktop) {
+				position: initial;
+				width: 100%;
+				height: 0;
+				opacity: 1;
+				visibility: visible;
+				transition: all 0s;
+			}
+
+			&__wrapper {
+				position: relative;
+				height: 100%;
+
+				@include breakpoint-down(small-desktop) {
+					height: initial;
+				}
+			}
+
+			&__bg {
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: -2;
+				width: 100%;
+				height: 100%;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				overflow: hidden;
+			}
+
+			&__content {
+				margin-left: rem(111);
+				margin-right: auto;
+				height: 100%;
+
+				@include breakpoint-down(small-desktop) {
+					margin-left: rem(64);
+					height: initial;
+				}
+
+				@include breakpoint-down(mobile) {
+					margin-left: 0;
+					margin-right: 0;
+					padding-top: rem(194);
+				}
+			}
+
+			&__content-wrapper {
+				padding: rem(72) rem(26) rem(72) rem(24);
+				max-width: rem(401);
+				height: 100%;
+				background-color: $gray20;
+				backdrop-filter: blur(rem(20));
+				border: rem(1) solid $white10;
+
+				@include breakpoint-down(small-desktop) {
+					padding: rem(40) rem(24) rem(80);
+					max-width: rem(396);
+					height: initial;
+				}
+
+				@include breakpoint-down(mobile) {
+					padding: rem(32) rem(20);
+					max-width: 100%;
+				}
+			}
+
+			&__title {
+				margin-bottom: rem(24);
+				color: $white;
+				font-family: $drukWide;
+				font-style: normal;
+				font-weight: 500;
+				font-size: rem(24);
+				line-height: rem(32);
+
+				& > * {
+					display: -webkit-box;
+					-webkit-line-clamp: 2;
+					-webkit-box-orient: vertical;
+					overflow: hidden;
+				}
+
+				@include breakpoint-down(small-desktop) {
+					margin-bottom: rem(16);
+				}
+
+				@include breakpoint-down(mobile) {
+					max-width: rem(275);
+				}
+			}
+
+			&__excerpt-wrap {
+				max-height: rem(290);
+
+				& > .scrollbar-outer {
+					max-height: rem(290);
+					overflow-y: auto;
+				}
+
+				@include breakpoint-down(small-desktop) {
+					max-height: rem(220);
+
+					& > .scrollbar-outer {
+						max-height: rem(220);
+					}
+				}
+
+				@include breakpoint-down(mobile) {
+					max-height: rem(60);
+
+					& > .scrollbar-outer {
+						max-height: rem(60);
+					}
+				}
+			}
+
+			&__excerpt {
+				color: $white;
+				font-family: $montserrat;
+				font-style: normal;
+				font-weight: 500;
+				font-size: rem(16);
+				line-height: rem(22);
+			}
+
+			&__link {
+				margin-top: rem(32);
+
+				@include breakpoint-down(small-desktop) {
+					margin-top: rem(24);
+				}
+
+				@include breakpoint-down(mobile) {
+					max-width: rem(275);
+				}
+			}
+		}
+
+		&.active {
+			.accordion-spine {
+				&::before {
+					left: 0;
+				}
+
+				&::after {
+					right: 0;
+				}
+
+				&__title {
+					&::before {
+						left: rem(4);
+						right: rem(4);
+					}
+
+					&::after {
+						opacity: 0;
+					}
+				}
+			}
+
+			.accordion-info {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+}

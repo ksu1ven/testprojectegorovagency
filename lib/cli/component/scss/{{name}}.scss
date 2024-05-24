@@ -1,0 +1,24 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Component: Gallery Slider
+\* ------------------------------------------------------------ */
+
+.acf-block-preview .component-{{name}} * {
+	pointer-events: none !important;
+
+	& .post-empty-message a {
+		pointer-events: auto !important;
+	}
+}
+
+.component-{{name}},
+.acf-block-preview .component-{{name}} {
+
+}

@@ -1,0 +1,245 @@
+button {
+	padding: 0;
+	color: inherit;
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	box-shadow: none;
+	border-radius: 0;
+	cursor: pointer;
+	outline: none;
+}
+
+.button {
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: rem(18) rem(36);
+	min-height: rem(56);
+	border-radius: rem(40);
+	cursor: pointer;
+	outline: none;
+	border: none;
+	font-size: rem(18);
+	font-family: $montserrat;
+	line-height: 1;
+	color: $white;
+	text-align: center;
+	text-decoration: none;
+	box-shadow: 0 0 rem(60) rgba(0, 174, 239, 0.25);
+	transition: all $transition-default;
+
+	@include breakpoint-down(mobile) {
+		padding: rem(14) rem(36);
+		min-height: rem(48);
+		font-size: rem(16);
+	}
+
+	&--bordered {
+		padding: rem(16) rem(34);
+		border: 2px solid $cerulean;
+		color: $cerulean;
+
+		@media (hover: hover) {
+			&:hover {
+				border-color: $scienceBlue;
+				color: $scienceBlue;
+			}
+		}
+
+		@include breakpoint-up(tablet) {
+			&:focus {
+				border-color: $scienceBlue;
+				color: $scienceBlue;
+			}
+		}
+
+		@include breakpoint-down(mobile) {
+			padding: rem(12) rem(34);
+		}
+	}
+	&--bordered-text-blue {
+		padding: rem(16) rem(34);
+		border: 2px solid $cerulean;
+		color: $cerulean;
+
+		@media (hover: hover) {
+			&:hover {
+				border-color: $scienceBlue;
+				color: $scienceBlue;
+			}
+		}
+
+		@include breakpoint-up(tablet) {
+			&:focus {
+				border-color: $scienceBlue;
+				color: $scienceBlue;
+			}
+		}
+
+		@include breakpoint-down(mobile) {
+			padding: rem(12) rem(34);
+		}
+	}
+
+	&--fill {
+		background-color: $cerulean;
+
+		@media (hover: hover) {
+			&:hover {
+				background-color: $scienceBlue;
+			}
+		}
+
+		@include breakpoint-up(tablet) {
+			&:focus {
+				background-color: $scienceBlue;
+			}
+		}
+	}
+
+	&--with-icon {
+		position: relative;
+		padding-right: rem(62);
+
+		& .icon {
+			position: absolute;
+			width: rem(32);
+			height: rem(32);
+			top: 50%;
+			right: rem(24);
+			transform: translateY(-50%);
+			svg {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+
+	&--rect {
+		border-radius: 4px;
+	}
+
+	&--submit {
+		height: rem(56);
+		padding-top: rem(12);
+		padding-bottom: rem(12);
+
+		@include breakpoint-down(mobile-small) {
+			height: rem(48);
+		}
+
+		.icon {
+			transform: translateY(-45%);
+
+			@include breakpoint-down(tablet) {
+				position: relative;
+				transform: translate(0);
+				right: 0;
+				top: 0;
+				margin-left: 8px;
+				margin-top: 3px;
+				margin-right: -36px;
+			}
+		}
+	}
+
+	&--play-circle {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		padding: rem(20);
+		width: rem(32);
+		height: rem(32);
+		min-width: auto;
+		min-height: auto;
+		transform: translate(-50%, -50%);
+		box-sizing: content-box;
+		border-radius: 50%;
+		background-color: $cerulean;
+
+		& .icon {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&--scroll-down {
+		background-color: $cerulean;
+		padding: rem(61) rem(24);
+		border-radius: 0;
+		box-shadow: none;
+
+		@media (hover: hover) {
+			&:hover {
+				background-color: $scienceBlue;
+			}
+		}
+		@include breakpoint-up(tablet) {
+			&:focus {
+				background-color: $scienceBlue;
+			}
+		}
+
+		&-icon {
+			svg {
+				width: rem(24);
+				height: rem(98);
+			}
+		}
+
+		@include breakpoint-down(small-desktop) {
+			padding: rem(31) rem(16);
+		}
+
+		@include breakpoint-down(mobile) {
+			padding: rem(23) rem(14);
+
+			&-icon {
+				svg {
+					width: rem(12);
+					height: rem(66);
+				}
+			}
+		}
+	}
+}
+
+.buttons-wrap {
+	display: flex;
+	margin-top: rem(32);
+	flex-wrap: wrap;
+	gap: rem(32) rem(16);
+}
+
+.scroll-down {
+	display: flex;
+	align-items: center;
+
+	&__text {
+		margin-left: rem(63);
+		font-size: rem(16);
+		line-height: rem(20);
+		color: $white40;
+		cursor: pointer;
+		transition: all $transition-default;
+
+		&:hover {
+			color: $white80;
+		}
+	}
+
+	@include breakpoint-down(small-desktop) {
+		&__text {
+			margin-left: rem(56);
+		}
+	}
+
+	@include breakpoint-down(mobile) {
+		&__text {
+			margin-left: rem(32);
+		}
+	}
+}
