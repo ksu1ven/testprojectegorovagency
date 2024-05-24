@@ -74,6 +74,7 @@
 		"vinyl-paths": "^2.1.0",
 		"webpack": "^5.75.0",
 		"webpack-stream": "^7.0.0",
+		"wp-scripts": "^0.0.1-security",
 		"yargs": "^10.0.3"
 	},
 	"browserslist": [
