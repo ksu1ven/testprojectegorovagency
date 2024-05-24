@@ -13,7 +13,7 @@ function hm_custom_login_screen_logo() {
 
 	<style type="text/css">
 		:root {
-			--theme-logo-raster-colorful-url: url('<?php echo THEME_LOGO_RASTER_COLORFUL_URL ?>');
+			--theme-logo-raster-colorful-url: url('<?php echo defined('THEME_LOGO_RASTER_COLORFUL_URL') ?? THEME_LOGO_RASTER_COLORFUL_URL ?>');
 		}
 	</style>
 
