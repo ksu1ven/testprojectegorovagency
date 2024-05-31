@@ -7,23 +7,15 @@
 @import "generic/mixins";
 @import "generic/reset";
 @import "generic/fonts";
-@import "generic/forms";
 @import "generic/base";
 @import "generic/helpers";
 @import "generic/swiper";
-@import "generic/select2";
 
 /* ------------------------------------------------------------ *\
 	Overwrites
 \* ------------------------------------------------------------ */
 
 //@import "overwrites/_theme.*";
-
-/* ------------------------------------------------------------ *\
-	Components
-\* ------------------------------------------------------------ */
-
-@import "components/*";
 
 /* ------------------------------------------------------------ *\
 	Plugins
