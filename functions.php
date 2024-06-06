@@ -27,7 +27,7 @@ function hm_admin_styles(): void {
 
 function hm_frontend_assets(): void {
 	$template_dir = get_template_directory_uri();
-	
+
 	# Enqueue Custom CSS files
 	wp_enqueue_style( THEME_TEXTDOMAIN . '-bundle', $template_dir . hm_assets_bundle( 'css/bundle.css' ) );
 
@@ -44,7 +44,6 @@ function hm_front_enqueue_assets() {
 	# Enqueue Custom JS files
 	wp_enqueue_script( THEME_TEXTDOMAIN . '-lottie', $template_dir . '/resources/js/lottie-player.js', ['jquery'], false, true );
 	wp_enqueue_script( THEME_TEXTDOMAIN . '-preloader', $template_dir . '/resources/js/preloader.js', [], false, true );
-	wp_enqueue_script( THEME_TEXTDOMAIN . '-google-map', 'https://maps.googleapis.com/maps/api/js?key='. $google_api_key. '&callback=initMap&language=en', [], false, true );
 	wp_enqueue_script( THEME_TEXTDOMAIN . '-vendor', $template_dir . hm_assets_bundle( 'js/vendor.js' ), array( 'jquery' ), null, true );
 	wp_enqueue_script( THEME_TEXTDOMAIN . '-bundle', $template_dir . hm_assets_bundle( 'js/main.js' ), [], null, true );
 

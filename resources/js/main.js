@@ -6,8 +6,6 @@ import "bootstrap/js/dist/collapse";
 import "./modules/hide-preloader";
 import "./modules/horizontal-scroll";
 import hideFocusOnDesktop from "./modules/hide-focus-on-desktop";
-import modalVideoLogic from "./modules/modal-video-logic";
-import modalYoutubeVideoLogic from "./modules/modal-youtube-video-logic";
 import updateStyleVariables from "./modules/resize-dependent";
 
 const admin = function() {
@@ -22,8 +20,6 @@ const front = function() {
 	$body.removeClass('scroll-off');
 
 	updateStyleVariables();
-	modalVideoLogic();
-	modalYoutubeVideoLogic();
 
 	// This code block always will be in the end!
 	hideFocusOnDesktop();
