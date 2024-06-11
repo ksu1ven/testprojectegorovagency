@@ -1,40 +1,38 @@
-@import "../../../node_modules/jquery.scrollbar/sass/jquery.scrollbar.scss";
-@import "../generic/variables";
+body::-webkit-scrollbar {
+	width: 12px;
+}
 
-.scrollbar-outer > .scroll-element {
+body::-webkit-scrollbar-track {
+	padding-left: 2px;
+	border-radius: 6px;
+	box-shadow: 0 0 3px 2px $color-background inset;
+	background-color: $white;
+}
+
+body::-webkit-scrollbar-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	border-radius: 6px;
+	width: 12px;
+	background-color: $color-accent;
+	box-shadow: 0x 0 3px 2px $color-accent-light inset;
+	cursor: pointer;
+}
+
+.offer__nav-tabs-wrapper::-webkit-scrollbar {
+	height: 30px;
+	cursor: pointer;
+}
+
+.offer__nav-tabs-wrapper::-webkit-scrollbar-track {
+	-webkit-appearance: none;
+	appearance: none;
 	background-color: transparent;
+	cursor: pointer;
 }
 
-.scrollbar-outer > .scroll-element.scroll-x {
-	height: 4px;
-}
-
-.scrollbar-outer > .scroll-element.scroll-y {
-	width: 4px;
-}
-
-.scrollbar-outer > .scroll-element.scroll-x .scroll-element_outer {
-	height: 4px;
-	top: 0;
-}
-
-.scrollbar-outer > .scroll-element.scroll-y .scroll-element_outer {
-	left: 0;
-	width: 4px;
-}
-
-.scrollbar-outer > .scroll-element .scroll-element_track {
-	background-color: transparent;
-}
-
-.scrollbar-outer > .scroll-element .scroll-bar {
-	background-color: $cerulean;
-}
-
-.scrollbar-outer > .scroll-element .scroll-bar:hover {
-	background-color: $deepSapphire;
-}
-
-.scrollbar-outer > .scroll-element.scroll-draggable .scroll-bar {
-	background-color: $deepSapphire;
+.offer__nav-tabs-wrapper::-webkit-scrollbar-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	cursor: pointer;
 }

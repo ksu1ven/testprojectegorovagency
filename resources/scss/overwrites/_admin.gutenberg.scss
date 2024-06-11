@@ -84,44 +84,6 @@
 	table.wp-block,
 	blockquote.wp-block {
 	}
-
-	.section {
-		a.button,
-		button.button {
-			color: $white;
-
-			&.button--bordered {
-				color: $cerulean;
-
-				@media (hover: hover) {
-					&:hover {
-						color: $scienceBlue;
-					}
-				}
-
-				@include breakpoint-up(tablet) {
-					&:focus {
-						color: $scienceBlue;
-					}
-				}
-			}
-			&.button--bordered-text-blue {
-				color: $cerulean;
-
-				@media (hover: hover) {
-					&:hover {
-						color: $scienceBlue;
-					}
-				}
-
-				@include breakpoint-up(tablet) {
-					&:focus {
-						color: $scienceBlue;
-					}
-				}
-			}
-		}
-	}
 }
 
 .block-editor__container,

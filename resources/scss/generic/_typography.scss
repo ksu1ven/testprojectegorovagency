@@ -1,0 +1,67 @@
+.h2 {
+	font-size: 60px;
+	font-weight: 900;
+	line-height: 1.2;
+	color: $color-dark-s;
+
+	@include breakpoint-down(small-desktop) {
+		font-size: 30px;
+	}
+}
+
+.h3 {
+	font-family: "Montserrat", "sans-serif";
+	font-weight: 900;
+	font-size: 22px;
+	line-height: 1.2;
+
+	@include breakpoint-down(desktop) {
+		font-size: 18px;
+	}
+}
+
+.h5 {
+	font-family: "Bank Gothic", "sans-serif";
+	font-size: 32px;
+	line-height: 1;
+	color: $white;
+
+	@include breakpoint-down(large-desktop) {
+		font-size: 28px;
+	}
+
+	@include breakpoint-down(small-desktop) {
+		font-size: 32px;
+	}
+
+	@include breakpoint-down(mobile) {
+		font-size: 24px;
+	}
+}
+
+.p {
+	font-family: "Bank Gothic", "sans-serif";
+	line-height: 1;
+	color: $color-dark-s;
+}
+
+.p--big {
+	font-size: 24px;
+	letter-spacing: -0.05 * 24px;
+
+	@include breakpoint-down(small-desktop) {
+		font-size: 20px;
+		letter-spacing: -0.05 * 20px;
+	}
+}
+
+.p--small {
+	font-size: 18px;
+	letter-spacing: -0.05 * 18px;
+	color: $color-dark-s;
+
+	@include breakpoint-down(small-desktop) {
+		font-size: 16px;
+		letter-spacing: -0.05 * 16px;
+	}
+}

@@ -1,75 +1,44 @@
 /* ------------------------------------------------------------ *\
 	Fonts
 \* ------------------------------------------------------------ */
-
 @font-face {
-	font-family: 'Druk Wide Web';
-	src: url('../fonts/druk/DrukWide-MediumItalic-Web.woff2') format('woff2'),
-	url('../fonts/druk/DrukWide-MediumItalic-Web.woff') format('woff');
-	font-weight: 500;
-	font-style: italic;
-	font-stretch: normal;
+	font-family: "Montserrat";
+	src: local("Montserrat Regular"), local("Montserrat-Regular"),
+		url("../fonts/montserrat/Montserrat-Regular.woff2") format("woff2"),
+		url("../fonts/montserrat/Montserrat-Regular.woff") format("woff");
+	font-weight: 400;
 }
 
 @font-face {
-	font-family: 'Druk Wide Web';
-	src: url('../fonts/druk/DrukWide-Medium-Web.woff2') format('woff2'),
-	url('../fonts/druk/DrukWide-Medium-Web.woff') format('woff');
+	font-family: "Montserrat";
+	src: local("Montserrat Medium"), local("Montserrat-Medium"),
+		url("../fonts/montserrat/Montserrat-Medium.woff2") format("woff2"),
+		url("../fonts/montserrat/Montserrat-Medium.woff") format("woff");
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: "Montserrat";
+	src: local("Montserrat Bold"), local("Montserrat-Bold"),
+		url("../fonts/montserrat/Montserrat-Bold.woff2") format("woff2"),
+		url("../fonts/montserrat/Montserrat-Bold.woff") format("woff");
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: "Montserrat";
+	src: local("Montserrat Black"), local("Montserrat-Black"),
+		url("../fonts/montserrat/Montserrat-Black.woff2") format("woff2"),
+		url("../fonts/montserrat/Montserrat-Black.woff") format("woff");
+	font-weight: 900;
+}
+
+@font-face {
+	font-family: "Bank Gothic";
+	src: local("Bank Gothic Medium"), local("BankGothicBT-Medium"),
+		url("../fonts/bankgothic/BankGothicBT-Medium.woff2") format("woff2"),
+		url("../fonts/bankgothic/BankGothicBT-Medium.woff") format("woff");
+
 	font-weight: 500;
 	font-style: normal;
-	font-stretch: normal;
-}
-
-@font-face {
-	font-family: 'Druk Wide Web';
-	src: url('../fonts/druk/DrukWide-Bold-Web.woff2') format('woff2'),
-	url('../fonts/druk/DrukWide-Bold-Web.woff') format('woff');
-	font-weight: 700;
-	font-style: normal;
-	font-stretch: normal;
-}
-
-@font-face {
-	font-family: 'Druk Wide Web';
-	src: url('../fonts/druk/DrukWide-BoldItalic-Web.woff2') format('woff2'),
-	url('../fonts/druk/DrukWide-BoldItalic-Web.woff') format('woff');
-	font-weight: 700;
-	font-style: italic;
-	font-stretch: normal;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/montserrat/Montserrat-MediumItalic.woff2') format('woff2'),
-        url('../fonts/montserrat/Montserrat-MediumItalic.woff') format('woff');
-    font-weight: 500;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/montserrat/Montserrat-BoldItalic.woff2') format('woff2'),
-        url('../fonts/montserrat/Montserrat-BoldItalic.woff') format('woff');
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/montserrat/Montserrat-Medium.woff2') format('woff2'),
-        url('../fonts/montserrat/Montserrat-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/montserrat/Montserrat-Bold.woff2') format('woff2'),
-        url('../fonts/montserrat/Montserrat-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
 }

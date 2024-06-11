@@ -1,0 +1,92 @@
+.contacts {
+	width: fit-content;
+}
+
+.contacts__phone-geo {
+	margin-bottom: 96px;
+	@include flex(column, flex-start, flex-start);
+	row-gap: 20px;
+
+	@include breakpoint-down(small-desktop) {
+		margin-bottom: 50px;
+		row-gap: 15px;
+	}
+}
+
+.contacts__media {
+	@include flex(row, flex-start, center);
+	column-gap: 20px;
+}
+
+.contacts__link {
+	transition: $transition-default;
+
+	svg {
+		color: $color-accent;
+		transition: $transition-default;
+		flex-shrink: 0;
+	}
+
+	@include hover-device {
+		&:hover svg {
+			color: $color-accent-light;
+		}
+	}
+
+	@include mobile-device {
+		&:active svg {
+			color: $color-accent-light;
+		}
+	}
+}
+
+.contacts__link--with-text {
+	@include flex(row, flex-start, center);
+	column-gap: 10px;
+	max-width: 290px;
+	font-family: "Bank Gothic", "sans-serif";
+	font-size: 18px;
+	line-height: 1.2;
+	letter-spacing: -0.05 * 18px;
+	text-decoration: none;
+
+	span {
+		display: inline;
+		background: linear-gradient(currentColor, currentColor) no-repeat;
+		background-size: 0 1px;
+		background-position: 50% 0.95em;
+		transition: $transition-default;
+	}
+
+	@include breakpoint-down(tablet) {
+		font-size: 16px;
+	}
+
+	@include hover-device {
+		&:hover span {
+			background-size: 100% 1px;
+			background-position: 0 0.95em;
+		}
+	}
+
+	@include mobile-device {
+		&:active span {
+			background-size: 100% 1px;
+			background-position: 0 0.95em;
+		}
+	}
+}
+
+.contacts__link--white {
+	color: $white;
+}
+
+.contacts__link--dark {
+	color: $color-dark-s;
+}
+
+.contacts__link--geo {
+	svg {
+		align-self: flex-start;
+	}
+}

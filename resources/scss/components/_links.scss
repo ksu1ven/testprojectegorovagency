@@ -1,0 +1,115 @@
+.link {
+	border-radius: $border-radius;
+	color: $white;
+	background-color: transparent;
+	transition: $transition-default;
+}
+
+.link--square {
+	@extend %square-button-link;
+	background-color: $white-5;
+}
+
+.link--phone {
+	@include flex(row, left, center);
+	column-gap: 10px;
+	color: $color-accent;
+	text-decoration: none;
+
+	span:first-child {
+		@include breakpoint-down(tablet) {
+			@include flex(row, center, center);
+			width: 44px;
+			height: 44px;
+			border: 3px solid $color-accent;
+			color: $white;
+			background-color: $white-5;
+
+			svg {
+				width: 20px;
+				height: 20px;
+			}
+		}
+	}
+
+	span:last-child {
+		position: relative;
+		@extend %text-header-small;
+		color: $white;
+
+		@include breakpoint-down(mobile) {
+			display: none;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: -2px;
+			left: 50%;
+			width: 0;
+			height: 1px;
+			background-color: $white;
+			transform-origin: center;
+			transition: $transition-default;
+		}
+	}
+
+	@include hover-device {
+		&:hover {
+			color: $color-accent-light;
+
+			span::after {
+				left: 0;
+				width: 100%;
+			}
+		}
+	}
+
+	@include mobile-device {
+		&:active {
+			color: $color-accent-light;
+
+			span::after {
+				left: 0;
+				width: 100%;
+			}
+		}
+	}
+}
+
+.link--white {
+	padding: 17.6px 37.6px;
+	display: block;
+	width: fit-content;
+	background-color: $white;
+	color: $color-accent;
+	border: 3px solid $color-accent;
+	text-decoration: none;
+	font-size: 16px;
+	line-height: 1;
+	font-weight: 700;
+
+	@include breakpoint-down(large-desktop) {
+		padding: 12.5px 27.9px;
+	}
+
+	@include breakpoint-down(tablet) {
+		font-size: 14px;
+	}
+
+	@include hover-device {
+		&:hover {
+			border: 3px solid $color-accent-light;
+			background-color: $color-accent-light;
+			color: $white;
+		}
+	}
+
+	@include mobile-device {
+		&:active {
+			border: 3px solid $color-accent-light;
+			background-color: $color-accent-light;
+			color: $white;
+		}
+	}
+}

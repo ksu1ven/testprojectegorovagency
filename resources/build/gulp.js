@@ -5,7 +5,7 @@ const del = require("del");
 const gulp = require("gulp");
 const path = require("path");
 const sass = require("gulp-sass")(require("sass"));
-const sassGlob = require('gulp-sass-glob');
+const sassGlob = require("gulp-sass-glob");
 const utils = require("./utils");
 const gulpif = require("gulp-if");
 const rename = require("gulp-rename");
@@ -69,12 +69,12 @@ const styles = () => {
 };
 
 const blockStyles = () => {
-	const sectionsSrc = utils.srcBlocks( 'sections/*/scss/*.scss' );
-	const componentsSrc = utils.srcBlocks( 'components/*/scss/*.scss' );
+	const sectionsSrc = utils.srcBlocks("sections/*/scss/*.scss");
+	const componentsSrc = utils.srcBlocks("components/*/scss/*.scss");
 	const dest = utils.buildStylesBlocksPath();
 
 	return gulp
-		.src( [sectionsSrc, componentsSrc] , {
+		.src([sectionsSrc, componentsSrc], {
 			allowEmpty: true,
 		})
 		.pipe(gulpif(isDev, sourcemaps.init()))
@@ -152,17 +152,17 @@ const images = () => {
 
 	const dest = utils.buildImagesPath();
 
-	return gulp
-		.src(src)
-		.pipe(changed(dest))
-		.pipe(plumber({ errorHandler: error }))
-		.pipe(gulp.dest(dest));
+	return (
+		gulp
+			.src(src)
+			// .pipe(changed(dest))
+			// .pipe(plumber({ errorHandler: error }))
+			.pipe(gulp.dest(dest))
+	);
 };
 
 const cache = () => {
-	const src = [
-		utils.srcCacheImagesPath("**/*")
-	];
+	const src = [utils.srcCacheImagesPath("**/*")];
 
 	const dest = utils.buildCacheImagesPath();
 
@@ -201,7 +201,7 @@ const optimize = () => {
 				// https://github.com/imagemin/imagemin-optipng#api
 				imageminPNGquant({
 					speed: 1,
-					quality: [.8, .9],
+					quality: [0.8, 0.9],
 				}),
 
 				// SVG
@@ -268,13 +268,7 @@ const watch = () => {
 
 	gulp.watch([utils.srcImagesPath("**/*")], images, cache);
 
-	gulp.watch(
-		[
-			utils.srcScriptsPath("**/*"),
-			utils.srcBlocks("**/*")
-		],
-		scripts
-	);
+	gulp.watch([utils.srcScriptsPath("**/*"), utils.srcBlocks("**/*")], scripts);
 };
 
 /**
@@ -324,8 +318,8 @@ gulp.task(
 		adminstyles,
 		scripts,
 		images,
-		cache,
-		optimize,
+		// cache,s
+		// optimize,
 		manifest
 	)
 );
