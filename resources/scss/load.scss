@@ -2,14 +2,57 @@
 	Generic
 \* ------------------------------------------------------------ */
 
+.preloader {
+	position: fixed;
+	inset: 0;
+	z-index: 90;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgb(250, 183, 216);
+}
+
+.loader-lottie {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.lottie-player {
+	height: 50vh;
+}
+
+.grow-up {
+	transform-origin: center;
+	transform: scale(1);
+}
+
+.grow-down {
+	transform-origin: center;
+	transform: scale(0);
+}
+
 @import "generic/variables";
 @import "generic/functions";
 @import "generic/mixins";
+@import "generic/templates";
 @import "generic/reset";
 @import "generic/fonts";
 @import "generic/base";
 @import "generic/helpers";
 @import "generic/swiper";
+@import "generic/typography";
+@import "bootstrap/bootstrap-grid";
+@import "bootstrap/bootstrap-modals";
+@import "bootstrap/bootstrap-tabs";
+@import "components/links";
+@import "components/buttons";
+@import "components/nav";
+@import "components/contacts";
+@import "components/scrollbar";
+@import "components/carousel";
+@import "components/forms";
+@import "components/modals";
 
 /* ------------------------------------------------------------ *\
 	Overwrites

@@ -11,5 +11,241 @@
 \* ------------------------------------------------------------ */
 
 .header {
-	background-color: #ddd;
+	position: relative;
+	z-index: 15;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	height: 80px;
+	transition: $transition-default;
+	transition-delay: $transition-delay-default;
+
+	@include breakpoint-down(tablet) {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		height: 64px;
+	}
+}
+
+.header--colored {
+	background-color: $color-dark-s;
+
+	.logo {
+		svg {
+			width: auto;
+			height: 60px;
+
+			@include breakpoint-down(tablet) {
+				height: 44px;
+			}
+		}
+	}
+}
+
+.header--fixed {
+	position: fixed;
+	top: $adminbarHeightDesktop;
+	z-index: 15;
+	left: 0;
+	right: 0;
+	background-color: $color-dark-s;
+
+	@include breakpoint-down(mobile) {
+		top: $adminbarHeightMobile;
+	}
+
+	.logo {
+		svg {
+			width: auto;
+			height: 60px;
+			transition: none;
+
+			@include breakpoint-down(large-desktop) {
+				height: 44px;
+			}
+		}
+	}
+}
+
+@keyframes appear-from-top {
+	from {
+		transform: translateY(-100%);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+
+.header--appear {
+	animation: appear-from-top $transition-default forwards;
+}
+
+@keyframes disappear-to-top {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(-100%);
+	}
+}
+
+.header--disappear {
+	animation: disappear-to-top $transition-default forwards;
+}
+
+.header__left-col {
+	@include flex(row, left, center);
+	column-gap: 60px;
+
+	@include breakpoint-down(small-desktop) {
+		column-gap: 10px;
+	}
+}
+
+.header__center-col {
+	@include flex(row, center, flex-start);
+}
+
+.logo {
+	position: absolute;
+	color: $color-accent;
+	transition: $transition-default;
+
+	svg {
+		transition: $transition-default;
+
+		@include breakpoint-down(small-desktop) {
+			width: 65px;
+			height: 44px;
+		}
+	}
+
+	@include hover-device {
+		&:hover {
+			color: $color-accent-light;
+		}
+	}
+
+	@include mobile-device {
+		&:active {
+			color: $color-accent-light;
+		}
+	}
+}
+
+.header__right-col {
+	@include flex(row, right, center);
+	column-gap: 10px;
+
+	.button--colored {
+		@include breakpoint-down(mobile) {
+			display: none;
+		}
+	}
+}
+
+.burger-menu__label {
+	@include flex(row, left, center);
+	column-gap: 10px;
+	font-family: "Montserrat", "sans-serif";
+	font-weight: 900;
+	font-size: 22px;
+	line-height: 1.2;
+
+	@include breakpoint-down(small-desktop) {
+		font-size: 18px;
+	}
+
+	span:last-child {
+		position: relative;
+		display: inline-block;
+
+		@include breakpoint-down(small-desktop) {
+			display: none;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: -2px;
+			left: 50%;
+			width: 0;
+			height: 1px;
+			background-color: $white;
+			transform-origin: center center;
+			transition: $transition-default;
+		}
+	}
+
+	@include hover-device {
+		&:hover {
+			span:last-child:after {
+				left: 0;
+				width: 100%;
+			}
+
+			.button--square {
+				border: $color-accent-light;
+				background-color: $color-accent-light;
+			}
+		}
+	}
+
+	@include mobile-device {
+		&:active {
+			span:last-child:after {
+				left: 0;
+				width: 100%;
+			}
+
+			.button--square {
+				border: $color-accent-light;
+				background-color: $color-accent-light;
+			}
+		}
+	}
+}
+
+.burger-menu__input:checked + .burger-menu__content {
+	transform: translateY(0);
+}
+.burger-menu__content {
+	position: fixed;
+	top: $adminbarHeightDesktop;
+	left: 0;
+	right: 0;
+	min-height: 100vh;
+	z-index: -1;
+	padding-top: 275px;
+	background-color: $color-dark-s;
+	transform: translateY(calc(-100% - $adminbarHeightDesktop));
+	transform-origin: top;
+	transition: $transition-default;
+	transition-delay: $transition-delay-default;
+
+	@include breakpoint-down(tablet) {
+		padding-top: 372px;
+	}
+
+	@include breakpoint-down(admin-bar) {
+		top: $adminbarHeightMobile;
+		transform: translateY(calc(-100% - $adminbarHeightMobile));
+	}
+
+	@include breakpoint-down(mobile) {
+		padding-top: 134px;
+	}
+}
+
+.burger-menu__contacts {
+	margin-left: auto;
+	margin-right: 88px;
+
+	@include breakpoint-down(small-desktop) {
+		margin-right: 0;
+		width: 275px;
+	}
+
+	@include breakpoint-down(mobile) {
+		margin-left: 0;
+	}
 }

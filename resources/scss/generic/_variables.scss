@@ -1,16 +1,33 @@
 @import "../generic/functions";
 @import "../generic/mixins";
 
-$white: #ffffff;
-$black: #000000;
+$white: rgb(255, 255, 255);
+$white-5: rgb(255, 255, 255, 0.05);
+$white-50: rgb(255, 255, 255, 0.5);
+$black: rgb(0, 0, 0);
+$black-10: rgb(0, 0, 0, 0.1);
+
+$color-accent: rgb(255, 54, 138);
+$color-accent-light: rgb(250, 183, 216);
+$color-dark-l: rgb(15, 15, 40);
+$color-dark-m: rgb(0, 76, 108);
+$color-dark-s: rgb(19, 89, 120);
+$color-dark-s-50: rgb(19, 89, 120, 0.5);
+$color-dark-s-27: rgb(19, 89, 120, 0.27);
+$color-dark-s-20: rgb(19, 89, 120, 0.2);
+$color-overlay: rgb(11, 39, 51, 0.8);
+$color-grey: rgb(196, 196, 196);
+$color-background: rgb(238, 243, 246);
+
+$border-radius: 2px;
 
 $responsive-ios: 812px;
 
-$font-main: 'Open Sans';
+$font-main: "Montserrat", "sans-serif";
 
 // Transitions
 $transition-duration-default: 0.3s;
-$transition-delay-default: 0.3s;
+$transition-delay-default: 0.15s;
 $transition-default: 0.3s ease-in-out;
 
 $breakpoints: (
@@ -25,8 +42,8 @@ $breakpoints: (
 
 // Other
 
-
 // Admin panel
 $adminbarHeightDesktop: 32px;
 $adminbarHeightMobile: 46px;
 
+$scroll-width: 16.8px;

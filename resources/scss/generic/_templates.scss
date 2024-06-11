@@ -1,0 +1,37 @@
+%square-button-link {
+	@include flex(row, center, center);
+	width: 60px;
+	height: 56px;
+	border: 3px solid $color-accent;
+	transform-origin: center;
+
+	@include breakpoint-down(large-desktop) {
+		width: 44px;
+		height: 44px;
+	}
+
+	@include hover-device {
+		&:hover {
+			background-color: $color-accent-light;
+			border: 3px solid $color-accent-light;
+		}
+	}
+
+	@include mobile-device {
+		&:active {
+			background-color: $color-accent-light;
+			border: 3px solid $color-accent-light;
+		}
+	}
+}
+
+%text-header-small {
+	font-family: "Montserrat", "sans-serif";
+	font-weight: 900;
+	font-size: 22px;
+	line-height: 1.2;
+
+	@include breakpoint-down(desktop) {
+		font-size: 18px;
+	}
+}

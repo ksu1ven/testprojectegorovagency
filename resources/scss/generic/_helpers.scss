@@ -25,34 +25,34 @@
 }
 
 .icon-wrap {
-    display: block;
-    line-height: 0;
+	display: block;
+	line-height: 0;
 
-    svg {
-        display: block;
-        width: 100%;
-        height: auto;
-        pointer-events: none;
+	svg {
+		display: block;
+		width: 100%;
+		height: auto;
+		pointer-events: none;
 
-        g {
-            opacity: 1;
-        }
+		g {
+			opacity: 1;
+		}
 
-        path,
-        circle {
-            &[fill] {
-                fill: currentColor;
-                fill-opacity: 1;
-                transition: opacity $transition-default;
-            }
+		path,
+		circle {
+			&[fill] {
+				fill: currentColor;
+				fill-opacity: 1;
+				transition: opacity $transition-default;
+			}
 
-            &[stroke] {
-                stroke: currentColor;
-                stroke-opacity: 1;
-                transition: opacity $transition-default;
-            }
-        }
-    }
+			&[stroke] {
+				stroke: currentColor;
+				stroke-opacity: 1;
+				transition: opacity $transition-default;
+			}
+		}
+	}
 }
 
 /*  Notext  */

@@ -1,0 +1,38 @@
+body::-webkit-scrollbar {
+	width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+	padding-left: 2px;
+	border-radius: 6px;
+	box-shadow: 0 0 3px 2px $color-background inset;
+	background-color: $white;
+}
+
+body::-webkit-scrollbar-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	border-radius: 6px;
+	width: 12px;
+	background-color: $color-accent;
+	box-shadow: 0x 0 3px 2px $color-accent-light inset;
+	cursor: pointer;
+}
+
+.offer__nav-tabs-wrapper::-webkit-scrollbar {
+	height: 30px;
+	cursor: pointer;
+}
+
+.offer__nav-tabs-wrapper::-webkit-scrollbar-track {
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.offer__nav-tabs-wrapper::-webkit-scrollbar-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	cursor: pointer;
+}

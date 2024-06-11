@@ -13,28 +13,13 @@
 	outline: none !important;
 }
 
-html {
-	font-size: 10px !important;
-
-	@include breakpoint-down(large-desktop) {
-		font-size: 8px !important;
-	}
-
-	@include breakpoint-down(desktop) {
-		font-size: 8px !important;
-	}
-
-	@include breakpoint-down(small-desktop) {
-		font-size: 10px !important;
-	}
-}
-
 html:not(.wp-toolbar),
 body:not(.wp-admin) {
-	position: fixed;
+	// position: fixed;
+	position: relative;
 	width: 100%;
-	overflow: hidden;
-	height: calc((var(--vh, 1vh) * 100));
+	height: 10000px;
+	// height: calc((var(--vh, 1vh) * 100));
 	background: $white;
 	touch-action: none;
 	-ms-touch-action: none;
@@ -49,14 +34,17 @@ body:not(.wp-admin) {
 }
 
 body:not(.wp-admin) {
-	font-size: rem(16);
+	font-size: 16px;
 	font-family: $font-main;
+	color: $white;
 	line-height: 1.4;
 	font-weight: 500;
-	min-width: rem(360);
+	min-width: 360px;
+	overflow-x: hidden;
 	word-break: break-word;
 	-webkit-text-size-adjust: none;
-	-moz-transition: color $transition-default, background-color $transition-default;
+	-moz-transition: color $transition-default,
+		background-color $transition-default;
 	transition: color $transition-default, background-color $transition-default;
 
 	&.scroll-off {
@@ -91,9 +79,16 @@ video {
 	}
 }
 
+.width-no-scroll {
+	width: calc(100vw - $scroll-width);
+}
+
 a {
 	word-break: break-word;
-	transition: color $transition-default, background-color $transition-default, border-color $transition-default, opacity $transition-default, visibility $transition-default, box-shadow $transition-default, transform $transition-default, text-decoration-color $transition-default;
+	transition: color $transition-default, background-color $transition-default,
+		border-color $transition-default, opacity $transition-default,
+		visibility $transition-default, box-shadow $transition-default,
+		transform $transition-default, text-decoration-color $transition-default;
 }
 
 a,
@@ -104,8 +99,9 @@ label {
 a:not([class]) {
 	color: currentColor;
 	text-decoration-color: currentColor;
-	text-underline-offset: rem(4);
-	transition: color $transition-default, text-decoration-color $transition-default;
+	text-underline-offset: 4px;
+	transition: color $transition-default,
+		text-decoration-color $transition-default;
 
 	&:hover,
 	&:focus {
@@ -141,13 +137,13 @@ img {
 	height: auto;
 	max-width: 100%;
 
-	&[src=''] {
+	&[src=""] {
 		display: none;
 	}
 }
 
 video {
-	&[src=''] {
+	&[src=""] {
 		display: none;
 	}
 }
@@ -175,8 +171,8 @@ p:empty {
 }
 
 .block-editor-list-view-tree {
-  	svg {
-	   pointer-events: initial;
+	svg {
+		pointer-events: initial;
 	}
 }
 
@@ -185,9 +181,11 @@ p:empty {
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	min-width: rem(360);
-	height: calc(var(--vh, 1vh) * 100);
-	overflow: auto;
+	min-width: 360px;
+	height: 10000px;
+	// height: calc(var(--vh, 1vh) * 100);
+	overflow-x: hidden;
+	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
 
 	.admin-bar & {
@@ -215,7 +213,7 @@ p:empty {
 }
 
 strong {
-	font-weight: 600;
+	font-weight: 900;
 }
 
 .fade {
@@ -246,6 +244,16 @@ tbody.collapse.show {
 	display: table-row-group;
 }
 
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
 .collapsing {
 	position: relative;
 	height: 0;
@@ -262,11 +270,11 @@ tbody.collapse.show {
 }
 
 .tab-content .tab-pane {
-	display: none
+	display: none;
 }
 
 .tab-content .tab-pane.active {
-	display: block
+	display: block;
 }
 
 .background-video,
@@ -296,14 +304,15 @@ tbody.collapse.show {
 		max-width: none;
 		color: rgba(0, 0, 0, 0);
 
-		@supports(object-fit: cover) or (-o-object-fit: cover) {
+		@supports (object-fit: cover) or (-o-object-fit: cover) {
 			width: 100%;
 			height: 100%;
 			-o-object-fit: cover;
 			object-fit: cover;
 		}
 
-		@supports(transform: translate(0, 0)) or (-webkit-transform: translate(0, 0)) {
+		@supports (transform: translate(0, 0)) or
+			(-webkit-transform: translate(0, 0)) {
 			top: 50%;
 			left: 50%;
 			transform: translateX(-50%) translateY(-50%);
@@ -319,12 +328,13 @@ tbody.collapse.show {
 		width: auto;
 		height: auto;
 
-		@supports(object-fit: cover) or (-o-object-fit: cover) {
+		@supports (object-fit: cover) or (-o-object-fit: cover) {
 			-o-object-fit: cover;
 			object-fit: cover;
 		}
 
-		@supports(transform: translate(0, 0)) or (-webkit-transform: translate(0, 0)) {
+		@supports (transform: translate(0, 0)) or
+			(-webkit-transform: translate(0, 0)) {
 			top: 50%;
 			left: 50%;
 			transform: translateX(-50%) translateY(-50%);
@@ -352,7 +362,7 @@ tbody.collapse.show {
 	width: auto;
 	height: auto;
 
-	@supports(transform: translate(0, 0)) or (-webkit-transform: translate(0, 0)) {
+	@supports (transform: translate(0, 0)) or (-webkit-transform: translate(0, 0)) {
 		top: 50%;
 		left: 50%;
 		transform: translateX(-50%) translateY(-50%);
@@ -377,7 +387,8 @@ tbody.collapse.show {
 		width: 100%;
 		height: 100%;
 
-		@supports (transform: translate(0, 0)) or (-webkit-transform: translate(0, 0)) {
+		@supports (transform: translate(0, 0)) or
+			(-webkit-transform: translate(0, 0)) {
 			top: 50%;
 			left: 50%;
 			transform: translateX(-50%) translateY(-50%);
@@ -387,46 +398,46 @@ tbody.collapse.show {
 
 .container {
 	width: 100%;
-	padding-right: rem(16);
-	padding-left: rem(16);
+	padding-right: 20px;
+	padding-left: 20px;
 	margin-right: auto;
 	margin-left: auto;
 }
 
 @include breakpoint-up(mobile-small) {
 	.container {
-		max-width: rem(560);
+		max-width: 560px;
 	}
 }
 
 @include breakpoint-up(mobile) {
 	.container {
-		max-width: rem(708);
-		padding-right: rem(10);
-		padding-left: rem(10);
+		max-width: 708px;
+		padding-right: 10px;
+		padding-left: 10px;
 	}
 }
 
 @include breakpoint-up(tablet) {
 	.container {
-		max-width: rem(880);
+		max-width: 880px;
 	}
 }
 
 @include breakpoint-up(small-desktop) {
 	.container {
-		max-width: rem_sm(1120);
+		max-width: 1120px;
 	}
 }
 
 @include breakpoint-up(desktop) {
 	.container {
-		max-width: rem_sm(1280);
+		max-width: 1280px;
 	}
 }
 
 @include breakpoint-up(large-desktop) {
 	.container {
-		max-width: rem(1620);
+		max-width: 1700px;
 	}
 }

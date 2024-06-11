@@ -1,11 +1,8 @@
 /**
  * Internal Dependencies
  */
-import { initScript } from '../../../../resources/js/utils/init-script'
+import { initScript } from "../../../../resources/js/utils/init-script";
 
-const init = function() {
-	const $section = $( this )
-}
+const init = function () {};
 
-
-initScript( '.header', 'header', init )
+initScript(".footer", "footer", init);

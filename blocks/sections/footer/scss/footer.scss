@@ -11,6 +11,149 @@
 \* ------------------------------------------------------------ */
 
 .footer {
-	position: relative;
-	overflow: hidden;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding-top: 255px;
+	background-color: $color-background;
+	color: $color-dark-s;
+
+	@include breakpoint-down(desktop) {
+		padding-top: 180px;
+		padding-left: 70px;
+		padding-right: 70px;
+	}
+
+	@include breakpoint-down(mobile) {
+		padding-top: 136px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+.footer__nav {
+	@include breakpoint-down(mobile) {
+		margin-bottom: 50px;
+	}
+}
+
+.footer__center-col {
+	@include flex(column, flex-start, center);
+
+	@include breakpoint-down(mobile) {
+		align-items: flex-start;
+	}
+}
+
+.footer__content {
+	padding-bottom: 100px;
+
+	@include breakpoint-down(tablet) {
+		padding-bottom: 70px;
+	}
+
+	@include breakpoint-down(mobile) {
+		padding-bottom: 50px;
+	}
+}
+
+.footer__nav {
+	padding-left: 310px;
+
+	@include breakpoint-down(large-desktop) {
+		padding-left: 100px;
+	}
+
+	@include breakpoint-down(desktop) {
+		padding-left: 20px;
+	}
+}
+
+.footer__h3 {
+	padding-top: 14px;
+	margin-bottom: 50px;
+	width: fit-content;
+
+	@include breakpoint-down(tablet) {
+		margin-bottom: 30px;
+	}
+}
+
+.footer__contacts {
+	color: $color-dark-s;
+}
+
+.photo-4 {
+	display: grid;
+	grid-template-columns: repeat(2, 152px);
+	gap: 5px;
+
+	@include breakpoint-down(small-desktop) {
+		margin-top: 70px;
+		grid-template-columns: repeat(4, 147px);
+		gap: 6px;
+	}
+
+	@include breakpoint-down(mobile) {
+		margin-top: 50px;
+		grid-template-columns: repeat(2, 137px);
+	}
+}
+
+.footer__copyright {
+	padding-top: 16px;
+	padding-bottom: 16px;
+	color: $color-dark-s-50;
+	font-family: "Bank Gothic", "sans-serif";
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1.4;
+	letter-spacing: -0.05 * 14px;
+
+	@include breakpoint-down(mobile) {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+}
+
+.footer__designed-by {
+	@include flex(row, flex-end, center);
+	column-gap: 15px;
+
+	@include breakpoint-down(mobile) {
+		@include flex(column, center, center);
+		row-gap: 5px;
+	}
+}
+
+.footer__hr {
+	height: 3px;
+	border: none;
+	background-color: $color-accent;
+	color: $color-accent;
+}
+
+.footer__year {
+	@include breakpoint-down(mobile) {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+}
+
+.footer__designed-by-link {
+	color: $color-dark-s-50;
+	transition: $transition-default;
+
+	@include hover-device {
+		&:hover {
+			color: $color-dark-s;
+		}
+	}
+
+	@include mobile-device {
+		&:active svg {
+			color: $color-dark-s;
+		}
+	}
 }

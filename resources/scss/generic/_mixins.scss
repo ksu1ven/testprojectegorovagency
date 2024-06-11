@@ -17,12 +17,12 @@
 	$max: breakpoint-max($name, $breakpoints);
 
 	@if $max == 767px {
-		@media (max-width: $max),
+		@media screen and (max-width: $max),
 			screen and (max-width: $responsive-ios) and (orientation: landscape) {
 			@content;
 		}
 	} @else {
-		@media (max-width: $max) {
+		@media screen and (max-width: $max) {
 			@content;
 		}
 	}
@@ -33,6 +33,25 @@
 	$max: breakpoint-max($upper, $breakpoints);
 
 	@media (min-width: $min) and (max-width: $max) {
+		@content;
+	}
+}
+
+@mixin flex($dir, $jus, $ali) {
+	display: flex;
+	flex-direction: $dir;
+	justify-content: $jus;
+	align-items: $ali;
+}
+
+@mixin hover-device {
+	@media screen and (hover: hover) {
+		@content;
+	}
+}
+
+@mixin mobile-device {
+	@media screen and (hover: none) {
 		@content;
 	}
 }

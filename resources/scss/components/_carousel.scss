@@ -1,0 +1,138 @@
+.carousel {
+	position: fixed;
+	top: calc(50vh - 766px / 2);
+	left: calc(50vw - 1362px / 2);
+	z-index: 30;
+	width: 1362px;
+	height: 766px;
+	aspect-ratio: 1.778;
+	background-color: $white;
+	transition: $transition-duration-default;
+	transform-origin: center;
+	transform: scale(0);
+
+	@include breakpoint-down(large-desktop) {
+		top: calc(50vh - 70vw / 1.778 / 2);
+		left: calc(50vw - 70vw / 2);
+		width: 70vw;
+		height: calc(70vw / 1.778);
+	}
+
+	@include breakpoint-down(tablet) {
+		top: calc(50vh - 80vw / 2);
+		left: calc(50vw - 80vw / 2);
+		width: 80vw;
+		height: 80vw;
+	}
+}
+
+.carousel__wrapper {
+	width: 1362px;
+	height: 711px;
+	overflow: hidden;
+
+	@include breakpoint-down(large-desktop) {
+		width: 70vw;
+		height: calc(70vw / 1.778 - 55px);
+	}
+
+	@include breakpoint-down(tablet) {
+		width: 80vw;
+		height: calc(80vw - 55px);
+	}
+}
+
+.carousel__pictures {
+	@include flex(row, flex-start, flex-start);
+	column-gap: 30px;
+	width: fit-content;
+	height: 100%;
+	transition: $transition-duration-default;
+}
+
+.carousel__img {
+	position: relative;
+	display: block;
+	height: 100%;
+	width: 1362px;
+
+	@include breakpoint-down(large-desktop) {
+		width: 70vw;
+	}
+
+	@include breakpoint-down(tablet) {
+		width: 80vw;
+	}
+}
+
+.controls {
+	@include flex(row, center, center);
+	height: 55px;
+}
+
+.controls__prev,
+.controls__next {
+	border: none;
+	background-color: transparent;
+	color: $color-dark-s-50;
+	transition: $transition-default;
+
+	@include hover-device {
+		&:not(:disabled):hover {
+			color: $color-dark-s;
+		}
+	}
+
+	@include mobile-device {
+		&:not(:disabled):active {
+			color: $color-dark-s;
+		}
+	}
+}
+
+.controls__next {
+	transform: scale(-1);
+}
+
+.controls__rounds {
+	@include flex(row, center, center);
+	column-gap: 10px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.controls__round {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	border: 2px solid $color-dark-s-20;
+	transition: $transition-default;
+
+	@include hover-device {
+		&:not(:disabled):hover {
+			border: 2px solid $color-dark-s;
+		}
+	}
+
+	@include mobile-device {
+		&:not(:disabled):active {
+			border: 2px solid $color-dark-s;
+		}
+	}
+}
+
+.controls__round--active {
+	border: 2px solid $color-accent;
+	background-color: $color-accent;
+}
+
+// .grow-up {
+// 	transform-origin: center;
+// 	transform: scale(1);
+// }
+
+// .grow-down {
+// 	transform-origin: center;
+// 	transform: scale(0);
+// }

@@ -1,0 +1,151 @@
+.header__nav {
+	@include breakpoint-down(mobile) {
+		margin-bottom: 70px;
+	}
+}
+
+.nav--small {
+	@include breakpoint-down(small-desktop) {
+		display: none;
+	}
+}
+
+.nav__ul {
+	@include flex(column, flex-start, flex-start);
+	width: fit-content;
+}
+
+.nav__ul--small {
+	row-gap: 26px;
+
+	@include breakpoint-down(large-desktop) {
+		row-gap: 16px;
+	}
+}
+
+.nav__ul--extra-small {
+	row-gap: 15px;
+}
+
+.nav__ul--big {
+	row-gap: 20px;
+}
+
+.nav__li {
+	position: relative;
+	@include flex(row, flex-start, center);
+	font-family: "Montserrat", "sans-serif";
+
+	a {
+		text-decoration: none;
+	}
+}
+
+.nav__li--small {
+	height: 30px;
+	color: $white-50;
+	font-size: 22px;
+	line-height: 1.2;
+	font-weight: 900;
+	@include hover-device {
+		&:hover {
+			color: $white !important;
+		}
+	}
+
+	@include mobile-device {
+		&:active {
+			color: $white !important;
+		}
+	}
+}
+
+.nav__li--big {
+	height: 60px;
+	color: $white-50;
+	font-size: 60px;
+	line-height: 1;
+	font-weight: 900;
+
+	@include breakpoint-down(large-desktop) {
+		height: 30px;
+		font-size: 30px;
+	}
+
+	@include hover-device {
+		&:hover {
+			color: $white !important;
+		}
+	}
+
+	@include mobile-device {
+		&:active {
+			color: $white !important;
+		}
+	}
+}
+
+.nav__li--small::before,
+.nav__li--big::before {
+	content: "";
+	display: inline-block;
+	margin-right: 15px;
+	width: 3px;
+	height: 100%;
+	background-color: transparent;
+	transform-origin: center;
+	transition: $transition-default;
+}
+
+.nav__li--active {
+	color: $white;
+
+	&::before {
+		background-color: $color-accent;
+	}
+}
+
+.nav__li--opacity {
+	color: $white-50;
+}
+
+.nav__li--extra-small {
+	color: $color-dark-s;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 1;
+
+	@include breakpoint-down(tablet) {
+		font-size: 14px;
+	}
+
+	@include hover-device {
+		&:hover {
+			&::before {
+				width: 100%;
+				left: 0;
+			}
+		}
+	}
+
+	@include mobile-device {
+		&:active {
+			&::before {
+				width: 100%;
+				left: 0;
+			}
+		}
+	}
+}
+
+.nav__li--extra-small::before {
+	content: "";
+	position: absolute;
+	bottom: -2px;
+	left: 50%;
+	width: 0;
+	height: 1px;
+	background-color: $color-dark-s;
+	transform-origin: center;
+	transition: $transition-default;
+}
