@@ -1,0 +1,106 @@
+.twentytwenty-wrapper,
+.twentytwenty-overlay {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.twentytwenty__img {
+	width: 100%;
+	height: 100%;
+	aspect-ratio: 0.6764;
+}
+
+.twentytwenty-handle:before,
+.twentytwenty-handle:after {
+	content: " ";
+	display: block;
+	background: white;
+	position: absolute;
+	z-index: 3000;
+	width: 3px;
+	height: 9999px;
+	left: 50%;
+	margin-left: -3px;
+}
+
+.twentytwenty-left-arrow,
+.twentytwenty-right-arrow,
+.twentytwenty-up-arrow,
+.twentytwenty-down-arrow {
+	display: none;
+}
+
+.twentytwenty-container {
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	z-index: 0;
+	position: relative;
+	overflow: hidden;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+.twentytwenty-container img {
+	max-width: 100%;
+	position: absolute;
+	top: 0;
+	display: block;
+}
+
+.twentytwenty-container * {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+.twentytwenty-before {
+	z-index: 20;
+}
+
+.twentytwenty-after {
+	z-index: 10;
+}
+
+.twentytwenty-handle {
+	height: 60px;
+	width: 9px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: 0;
+	margin-top: -30px;
+	background-color: $color-dark-s;
+	z-index: 10;
+	cursor: pointer;
+	border: 1px solid $white;
+
+	@include breakpoint-down(mobile) {
+		height: 30px;
+		width: 7px;
+		margin-top: -15px;
+	}
+}
+
+.twentytwenty-horizontal .twentytwenty-handle:before {
+	bottom: 50%;
+	margin-bottom: 30px;
+
+	@include breakpoint-down(mobile) {
+		margin-bottom: 15px;
+	}
+}
+.twentytwenty-horizontal .twentytwenty-handle:after {
+	top: 50%;
+	margin-top: 30px;
+
+	@include breakpoint-down(mobile) {
+		margin-top: 15px;
+	}
+}

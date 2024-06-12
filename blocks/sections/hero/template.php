@@ -1835,6 +1835,198 @@ $block] ); return; } /** * Block Variables */ ?>
 			</div>
 		</div>
 	</section>
+	<section class="results">
+		<div class="container results__container">
+			<div class="results-swiper__left">
+				<div class="text-swiper js-text-swiper">
+					<div class="swiper-wrapper text-swiper__wrapper">
+						<div class="swiper-slide">
+							<h2 class="h2">Real Women,<br />Real Results 1 </h2>
+							<div class="p p--big results__p">
+								I believe when you truly commit to making a change, you will see
+								results
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<h2 class="results__h2 h2">Real Women,<br />Real Results  2</h2>
+							<div class="p p--big results__p">
+								I believe when you truly commit to making a change, you will see
+								results
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<h2 class="h2">Real Women,<br />Real Results  3</h2>
+							<div class="p p--big results__p">
+								I believe when you truly commit to making a change, you will see
+								results
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<h2 class="h2">Real Women,<br />Real Results 4 </h2>
+							<div class="p p--big results__p">
+								I believe when you truly commit to making a change, you will see
+								results
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<h2 class="results__h2 h2">Real Women,<br />Real Results  5</h2>
+							<div class="p p--big results__p">
+								I believe when you truly commit to making a change, you will see
+								results
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<h2 class="h2">Real Women,<br />Real Results  6</h2>
+							<div class="p p--big results__p">
+								I believe when you truly commit to making a change, you will see
+								results
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="results-swiper__controls">
+					<div class="swiper-button-prev controls__prev js-swiper-button-prev">
+						<svg
+							class="swiper-button-prev__svg"
+							role="img"
+							aria-hidden="true"
+							width="25"
+							height="25"
+						>
+							<use xlink:href="#arrow-icon"></use>
+						</svg>
+					</div>
+					<div
+						class="swiper-pagination controls__rounds js-swiper-pagination"
+					></div>
+					<div class="swiper-button-next controls__next js-swiper-button-next">
+						<svg
+							class="swiper-button-prev__svg"
+							role="img"
+							aria-hidden="true"
+							width="25"
+							height="25"
+						>
+							<use xlink:href="#arrow-icon"></use>
+						</svg>
+					</div>
+				</div>
+			</div>
+			<div class="swiper results-swiper js-results-swiper">
+				<div class="swiper-wrapper results__swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="results__slide">
+							<div class="results__img-container">
+								<div class="twentytwenty-container">
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-1-before.jpg"
+										alt="Girl 1 before"
+									/>
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-1-after.jpg"
+										alt="Girl 1 after"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="results__slide">
+							<div class="results__img-container">
+								<div class="twentytwenty-container">
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-2-before.jpg"
+										alt="Girl 2 before"
+									/>
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-2-after.jpg"
+										alt="Girl 2 after"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="results__slide">
+							<div class="results__img-container">
+								<div class="twentytwenty-container">
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-3-before.jpg"
+										alt="Girl 3 before"
+									/>
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-3-after.jpg"
+										alt="Girl 3 after"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="results__slide">
+							<div class="results__img-container">
+								<div class="twentytwenty-container">
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-1-before.jpg"
+										alt="Girl 1 before"
+									/>
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-1-after.jpg"
+										alt="Girl 1 after"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="results__slide">
+							<div class="results__img-container">
+								<div class="twentytwenty-container">
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-2-before.jpg"
+										alt="Girl 2 before"
+									/>
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-2-after.jpg"
+										alt="Girl 2 after"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="results__slide">
+							<div class="results__img-container">
+								<div class="twentytwenty-container">
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-3-before.jpg"
+										alt="Girl 3 before"
+									/>
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-3-after.jpg"
+										alt="Girl 3 after"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<svg xmlns="http://www.w3.org/2000/svg" hidden>
 		<symbol id="woman-icon" viewBox="0 0 120 120" fill="currentColor">
