@@ -55,3 +55,18 @@
 		@content;
 	}
 }
+
+@mixin hover-active {
+	@media (pointer: coarse) {
+		&:active {
+			@content;
+		}
+	}
+
+	@media (hover: hover) and (pointer: fine) {
+		&:hover,
+		&:focus-visible {
+			@content;
+		}
+	}
+}

@@ -101,7 +101,8 @@
 	margin-right: 50px;
 }
 
-.controls__round {
+.controls__round,
+.swiper-pagination-bullet {
 	display: inline-block;
 	width: 14px;
 	height: 14px;
@@ -122,7 +123,8 @@
 	}
 }
 
-.controls__round--active {
+.controls__round--active,
+.swiper-pagination-bullet-active {
 	border: 2px solid $color-accent;
 	background-color: $color-accent;
 }

@@ -18,6 +18,7 @@
 	},
 	"dependencies": {
 		"bootstrap": "^5.2.3",
+		"jquery": "^3.7.1",
 		"jquery.scrollbar": "^0.2.11",
 		"select2": "^4.0.0",
 		"swiper": "^8.4.6",

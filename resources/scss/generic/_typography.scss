@@ -4,6 +4,10 @@
 	line-height: 1.2;
 	color: $color-dark-s;
 
+	@include breakpoint-down(large-desktop) {
+		font-size: 40px;
+	}
+
 	@include breakpoint-down(small-desktop) {
 		font-size: 30px;
 	}
