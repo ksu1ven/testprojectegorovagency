@@ -295,6 +295,12 @@
 .galery__item {
 	position: relative;
 	cursor: pointer;
+	border: 2px solid transparent;
+	transition: $transition-default;
+
+	@include hover-active {
+		border: 2px solid $color-accent;
+	}
 }
 
 .galery__item::before {
@@ -609,6 +615,10 @@
 	text-decoration: none;
 	color: $color-accent;
 
+	svg {
+		transition: $transition-default;
+	}
+
 	@include breakpoint-down(large-desktop) {
 		padding: 54px 16px;
 	}
@@ -617,6 +627,12 @@
 		padding-left: 10px;
 		padding-right: 10px;
 		flex: 1 1 49%;
+	}
+
+	@include hover-active {
+		svg {
+			color: $color-accent-light;
+		}
 	}
 }
 

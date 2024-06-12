@@ -36,7 +36,8 @@
 	width: 100vw;
 	height: 100vh;
 	background-color: $color-overlay;
-	filter: blur(10px);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
 	transition: $transition-duration-default;
 	transform-origin: center;
 	transform: scale(0);

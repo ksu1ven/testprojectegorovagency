@@ -226,7 +226,6 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 							class="form__input"
 							name="message"
 							id="message"
-							col="1"
 							placeholder="Message"
 						></textarea>
 					</div>

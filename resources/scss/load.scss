@@ -9,6 +9,7 @@
 	width: 100vw;
 	height: 100vh;
 	background-color: rgb(250, 183, 216);
+	transition: transform 0.3s ease-out;
 }
 
 .loader-lottie {
@@ -23,13 +24,13 @@
 }
 
 .grow-up {
-	transform-origin: center;
-	transform: scale(1);
+	transform-origin: top center;
+	transform: scale(1) !important;
 }
 
 .grow-down {
-	transform-origin: center;
-	transform: scale(0);
+	transform-origin: top center;
+	transform: scale(0) !important;
 }
 
 @import "generic/variables";
