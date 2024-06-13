@@ -17,7 +17,7 @@ $block] ); return; } /** * Block Variables */ ?>
 
 <section class="section section-hero">
 	<section class="intro js-intro">
-		<picture class="background-img hero__img">
+		<!-- <picture class="background-img hero__img">
 			<source
 				srcset="
 					/wp-content/themes/testproject/resources/images/backgrounds/intro-mobile.jpg
@@ -40,7 +40,12 @@ $block] ); return; } /** * Block Variables */ ?>
 				src="/wp-content/themes/testproject/resources/images/backgrounds/intro-desktop.jpg"
 				alt=""
 			/>
-		</picture>
+		</picture> -->
+		<video
+			class="background-video intro__backround-video js-intro__backround-video"
+			src="/wp-content/themes/testproject/resources/videos/Stretching.mp4"
+			muted
+		></video>
 		<div class="container">
 			<div class="row">
 				<nav class="col nav nav--small">
@@ -81,7 +86,14 @@ $block] ); return; } /** * Block Variables */ ?>
 						>
 							Book Consultation
 						</button>
-						<button class="button button--transparent" type="button">
+						<button
+							class="button button--transparent js-play-video-button"
+							type="button"
+							data-toggle="modal"
+							data-origin="youtube"
+							data-youtube-id="ebEv8C1yffo"
+							aria-label="Open video modal"
+						>
 							<svg
 								fill="currentColor"
 								aria-hidden="true"
@@ -148,6 +160,544 @@ $block] ); return; } /** * Block Variables */ ?>
 				<a href="javascript:void(0)" class="link link--white advantages__link"
 					>Learn More</a
 				>
+			</div>
+		</div>
+	</section>
+	<section class="testimonials">
+		<div class="container">
+			<h2 class="h2 testimonials__h2">Testimonials</h2>
+			<div class="testimonials__videos">
+				<a
+					href="#open-video"
+					class="testimonials__video background-img js-testimonials__video"
+					data-toggle="modal"
+					data-target="#open-video"
+					data-origin="self-hosted"
+					data-href="/wp-content/themes/testproject/resources/videos/Stretching.mp4"
+					aria-label="Open video modal"
+				>
+					<button
+						class="button testimonials__open-button js-video-open-button"
+						type="button"
+					>
+						<svg
+							class="testimonials__svg"
+							role="img"
+							aria-hidden="true"
+							width="40"
+							height="42"
+						>
+							<use xlink:href="#video-play-icon"></use>
+						</svg>
+					</button>
+
+					<img
+						class="background-img"
+						src="/wp-content/themes/testproject/resources/images/previews/video-1.jpg"
+						alt="video-1"
+					/>
+				</a>
+				<a
+					href="#open-video"
+					class="testimonials__video background-img js-testimonials__video"
+					data-toggle="modal"
+					data-origin="youtube"
+					data-youtube-id="ebEv8C1yffo"
+					aria-label="Open video modal"
+				>
+					<button
+						class="button testimonials__open-button js-video-open-button"
+						type="button"
+					>
+						<svg
+							class="testimonials__svg"
+							role="img"
+							aria-hidden="true"
+							width="40"
+							height="42"
+						>
+							<use xlink:href="#video-play-icon"></use>
+						</svg>
+					</button>
+
+					<img
+						class="background-img"
+						src="/wp-content/themes/testproject/resources/images/previews/video-2.jpg"
+						alt="video-1"
+					/>
+				</a>
+				<a
+					href="#open-video"
+					class="testimonials__video background-img js-testimonials__video"
+					data-toggle="modal"
+					data-target="#open-video"
+					data-origin="youtube"
+					data-youtube-id="uPbE76qhCEk"
+					aria-label="Open video modal"
+				>
+					<button
+						class="button testimonials__open-button js-video-open-button"
+						type="button"
+					>
+						<svg
+							class="testimonials__svg"
+							role="img"
+							aria-hidden="true"
+							width="40"
+							height="42"
+						>
+							<use xlink:href="#video-play-icon"></use>
+						</svg>
+					</button>
+
+					<img
+						class="background-img"
+						src="/wp-content/themes/testproject/resources/images/previews/video-3.jpg"
+						alt="video-1"
+					/>
+				</a>
+			</div>
+		</div>
+	</section>
+	<section class="reviews">
+		<div class="container reviews__main-container">
+			<div class="row no-gutters">
+				<div class="col col-12 col-xl-6 reviews__left-col">
+					<div
+						class="container reviews__inner-container reviews__inner-container--left"
+					>
+						<picture class="background-img reviews__img">
+							<source
+								srcset="
+									/wp-content/themes/testproject/resources/images/backgrounds/alli-mobile.png
+								"
+								media="(max-width: 767px)"
+							/>
+							<source
+								srcset="
+									/wp-content/themes/testproject/resources/images/backgrounds/alli-desktop.png
+								"
+								media="(min-width: 768px)"
+							/>
+
+							<img
+								src="/wp-content/themes/testproject/resources/images/backgrounds/alli-desktop.png"
+								alt=""
+							/>
+						</picture>
+						<div class="reviews__left-content">
+							<h2 class="h2 reviews__h2">Alli Kerr</h2>
+							<div
+								class="p p--small reviews__p js-reviews__p reviews__p--hidden"
+							>
+								business. Knowing I had more to offer the universe, I got the
+								crazy idea to open my own brick and mortar fitness business. It
+								was an itch that I had to scratch. In 2010 The Happy Fitness was
+								born<br />
+								business. Knowing I had more to offer the universe, I got the
+								crazy idea to open my own brick and mortar fitness business. It
+								was an itch that I had to scratch. In 2010 The Happy Fitness was
+								born
+							</div>
+							<button
+								class="button button--underline js-button-readmore"
+								type="button"
+							>
+								Read more
+							</button>
+							<div class="reviews__buttons">
+								<button class="button button--colored">
+									Watch Video of The Bio
+								</button>
+								<button class="button button--transparent">Learn More</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col col-12 col-xl-6 reviews__right-col">
+					<div
+						class="container reviews__inner-container reviews__right-content"
+					>
+						<h2 class="h2 rewiews__h2--right">
+							Hear from the people who know me best
+						</h2>
+						<div class="swiper reviews-swiper js-reviews-swiper">
+							<div class="swiper-wrapper reviews-swiper__wrapper">
+								<div class="swiper-slide">
+									<div class="review">
+										<div class="review__author">Sally Profit</div>
+										<div class="stars">
+											<svg role="img" aria-hidden="true" width="16" height="16">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+											<svg role="img" aria-hidden="true" width="16" height="16">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+											<svg role="img" aria-hidden="true" width="16" height="16">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+											<svg role="img" aria-hidden="true" width="16" height="16">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+											<svg role="img" aria-hidden="true" width="16" height="16">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+										</div>
+										<div class="p p--small review__content">
+											The Happy Fitness has it going on!!! I love this gym, the
+											staff and all the members. I have been in different gyms
+											all my life and the Happy Fitness is the best by far. The
+											staff are very knowledgeable about all aspects of exercise
+											and nutrition. Whether you are using the trainers or not,
+											they will always help make sure you are doing the
+											exercises correctly so you get the best benefit and do not
+											hurt yourself. I never thought I would care one way or the
+											other if I was in an all female gym, but now that I am I
+											truly love it. The other aspect I love about this gym is
+											the cleanliness. The staff works very hard keeping the gym
+											orderly and spotless. Check it out...I promise you it
+											won't disappoint!!
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="review">
+										<div class="review__author">Sally Profit</div>
+										<div class="stars">
+											<svg role="img" aria-hidden="true" width="16" height="16">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+											<svg role="img" aria-hidden="true" width="16" height="16">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+											<svg role="img" aria-hidden="true" width="16" height="16">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+											<svg role="img" aria-hidden="true" width="16" height="16">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+											<svg role="img" aria-hidden="true" width="16" height="16">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+										</div>
+										<div class="p p--small review__content">
+											The Happy Fitness has it going on!!! I love this gym, the
+											staff and all the members. I have been in different gyms
+											all my life and the Happy Fitness is the best by far. The
+											staff are very knowledgeable about all aspects of exercise
+											and nutrition. Whether you are using the trainers or not,
+											they will always help make sure you are doing the
+											exercises correctly so you get the best benefit and do not
+											hurt yourself. I never thought I would care one way or the
+											other if I was in an all female gym, but now that I am I
+											truly love it. The other aspect I love about this gym is
+											the cleanliness. The staff works very hard keeping the gym
+											orderly and spotless. Check it out...I promise you it
+											won't disappoint!!
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="review">
+										<div class="review__author">Sally Profit</div>
+										<div class="stars">
+											<svg role="img" aria-hidden="true" width="16" height="16">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+											<svg role="img" aria-hidden="true" width="16" height="16">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+											<svg role="img" aria-hidden="true" width="16" height="16">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+											<svg role="img" aria-hidden="true" width="16" height="16">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+											<svg role="img" aria-hidden="true" width="16" height="16">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+										</div>
+										<div class="p p--small review__content">
+											The Happy Fitness has it going on!!! I love this gym, the
+											staff and all the members. I have been in different gyms
+											all my life and the Happy Fitness is the best by far. The
+											staff are very knowledgeable about all aspects of exercise
+											and nutrition. Whether you are using the trainers or not,
+											they will always help make sure you are doing the
+											exercises correctly so you get the best benefit and do not
+											hurt yourself. I never thought I would care one way or the
+											other if I was in an all female gym, but now that I am I
+											truly love it. The other aspect I love about this gym is
+											the cleanliness. The staff works very hard keeping the gym
+											orderly and spotless. Check it out...I promise you it
+											won't disappoint!!
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="review">
+										<div class="review__author">Sally Profit</div>
+										<div class="stars">
+											<svg role="img" aria-hidden="true" width="16" height="16">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+											<svg role="img" aria-hidden="true" width="16" height="16">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+											<svg role="img" aria-hidden="true" width="16" height="16">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+											<svg role="img" aria-hidden="true" width="16" height="16">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+											<svg role="img" aria-hidden="true" width="16" height="16">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+										</div>
+										<div class="p p--small review__content">
+											The Happy Fitness has it going on!!! I love this gym, the
+											staff and all the members. I have been in different gyms
+											all my life and the Happy Fitness is the best by far. The
+											staff are very knowledgeable about all aspects of exercise
+											and nutrition. Whether you are using the trainers or not,
+											they will always help make sure you are doing the
+											exercises correctly so you get the best benefit and do not
+											hurt yourself. I never thought I would care one way or the
+											other if I was in an all female gym, but now that I am I
+											truly love it. The other aspect I love about this gym is
+											the cleanliness. The staff works very hard keeping the gym
+											orderly and spotless. Check it out...I promise you it
+											won't disappoint!!
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="reviews-swiper__controls">
+								<div
+									class="swiper-button-prev controls__prev js-reviews-swiper-button-prev"
+								>
+									<svg
+										class="swiper-button-prev__svg"
+										role="img"
+										aria-hidden="true"
+										width="25"
+										height="25"
+									>
+										<use xlink:href="#arrow-icon"></use>
+									</svg>
+								</div>
+								<div
+									class="swiper-pagination controls__rounds js-reviews-swiper-pagination"
+								></div>
+								<div
+									class="swiper-button-next controls__next js-reviews-swiper-button-next"
+								>
+									<svg
+										class="swiper-button-prev__svg"
+										role="img"
+										aria-hidden="true"
+										width="25"
+										height="25"
+									>
+										<use xlink:href="#arrow-icon"></use>
+									</svg>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="results">
+		<div class="container results__container">
+			<div class="results-swiper__left">
+				<div class="text-swiper js-text-swiper">
+					<div class="swiper-wrapper text-swiper__wrapper">
+						<div class="swiper-slide">
+							<h2 class="h2">Real Women,<br />Real Results 1 </h2>
+							<div class="p p--big results__p">
+								I believe when you truly commit to making a change, you will see
+								results
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<h2 class="results__h2 h2">Real Women,<br />Real Results  2</h2>
+							<div class="p p--big results__p">
+								I believe when you truly commit to making a change, you will see
+								results
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<h2 class="h2">Real Women,<br />Real Results  3</h2>
+							<div class="p p--big results__p">
+								I believe when you truly commit to making a change, you will see
+								results
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<h2 class="h2">Real Women,<br />Real Results 4 </h2>
+							<div class="p p--big results__p">
+								I believe when you truly commit to making a change, you will see
+								results
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<h2 class="results__h2 h2">Real Women,<br />Real Results  5</h2>
+							<div class="p p--big results__p">
+								I believe when you truly commit to making a change, you will see
+								results
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<h2 class="h2">Real Women,<br />Real Results  6</h2>
+							<div class="p p--big results__p">
+								I believe when you truly commit to making a change, you will see
+								results
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="results-swiper__controls">
+					<div class="swiper-button-prev controls__prev js-swiper-button-prev">
+						<svg
+							class="swiper-button-prev__svg"
+							role="img"
+							aria-hidden="true"
+							width="25"
+							height="25"
+						>
+							<use xlink:href="#arrow-icon"></use>
+						</svg>
+					</div>
+					<div
+						class="swiper-pagination controls__rounds js-swiper-pagination"
+					></div>
+					<div class="swiper-button-next controls__next js-swiper-button-next">
+						<svg
+							class="swiper-button-prev__svg"
+							role="img"
+							aria-hidden="true"
+							width="25"
+							height="25"
+						>
+							<use xlink:href="#arrow-icon"></use>
+						</svg>
+					</div>
+				</div>
+			</div>
+			<div class="swiper results-swiper js-results-swiper">
+				<div class="swiper-wrapper results__swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="results__slide">
+							<div class="results__img-container">
+								<div class="twentytwenty-container">
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-1-before.jpg"
+										alt="Girl 1 before"
+									/>
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-1-after.jpg"
+										alt="Girl 1 after"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="results__slide">
+							<div class="results__img-container">
+								<div class="twentytwenty-container">
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-2-before.jpg"
+										alt="Girl 2 before"
+									/>
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-2-after.jpg"
+										alt="Girl 2 after"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="results__slide">
+							<div class="results__img-container">
+								<div class="twentytwenty-container">
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-3-before.jpg"
+										alt="Girl 3 before"
+									/>
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-3-after.jpg"
+										alt="Girl 3 after"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="results__slide">
+							<div class="results__img-container">
+								<div class="twentytwenty-container">
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-1-before.jpg"
+										alt="Girl 1 before"
+									/>
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-1-after.jpg"
+										alt="Girl 1 after"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="results__slide">
+							<div class="results__img-container">
+								<div class="twentytwenty-container">
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-2-before.jpg"
+										alt="Girl 2 before"
+									/>
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-2-after.jpg"
+										alt="Girl 2 after"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="results__slide">
+							<div class="results__img-container">
+								<div class="twentytwenty-container">
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-3-before.jpg"
+										alt="Girl 3 before"
+									/>
+									<img
+										class="twentytwenty__img"
+										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-3-after.jpg"
+										alt="Girl 3 after"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -1835,198 +2385,6 @@ $block] ); return; } /** * Block Variables */ ?>
 			</div>
 		</div>
 	</section>
-	<section class="results">
-		<div class="container results__container">
-			<div class="results-swiper__left">
-				<div class="text-swiper js-text-swiper">
-					<div class="swiper-wrapper text-swiper__wrapper">
-						<div class="swiper-slide">
-							<h2 class="h2">Real Women,<br />Real Results 1 </h2>
-							<div class="p p--big results__p">
-								I believe when you truly commit to making a change, you will see
-								results
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<h2 class="results__h2 h2">Real Women,<br />Real Results  2</h2>
-							<div class="p p--big results__p">
-								I believe when you truly commit to making a change, you will see
-								results
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<h2 class="h2">Real Women,<br />Real Results  3</h2>
-							<div class="p p--big results__p">
-								I believe when you truly commit to making a change, you will see
-								results
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<h2 class="h2">Real Women,<br />Real Results 4 </h2>
-							<div class="p p--big results__p">
-								I believe when you truly commit to making a change, you will see
-								results
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<h2 class="results__h2 h2">Real Women,<br />Real Results  5</h2>
-							<div class="p p--big results__p">
-								I believe when you truly commit to making a change, you will see
-								results
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<h2 class="h2">Real Women,<br />Real Results  6</h2>
-							<div class="p p--big results__p">
-								I believe when you truly commit to making a change, you will see
-								results
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="results-swiper__controls">
-					<div class="swiper-button-prev controls__prev js-swiper-button-prev">
-						<svg
-							class="swiper-button-prev__svg"
-							role="img"
-							aria-hidden="true"
-							width="25"
-							height="25"
-						>
-							<use xlink:href="#arrow-icon"></use>
-						</svg>
-					</div>
-					<div
-						class="swiper-pagination controls__rounds js-swiper-pagination"
-					></div>
-					<div class="swiper-button-next controls__next js-swiper-button-next">
-						<svg
-							class="swiper-button-prev__svg"
-							role="img"
-							aria-hidden="true"
-							width="25"
-							height="25"
-						>
-							<use xlink:href="#arrow-icon"></use>
-						</svg>
-					</div>
-				</div>
-			</div>
-			<div class="swiper results-swiper js-results-swiper">
-				<div class="swiper-wrapper results__swiper-wrapper">
-					<div class="swiper-slide">
-						<div class="results__slide">
-							<div class="results__img-container">
-								<div class="twentytwenty-container">
-									<img
-										class="twentytwenty__img"
-										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-1-before.jpg"
-										alt="Girl 1 before"
-									/>
-									<img
-										class="twentytwenty__img"
-										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-1-after.jpg"
-										alt="Girl 1 after"
-									/>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="results__slide">
-							<div class="results__img-container">
-								<div class="twentytwenty-container">
-									<img
-										class="twentytwenty__img"
-										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-2-before.jpg"
-										alt="Girl 2 before"
-									/>
-									<img
-										class="twentytwenty__img"
-										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-2-after.jpg"
-										alt="Girl 2 after"
-									/>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="results__slide">
-							<div class="results__img-container">
-								<div class="twentytwenty-container">
-									<img
-										class="twentytwenty__img"
-										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-3-before.jpg"
-										alt="Girl 3 before"
-									/>
-									<img
-										class="twentytwenty__img"
-										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-3-after.jpg"
-										alt="Girl 3 after"
-									/>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="results__slide">
-							<div class="results__img-container">
-								<div class="twentytwenty-container">
-									<img
-										class="twentytwenty__img"
-										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-1-before.jpg"
-										alt="Girl 1 before"
-									/>
-									<img
-										class="twentytwenty__img"
-										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-1-after.jpg"
-										alt="Girl 1 after"
-									/>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="results__slide">
-							<div class="results__img-container">
-								<div class="twentytwenty-container">
-									<img
-										class="twentytwenty__img"
-										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-2-before.jpg"
-										alt="Girl 2 before"
-									/>
-									<img
-										class="twentytwenty__img"
-										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-2-after.jpg"
-										alt="Girl 2 after"
-									/>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="results__slide">
-							<div class="results__img-container">
-								<div class="twentytwenty-container">
-									<img
-										class="twentytwenty__img"
-										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-3-before.jpg"
-										alt="Girl 3 before"
-									/>
-									<img
-										class="twentytwenty__img"
-										src="/wp-content/themes/testproject/resources/images/previews/swiper/girl-3-after.jpg"
-										alt="Girl 3 after"
-									/>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 
 	<svg xmlns="http://www.w3.org/2000/svg" hidden>
 		<symbol id="woman-icon" viewBox="0 0 120 120" fill="currentColor">
@@ -2058,6 +2416,18 @@ $block] ); return; } /** * Block Variables */ ?>
 				stroke-width="2"
 				stroke-linecap="round"
 				stroke-linejoin="round"
+			/>
+		</symbol>
+		<symbol id="star-icon" viewBox="0 0 16 16" fill="currentColor">
+			<path
+				fill-rule="evenodd"
+				clip-rule="evenodd"
+				d="M4.527 15.515c-.224.156-.479.234-.734.234h-.004c-.262-.001-.524-.083-.751-.248-.449-.326-.635-.88-.475-1.411l1.184-3.919c.025-.084-.004-.176-.073-.229l-3.174-2.449c-.298-.23-.472-.562-.498-.916-.012-.17.009-.346.068-.518.18-.529.656-.87 1.212-.87h3.962c.094 0 .173-.053.201-.135l1.338-3.932c.18-.529.657-.87 1.215-.87h.001c.558 0 1.035.341 1.215.87l1.338 3.932c.028.082.107.135.201.135h3.961c.556 0 1.032.342 1.213.87.056.166.079.335.069.499l-.003.047c-.033.344-.205.664-.495.888l-3.174 2.449c-.069.053-.099.145-.073.229l1.184 3.919c.161.531-.026 1.085-.475 1.411-.227.165-.489.248-.751.248h-.004c-.255 0-.51-.078-.734-.234l-3.352-2.335-.121-.038-.12.038-3.352 2.335z"
+			/>
+		</symbol>
+		<symbol id="video-play-icon" viewBox="0 0 40 42" fill="currentColor">
+			<path
+				d="M.966 2.012v37.981c0 .904.959 1.485 1.76 1.066l36.239-18.926c.86-.449.862-1.679.003-2.131l-36.239-19.055c-.801-.421-1.763.16-1.763 1.065z"
 			/>
 		</symbol>
 	</svg>

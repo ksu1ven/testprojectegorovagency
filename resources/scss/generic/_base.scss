@@ -15,10 +15,8 @@
 
 html:not(.wp-toolbar),
 body:not(.wp-admin) {
-	// position: fixed;
 	position: relative;
 	width: 100%;
-	height: 10000px;
 	// height: calc((var(--vh, 1vh) * 100));
 	background: $white;
 	touch-action: none;
@@ -182,7 +180,7 @@ p:empty {
 	padding: 0;
 	width: 100%;
 	min-width: 360px;
-	height: 10000px;
+	position: relative;
 	// height: calc(var(--vh, 1vh) * 100);
 	overflow-x: hidden;
 	overflow-y: auto;

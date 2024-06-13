@@ -143,6 +143,7 @@ $block] ); return; } ?>
 			</div>
 		</div>
 	</div>
+
 	<div
 		class="modal fade"
 		id="book-consultation"
@@ -227,6 +228,39 @@ $block] ); return; } ?>
 		</div>
 	</div>
 
+	<div
+		class="modal modal-video js-modal-video fade"
+		id="open-video"
+		tabindex="-1"
+		role="dialog"
+		aria-labelledby="Training video"
+		aria-hidden="true"
+	>
+		<div
+			class="modal-dialog modal-dialog-centered"
+			role="document"
+		>
+			<div class="modal-content">
+				<button
+					type="button"
+					class="close popup__close js-modal-video-close"
+					data-dismiss="modal"
+					aria-label="Close"
+				>
+					<span aria-hidden="true"
+						><svg role="img" aria-hidden="true" width="24" height="24">
+							<use xlink:href="#menu-icon-cross"></use></svg
+					></span>
+				</button>
+				<div class="modal-video__content background-video js-modal-video__content">			
+					<div id="youtube-player" class="background-video"></div>
+					<video id="self-hosted-player" class="self-hosted-video" src="" controls autoplay webkit-playsinline playisinline ></video>
+				</div>
+	
+			</div>
+		</div>
+	</div>
+
 	<script
 		src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -242,6 +276,7 @@ $block] ); return; } ?>
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"
 	></script>
+
 
 
 </footer>

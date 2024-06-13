@@ -1,18 +1,5 @@
 .close {
-	// float: right;
-	// font-size: 1.5rem;
-	// font-weight: 700;
-	// line-height: 1;
-	// color: #000;
-	// text-shadow: 0 1px 0 #fff;
-	// opacity: 0.5;
-}
-
-.close:hover,
-.close:focus {
-	color: #000;
-	text-decoration: none;
-	opacity: 0.75;
+	line-height: 0;
 }
 
 .close:not(:disabled):not(.disabled) {
@@ -91,6 +78,7 @@ button.close {
 	outline: 0;
 	padding: 70px;
 	background-color: $white;
+	border-radius: 2px;
 
 	@include breakpoint-down(small-desktop) {
 		padding: 50px 50px 30px 50px;
@@ -146,43 +134,4 @@ button.close {
 	-ms-flex: 1 1 auto;
 	flex: 1 1 auto;
 	padding: 1rem;
-}
-
-// .modal-footer {
-// 	display: -webkit-box;
-// 	display: -ms-flexbox;
-// 	display: flex;
-// 	-webkit-box-align: center;
-// 	-ms-flex-align: center;
-// 	align-items: center;
-// 	-webkit-box-pack: end;
-// 	-ms-flex-pack: end;
-// 	justify-content: flex-end;
-// 	padding: 1rem;
-// 	border-top: 1px solid #e9ecef;
-// }
-
-// .modal-footer > :not(:first-child) {
-// 	margin-left: 0.25rem;
-// }
-
-// .modal-footer > :not(:last-child) {
-// 	margin-right: 0.25rem;
-// }
-
-.modal-scrollbar-measure {
-	position: absolute;
-	top: -9999px;
-	width: 50px;
-	height: 50px;
-	overflow: scroll;
-}
-
-@media (min-width: 576px) {
-	.modal-dialog {
-		margin: 1.75rem auto;
-	}
-	.modal-dialog-centered {
-		min-height: calc(100% - (1.75rem * 2));
-	}
 }

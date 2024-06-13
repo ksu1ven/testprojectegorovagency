@@ -28,7 +28,8 @@ $font-main: "Montserrat", "sans-serif";
 // Transitions
 $transition-duration-default: 0.3s;
 $transition-delay-default: 0.15s;
-$transition-default: 0.3s ease-in-out;
+$transition-default: 0.3s;
+$transition-mobile-default: 0.1s;
 
 $breakpoints: (
 	mobile-small: 575px,

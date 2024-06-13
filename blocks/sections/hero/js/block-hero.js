@@ -7,8 +7,9 @@ import Swiper, { Pagination, Navigation } from "swiper";
 const init = function () {
 	const heroHeight = document.querySelector(".js-intro").offsetHeight;
 	const header = document.querySelector(".js-header");
-	window.addEventListener("scroll", () => {
-		if (window.scrollY > heroHeight) {
+
+	document.querySelector(".wp-site-blocks").addEventListener("scroll", () => {
+		if (document.querySelector(".wp-site-blocks").scrollTop > heroHeight) {
 			header.classList.add("header--fixed");
 			header.classList.add("header--appear");
 		} else if (header.classList.contains("header--fixed")) {
@@ -18,6 +19,19 @@ const init = function () {
 				header.classList.remove("header--disappear");
 				header.classList.remove("header--fixed");
 			}, 300);
+		}
+	});
+
+	const video = document.querySelector(".js-intro__backround-video");
+	const videoButton = document.querySelector(".js-play-video-button span");
+
+	videoButton.addEventListener("click", () => {
+		if (videoButton.textContent === "Play Video") {
+			video.play();
+			videoButton.textContent = "Stop Video";
+		} else if (videoButton.textContent === "Stop Video") {
+			video.pause();
+			videoButton.textContent = "Play Video";
 		}
 	});
 
@@ -150,6 +164,29 @@ const init = function () {
 	navs.addEventListener("wheel", (e) => {
 		e.preventDefault();
 		navTabs.scrollLeft += e.deltaY;
+	});
+
+	document
+		.querySelector(".js-button-readmore")
+		.addEventListener("click", () => {
+			const reviewsParagraph = document.querySelector(".js-reviews__p");
+			reviewsParagraph.classList.toggle("reviews__p--visible");
+			reviewsParagraph.classList.toggle("reviews__p--hidden");
+		});
+
+	new Swiper(".js-reviews-swiper", {
+		modules: [Pagination, Navigation],
+		slidesPerView: 1,
+		initialSlide: 1,
+		spaceBetween: 20,
+		pagination: {
+			el: ".js-reviews-swiper-pagination",
+			clickable: true,
+		},
+		navigation: {
+			nextEl: ".js-reviews-swiper-button-next",
+			prevEl: ".js-reviews-swiper-button-prev",
+		},
 	});
 
 	let swiperText = new Swiper(".js-text-swiper", {

@@ -28,7 +28,14 @@
 
 .form__div::before {
 	content: "";
-	transition: $transition-default;
+	position: absolute;
+	top: 9px;
+	left: 20px;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 1;
+	transform: translateY(5px);
+	transition: transform $transition-default;
 }
 
 .form__input {
@@ -38,6 +45,7 @@
 	padding: 20px;
 	color: $color-dark-s;
 	border: 1px solid $color-dark-s-50;
+	border-radius: 2px;
 	font-size: 16px;
 	font-weight: bold;
 	line-height: 1;
@@ -54,13 +62,8 @@
 
 .form__div:has(input:not(:placeholder-shown))::before,
 .form__div:has(textarea:not(:placeholder-shown))::before {
-	position: absolute;
-	top: 9px;
-	left: 20px;
-	font-size: 12px;
-	font-weight: 700;
-	line-height: 1;
 	content: attr(data-placeholder);
+	transform: translateY(0);
 
 	@include breakpoint-down(small-desktop) {
 		font-size: 10px;

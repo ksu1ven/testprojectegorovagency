@@ -1,15 +1,22 @@
 .popup__close {
 	position: absolute;
-	z-index: 50;
+	z-index: 120;
 	right: 4px;
 	top: 4px;
 	width: 56px;
 	height: 56px;
 	@include flex(row, center, center);
-	background-color: $white;
+	background-color: $white !important;
+	line-height: 0;
 	color: $color-dark-s-50;
-	border: 2px solid transparent;
-	transition: $transition-default;
+	border: 2px solid $white;
+	border-radius: 2px;
+	transition: color $transition-default, border $transition-default;
+
+	@include breakpoint-down(large-desktop) {
+		width: 44px;
+		height: 44px;
+	}
 
 	@include hover-device {
 		&:hover {
@@ -74,4 +81,36 @@
 	@include breakpoint-down(mobile) {
 		margin-bottom: 25px;
 	}
+}
+
+.modal-video__content {
+	aspect-ratio: 1.778;
+	position: relative;
+	background-color: $white;
+	z-index: 100;
+}
+
+.modal-video .modal-dialog {
+	width: 70.95vw;
+	margin-left: auto;
+	margin-right: auto;
+
+	@include breakpoint-down(small-desktop) {
+		width: 90vw;
+	}
+}
+
+.modal-video .modal-content {
+	padding: 0;
+}
+
+.modal-video .self-hosted-video {
+	padding: 0;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: auto;
+	height: 100%;
+	transform: translateX(-50%);
+	object-fit: contain;
 }
