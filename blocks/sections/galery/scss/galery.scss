@@ -150,6 +150,7 @@
 	position: relative;
 	cursor: pointer;
 	border: 2px solid transparent;
+	text-decoration: none;
 	transition: $transition-default;
 
 	@include hover-active {

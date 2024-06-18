@@ -15,51 +15,34 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 	hm_get_template_part_with_params( 'fragments/block-preview-image', ['block' =>
 $block] ); return; } /** * Block Variables */ 
 $advantages_list=get_field( 'advantages_list' );
-
-
 ?>
 
 
-	<section class="advantages">
-		<div class="container">
-			<div class="advantages__content">
-
-			<?php if (have_rows('advantages_list')) : ?>
-								<div class="advantages__flex">
-										<?php 
-										foreach ($advantages_list as $index=>$advantage) {
-											$img_id = $advantage['image'];
-								 			$img =wp_get_attachment_image_url($img_id, 'full');
-											$text =$advantage['text'];
-													
-												?>
-												<div class="advantages__item">
-												<img class="advantages__svg" src="<?= esc_url( $img ); ?>" alt="Advantage image" width="120" height="120">	
-													<h3 class="h3 advantages__h3">
-															<?php echo esc_html(  $text )  ?>
-													</h3>
-												</div>
-												
-													
-
-												<?php 
-												}
-												?>
-										</div>
-									<?php else : ?>
-										<div class="p p--small" >No Advantages :(</div>
-									<?php endif ?>
-
-
-
-
-
-
-				
-				<a href="javascript:void(0)" class="link link--white advantages__link"
-					>Learn More</a
-				>
-			</div>
-		</div>
-	</section>
-	
+<section class="advantages">
+    <div class="container">
+        <div class="advantages__content">
+            <?php if (have_rows('advantages_list')) : ?>
+            <div class="advantages__flex">
+                <?php 
+                    foreach ($advantages_list as $index=>$advantage) {
+                        $img_id = $advantage['image'];
+                        $text =$advantage['text'];
+                                
+                            ?>
+                <div class="advantages__item">
+                    <?= hm_get_svg_inline( wp_get_attachment_url( $img_id ) ); ?>
+                    <h3 class="h3 advantages__h3">
+                        <?php echo esc_html(  $text )  ?>
+                    </h3>
+                </div>
+                <?php 
+                    }
+                ?>
+            </div>
+            <?php else : ?>
+            <div class="p p--small">No Advantages :(</div>
+            <?php endif ?>
+            <a href="javascript:void(0)" class="link link--white advantages__link">Learn More</a>
+        </div>
+    </div>
+</section>

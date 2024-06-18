@@ -53,15 +53,11 @@
 
 .header--fixed {
 	position: fixed;
-	top: $adminbarHeightDesktop;
+	top: 0;
 	z-index: 15;
 	left: 0;
 	right: 0;
 	background-color: $color-dark-s;
-
-	@include breakpoint-down(mobile) {
-		top: $adminbarHeightMobile;
-	}
 
 	.logo {
 		svg {
@@ -220,25 +216,25 @@
 }
 .burger-menu__content {
 	position: fixed;
-	top: $adminbarHeightDesktop;
+	top: 0;
 	left: 0;
 	right: 0;
 	min-height: 100vh;
 	z-index: -1;
 	padding-top: 275px;
 	background-color: $color-dark-s;
-	transform: translateY(calc(-100% - $adminbarHeightDesktop));
+	transform: translateY(-100%);
 	transform-origin: top;
 	transition: $transition-default;
 	transition-delay: $transition-delay-default;
 
-	@include breakpoint-down(tablet) {
-		padding-top: 372px;
+	@include breakpoint-down(large-desktop) {
+		padding-top: 0;
+		@include flex(row, flex-start, center);
 	}
 
-	@include breakpoint-down(admin-bar) {
-		top: $adminbarHeightMobile;
-		transform: translateY(calc(-100% - $adminbarHeightMobile));
+	@include breakpoint-down(tablet) {
+		padding-top: 372px;
 	}
 
 	@include breakpoint-down(mobile) {

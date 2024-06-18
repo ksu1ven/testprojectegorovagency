@@ -9,25 +9,17 @@ const init = function () {
 
 	if (buttonReadMore)
 		buttonReadMore.addEventListener("click", () => {
-			const reviewsParagraph = document.querySelector(".js-reviews__p");
 			if (buttonReadMore.textContent.includes("Read more")) {
 				buttonReadMore.textContent = "Show less";
-				document.querySelector(".js-reviews__left-col").style.paddingTop = 0;
 			} else {
 				buttonReadMore.textContent = "Read more";
-				document
-					.querySelector(".js-reviews__left-col")
-					.removeAttribute("style");
 			}
-
-			reviewsParagraph.classList.toggle("reviews__p--visible");
-			reviewsParagraph.classList.toggle("reviews__p--hidden");
 		});
 
 	new Swiper(".js-reviews-swiper", {
 		modules: [Pagination, Navigation],
 		slidesPerView: 1,
-		initialSlide: 1,
+		initialSlide: 0,
 		spaceBetween: 20,
 		pagination: {
 			el: ".js-reviews-swiper-pagination",
@@ -38,6 +30,14 @@ const init = function () {
 			prevEl: ".js-reviews-swiper-button-prev",
 		},
 	});
+
+	let reviews = document.querySelectorAll(".js-review");
+	if (reviews)
+		reviews.forEach((el) => {
+			if (el.scrollHeight <= el.clientHeight) {
+				el.classList.add("border-left");
+			}
+		});
 };
 
 initScript(".js-section-reviews", "reviews", init);

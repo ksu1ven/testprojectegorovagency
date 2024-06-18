@@ -64,6 +64,7 @@
 .form__div:has(textarea:not(:placeholder-shown))::before {
 	content: attr(data-placeholder);
 	transform: translateY(0);
+	color: $color-dark-s-50;
 
 	@include breakpoint-down(small-desktop) {
 		font-size: 10px;

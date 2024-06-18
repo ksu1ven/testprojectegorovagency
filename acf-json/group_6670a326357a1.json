@@ -77,7 +77,7 @@
                 "id": ""
             },
             "acfe_repeater_stylised_button": 0,
-            "layout": "table",
+            "layout": "block",
             "pagination": 0,
             "min": 0,
             "max": 0,
@@ -121,8 +121,7 @@
                         "id": ""
                     },
                     "acfe_repeater_stylised_button": 0,
-                    "layout": "table",
-                    "pagination": 0,
+                    "layout": "block",
                     "min": 12,
                     "max": 12,
                     "collapsed": "",
@@ -131,10 +130,10 @@
                     "sub_fields": [
                         {
                             "key": "field_6670a6b0c3fc9",
-                            "label": "Text",
-                            "name": "text",
+                            "label": "Link",
+                            "name": "link",
                             "aria-label": "",
-                            "type": "text",
+                            "type": "link",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -143,11 +142,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "maxlength": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
+                            "return_format": "array",
                             "parent_repeater": "field_6670a62df3f35"
                         }
                     ],
@@ -181,5 +176,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1718661825
+    "modified": 1718728316
 }

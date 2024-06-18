@@ -36,3 +36,26 @@ body::-webkit-scrollbar-thumb {
 	appearance: none;
 	cursor: pointer;
 }
+
+.review::-webkit-scrollbar,
+.nav__ul::-webkit-scrollbar {
+	width: 10px;
+}
+
+.review::-webkit-scrollbar-track,
+.nav__ul::-webkit-scrollbar-track {
+	border-radius: 5px;
+	box-shadow: 0 0 3px 2px $color-background inset;
+	background-color: $white;
+}
+
+.review::-webkit-scrollbar-thumb,
+.nav__ul::-webkit-scrollbar-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	border-radius: 5px;
+	width: 10px;
+	background-color: $color-accent;
+	box-shadow: 0x 0 3px 2px $color-accent-light inset;
+	cursor: pointer;
+}

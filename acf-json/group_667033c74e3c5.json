@@ -101,7 +101,7 @@
             "label": "Trainer description",
             "name": "reviews_trainer_description",
             "aria-label": "",
-            "type": "text",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 1,
             "conditional_logic": 0,
@@ -111,10 +111,10 @@
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
         },
         {
             "key": "field_6670410b5b00c",
@@ -131,7 +131,7 @@
                 "id": ""
             },
             "acfe_repeater_stylised_button": 0,
-            "layout": "table",
+            "layout": "block",
             "pagination": 0,
             "min": 0,
             "max": 0,
@@ -188,7 +188,7 @@
                     "label": "Review",
                     "name": "review",
                     "aria-label": "",
-                    "type": "text",
+                    "type": "textarea",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -198,10 +198,11 @@
                         "id": ""
                     },
                     "default_value": "",
+                    "acfe_textarea_code": 0,
                     "maxlength": "",
+                    "rows": "",
                     "placeholder": "",
-                    "prepend": "",
-                    "append": "",
+                    "new_lines": "",
                     "parent_repeater": "field_6670410b5b00c"
                 }
             ]
@@ -232,5 +233,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1718645906
+    "modified": 1718737433
 }

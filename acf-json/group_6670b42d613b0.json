@@ -30,7 +30,7 @@
                     "label": "Item",
                     "name": "item",
                     "aria-label": "",
-                    "type": "text",
+                    "type": "link",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -39,11 +39,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
+                    "return_format": "array",
                     "parent_repeater": "field_6670b42d7ab0f"
                 }
             ]
@@ -88,5 +84,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1718663818
+    "modified": 1718726041
 }

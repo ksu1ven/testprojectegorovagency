@@ -235,6 +235,10 @@
 
 .reviews__button--transparent {
 	color: $color-accent !important;
+
+	@include hover-active {
+		color: $white !important;
+	}
 }
 
 .rewiews__h2--right {
@@ -263,30 +267,10 @@
 	transition: $transition-default;
 }
 
-.reviews__p--hidden {
-	height: 1.23em * 6;
-	max-height: 1.23em * 6;
-	overflow: hidden;
-	display: -webkit-box;
-	-webkit-line-clamp: 6;
-	-webkit-box-orient: vertical;
-
-	@include breakpoint-down(small-desktop) {
-		height: 1.23em * 5;
-		max-height: 1.23em * 5;
-		-webkit-line-clamp: 5;
-	}
-}
-
-.reviews__p--visible {
-	max-height: 100%;
-	overflow: visible;
-}
-
 .reviews-swiper {
 	max-width: 544px;
-	margin-left: 0;
-	margin-right: 0;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
 }
 
 .reviews-swiper__wrapper {
@@ -299,7 +283,14 @@
 
 .review {
 	padding-left: 16px;
-	border-left: 3px solid $color-accent;
+	max-height: 400px;
+	overflow-y: auto;
+	direction: rtl;
+	text-align: left;
+}
+
+.review__content {
+	direction: ltr;
 }
 
 .review__author {
@@ -309,6 +300,7 @@
 	line-height: 1.2;
 	letter-spacing: -0.05 * 18px;
 	margin-bottom: 6px;
+	direction: ltr;
 
 	@include breakpoint-down(small-desktop) {
 		line-height: 1;
@@ -320,6 +312,7 @@
 	@include flex(row, flex-start, center);
 	column-gap: 5px;
 	color: $color-accent;
+	direction: ltr;
 
 	@include breakpoint-down(small-desktop) {
 		margin-bottom: 20px;

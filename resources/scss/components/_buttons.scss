@@ -97,6 +97,7 @@
 .button--underline {
 	position: relative;
 	display: block;
+	width: fit-content;
 	border: none;
 	color: $color-accent;
 	font-size: 16px;

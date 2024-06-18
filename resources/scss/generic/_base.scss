@@ -447,3 +447,7 @@ tbody.collapse.show {
 .unscale-to-top {
 	transform: scaleY(0);
 }
+
+.border-left {
+	border-left: 3px solid $color-accent;
+}
