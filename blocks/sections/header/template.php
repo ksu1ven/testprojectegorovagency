@@ -13,7 +13,17 @@
  */
 if ( isset( $block['data']['block_preview_images'] ) ) {
 	hm_get_template_part_with_params( 'fragments/block-preview-image', ['block' =>
-$block] ); return; } ?>
+$block] ); return; } 
+
+$nav_list = get_field( 'nav' );
+$address_top = get_field( 'address_top' );
+$address_bottom = get_field( 'address_bottom' );
+$map_url=get_field( 'map_url' );
+$phone=get_field( 'phone_show' );
+$phone_without_brackets=get_field( 'phone_without_brackets' );
+$photo_list=get_field( 'footer_photo_list' );
+
+?>
 
 <header class="header js-header">
 	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -53,26 +63,27 @@ $block] ); return; } ?>
 						<div class="container">
 							<div class="row align-items-center">
 								<nav class="col col-12 col-md-6 header__nav">
+								<?php if (have_rows('nav')) : ?>
 									<ul class="nav__ul nav__ul--big js-nav__ul--header">
-										<li class="nav__li nav__li--big nav__li--active">
-											<a href="javascript:void(0)">Main</a>
-										</li>
-										<li class="nav__li nav__li--big">
-											<a href="javascript:void(0)">About Us</a>
-										</li>
-										<li class="nav__li nav__li--big">
-											<a href="javascript:void(0)">Contact Us</a>
-										</li>
-										<li class="nav__li nav__li--big">
-											<a href="javascript:void(0)">Before & After</a>
-										</li>
-										<li class="nav__li nav__li--big">
-											<a href="javascript:void(0)">Resources</a>
-										</li>
-										<li class="nav__li nav__li--big">
-											<a href="javascript:void(0)">Payment</a>
-										</li>
-									</ul>
+										<?php 
+										foreach ($nav_list as $index=>$nav_item) {
+											$item=$nav_item['item']
+													
+												?>
+												<li class="nav__li nav__li--big  <?php if ($index == '0'){ ?>nav__li--active<?php   } ?>">
+													<a href="javascript:void(0)"><?php echo esc_html(  $item)  ?></a>
+												</li>
+												
+													
+
+												<?php 
+												}
+												?>
+										</ul>
+									<?php else : ?>
+										<div class="p p--small" >No navigation :(</div>
+									<?php endif ?>
+									
 								</nav>
 
 								<div class="col col-12 col-md-6">
@@ -80,7 +91,7 @@ $block] ); return; } ?>
 										<div class="contacts__phone-geo">
 											<a
 												class="contacts__link contacts__link--with-text contacts__link--geo contacts__link--white"
-												href="https://maps.app.goo.gl/RKwek8259Px9jyP1A"
+												href="<?php echo esc_url(  $map_url )  ?>"
 												target="_blank"
 												><svg
 													role="img"
@@ -91,12 +102,12 @@ $block] ); return; } ?>
 													<use xlink:href="#location-icon"></use>
 												</svg>
 												<span
-													>4535 Forsyth Rd Suite 2 <span>Macon, GA 31210</span>
+													><?php echo esc_html(  $address_top )  ?> <span></br><?php echo esc_html(  $address_bottom )  ?></span>
 												</span></a
 											>
 											<a
 												class="contacts__link contacts__link--with-text contacts__link--white"
-												href="tel:+14782543220"
+												href="tel:+1<?php echo esc_html(  $phone_without_brackets )  ?>"
 												><svg
 													role="img"
 													aria-hidden="true"
@@ -104,7 +115,7 @@ $block] ); return; } ?>
 													height="24"
 												>
 													<use xlink:href="#phone-icon"></use></svg
-												><span>(478) 254-3220</span></a
+												><span><?php echo esc_html(  $phone )  ?></span></a
 											>
 										</div>
 										<div class="contacts__media">
@@ -172,12 +183,12 @@ $block] ); return; } ?>
 					</div>
 				</div>
 
-				<a class="link link--phone" href="tel:+14782543220">
+				<a class="link link--phone" href="tel:+<?php echo esc_html(  $phone_without_brackets )  ?>">
 					<span
 						><svg role="img" aria-hidden="true" width="34" height="34">
 							<use xlink:href="#phone-icon"></use></svg
 					></span>
-					<span>(478) 254-3220</span>
+					<span><?php echo esc_html(  $phone )  ?></span>
 				</a>
 			</div>
 

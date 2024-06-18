@@ -1,0 +1,112 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Blocks: Section Hero
+\* ------------------------------------------------------------ */
+
+.advantages {
+	position: relative;
+
+	@include breakpoint-down(small-desktop) {
+		background-color: $color-background;
+	}
+}
+
+.advantages::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 155px;
+	background-color: $color-accent-light;
+
+	@include breakpoint-down(tablet) {
+		height: 133px;
+	}
+
+	@include breakpoint-down(mobile) {
+		height: 410px;
+	}
+}
+
+.advantages__content {
+	position: relative;
+	z-index: 2;
+	padding-top: 30px;
+
+	@include breakpoint-down(tablet) {
+		padding-top: 20px;
+	}
+}
+
+.advantages__flex {
+	margin-bottom: 30px;
+	@include flex(row, space-between, stretch);
+	column-gap: 30px;
+	row-gap: 20px;
+
+	@include breakpoint-down(small-desktop) {
+		column-gap: 20px;
+	}
+
+	@include breakpoint-down(tablet) {
+		margin-bottom: 20px;
+	}
+
+	@include breakpoint-down(mobile) {
+		@include flex(column, flex-start, stretch);
+	}
+}
+
+.advantages__item {
+	padding: 65px 50px;
+	flex-basis: 100%;
+	@include flex(row, center, center);
+	column-gap: 30px;
+	row-gap: 20px;
+	background-color: $color-accent;
+
+	@include breakpoint-down(large-desktop) {
+		@include flex(column, flex-start, flex-start);
+	}
+
+	@include breakpoint-down(small-desktop) {
+		padding: 30px 10px 30px 20px;
+	}
+
+	@include breakpoint-down(mobile) {
+		padding-right: 20px;
+		@include flex(row, center, center);
+		column-gap: 20px;
+		height: 140px;
+	}
+}
+
+.advantages__h3 {
+	width: 250px;
+
+	@include breakpoint-down(small-desktop) {
+		width: 186px;
+	}
+}
+
+.advantages__svg {
+	color: $color-accent-light;
+
+	@include breakpoint-down(tablet) {
+		width: 80px;
+		height: 80px;
+	}
+}
+
+.advantages__link {
+	margin-left: auto;
+	margin-right: auto;
+}

@@ -1,0 +1,266 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Blocks: Section Hero
+\* ------------------------------------------------------------ */
+
+.galery {
+	padding-top: 120px;
+	padding-bottom: 120px;
+
+	@include breakpoint-down(small-desktop) {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+
+	@include breakpoint-down(mobile) {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+}
+
+.galery__h2 {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.galery__slogan {
+	margin: 20px auto 60px;
+	width: 397px;
+	text-align: center;
+
+	@include breakpoint-down(small-desktop) {
+		margin-bottom: 32px;
+	}
+
+	@include breakpoint-down(mobile) {
+		margin-top: 15px;
+		margin-bottom: 27px;
+		width: 100%;
+	}
+}
+
+.galery__content {
+	gap: 28px;
+	justify-content: center;
+	flex-wrap: nowrap;
+
+	@include breakpoint-down(large-desktop) {
+		gap: 16px;
+	}
+
+	@include breakpoint-down(small-desktop) {
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+	}
+}
+
+.galery__grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-auto-rows: 320px;
+	grid-gap: 28px;
+
+	@for $i from 1 through 100 {
+		.galery__item--grid:nth-child(#{$i}):is(:nth-child(9n + 3)) {
+			order: $i - 2;
+
+			@include breakpoint-down(small-desktop) {
+				order: 0;
+			}
+		}
+		.galery__item--grid:nth-child(#{$i}):is(:nth-child(9n + 6)) {
+			order: $i - 3;
+
+			@include breakpoint-down(small-desktop) {
+				order: 0;
+			}
+		}
+		.galery__item--grid:nth-child(#{$i}):is(:nth-child(9n + 1)) {
+			order: $i + 1;
+
+			@include breakpoint-down(small-desktop) {
+				order: 0;
+			}
+		}
+
+		.galery__item--grid:nth-child(#{$i}):is(:nth-child(9n + 2)) {
+			order: $i + 3;
+
+			@include breakpoint-down(small-desktop) {
+				order: 0;
+			}
+		}
+		.galery__item--grid:nth-child(#{$i}):is(:nth-child(9n + 7)) {
+			order: $i - 2;
+
+			@include breakpoint-down(small-desktop) {
+				order: 0;
+			}
+		}
+
+		.galery__item--grid:nth-child(#{$i}):is(:nth-child(9n + 8)) {
+			order: $i - 2;
+
+			@include breakpoint-down(small-desktop) {
+				order: 0;
+			}
+		}
+		.galery__item--grid:nth-child(#{$i}):is(:nth-child(9n + 4)) {
+			order: $i + 3;
+
+			@include breakpoint-down(small-desktop) {
+				order: 0;
+			}
+		}
+		.galery__item--grid:nth-child(#{$i}):is(:nth-child(9n + 5)) {
+			order: $i;
+
+			@include breakpoint-down(small-desktop) {
+				order: 0;
+			}
+		}
+		.galery__item--grid:nth-child(#{$i}):is(:nth-child(9n + 9)) {
+			order: $i;
+
+			@include breakpoint-down(small-desktop) {
+				order: 0;
+			}
+		}
+	}
+
+	@include breakpoint-down(small-desktop) {
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 10px;
+	}
+
+	@include breakpoint-down(mobile) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.galery__item {
+	position: relative;
+	cursor: pointer;
+	border: 2px solid transparent;
+	transition: $transition-default;
+
+	@include hover-active {
+		border: 2px solid $color-accent;
+	}
+}
+
+.galery__item::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: 3;
+	background-image: linear-gradient($color-dark-s-27, $color-dark-s);
+	opacity: 60%;
+}
+
+.galery__item--grid {
+	transition: $transition-default;
+	transform-origin: top;
+
+	img {
+		object-fit: cover;
+		object-position: top center;
+	}
+
+	&:nth-child(9n + 3) {
+		grid-row: span 2;
+
+		@include breakpoint-down(small-desktop) {
+			grid-row: auto;
+			grid-column: 1/3;
+		}
+
+		@include breakpoint-down(mobile) {
+			grid-column: auto;
+		}
+	}
+
+	&:nth-child(9n + 3):nth-last-child(-n + 4) {
+		grid-row: span 1;
+		grid-column: span 2;
+
+		@include breakpoint-down(small-desktop) {
+			grid-row: auto;
+			grid-column: auto;
+		}
+	}
+
+	&:nth-child(9n + 6) {
+		grid-row: span 1;
+		grid-column: span 2;
+
+		@include breakpoint-down(small-desktop) {
+			grid-row: auto;
+			grid-column: 1/3;
+		}
+
+		@include breakpoint-down(mobile) {
+			grid-column: auto;
+		}
+	}
+
+	&:nth-child(9n + 9) {
+		grid-column: span 2;
+
+		@include breakpoint-down(small-desktop) {
+			grid-column: 1/3;
+
+			@include breakpoint-down(mobile) {
+				grid-column: auto;
+			}
+		}
+	}
+}
+
+.galery__text-content {
+	position: relative;
+	z-index: 10;
+	padding-left: 24px;
+	padding-bottom: 24px;
+	height: 100%;
+	@include flex(column, flex-end, flex-start);
+	color: $white;
+}
+
+.galery__description {
+	margin-top: 2px;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.4;
+
+	@include breakpoint-down(mobile) {
+		font-weight: 500;
+	}
+}
+
+.galery__button {
+	display: block;
+	margin-top: 60px;
+	margin-left: auto;
+	margin-right: auto;
+
+	@include breakpoint-down(small-desktop) {
+		margin-top: 30px;
+	}
+
+	@include breakpoint-down(mobile) {
+		margin-top: 24px;
+	}
+}
+
+.galery__img {
+	object-fit: cover;
+}

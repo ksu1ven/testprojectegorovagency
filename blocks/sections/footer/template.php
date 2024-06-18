@@ -13,33 +13,46 @@
  */
 if ( isset( $block['data']['block_preview_images'] ) ) {
 	hm_get_template_part_with_params( 'fragments/block-preview-image', ['block' =>
-$block] ); return; } ?>
+$block] ); return; } 
+
+
+$nav_list = get_field( 'nav' );
+$address_top = get_field( 'address_top' );
+$address_bottom = get_field( 'address_bottom' );
+$map_url=get_field( 'map_url' );
+$phone=get_field( 'phone_show' );
+$phone_without_brackets=get_field( 'phone_without_brackets' );
+$photo_list=get_field( 'footer_photo_list' );
+
+
+
+?>
 
 <footer class="footer">
 	<div class="container">
 		<div class="row footer__content">
 			<nav class="col col-12 col-md-6 col-xl-4 nav--extra-small footer__nav">
 				<h3 class="h3 footer__h3">Navigation</h3>
-				<ul class="nav__ul nav__ul--extra-small js-nav__ul--hero">
-					<li class="nav__li nav__li--extra-small">
-						<a href="javascript:void(0)">Main</a>
-					</li>
-					<li class="nav__li nav__li--extra-small">
-						<a href="javascript:void(0)">About Us</a>
-					</li>
-					<li class="nav__li nav__li--extra-small">
-						<a href="javascript:void(0)">Contact Us</a>
-					</li>
-					<li class="nav__li nav__li--extra-small">
-						<a href="javascript:void(0)">Before & After</a>
-					</li>
-					<li class="nav__li nav__li--extra-small">
-						<a href="javascript:void(0)">Resources</a>
-					</li>
-					<li class="nav__li nav__li--extra-small">
-						<a href="javascript:void(0)">Payment</a>
-					</li>
-				</ul>
+				<?php if (have_rows('nav')) : ?>
+					<ul class="nav__ul nav__ul--extra-small js-nav__ul--hero">
+					<?php 
+					foreach ($nav_list as $nav_item) {
+						$item=$nav_item['item']
+								
+							?>
+							<li class="nav__li nav__li--extra-small">
+							<a href="javascript:void(0)"><?php echo esc_html(  $item)  ?></a>
+							</li>
+								
+
+							<?php 
+							}
+							?>
+					</ul>
+				<?php else : ?>
+					<div class="p p--small" >No navigation :(</div>
+				<?php endif ?>
+
 			</nav>
 
 			<div class="col col-12 col-md-6 col-xl-4 footer__center-col">
@@ -48,21 +61,21 @@ $block] ); return; } ?>
 					<div class="contacts__phone-geo">
 						<a
 							class="contacts__link contacts__link--with-text contacts__link--geo contacts__link--dark"
-							href="https://maps.app.goo.gl/RKwek8259Px9jyP1A"
+							href=" <?php echo esc_url(  $map_url )  ?>"
 							target="_blank"
 							><svg role="img" aria-hidden="true" width="24" height="24">
 								<use xlink:href="#location-icon"></use>
 							</svg>
 							<span
-								>4535 Forsyth Rd Suite 2 <span>Macon, GA 31210</span>
+								><?php echo esc_html(  $address_top )  ?> <span></br><?php echo esc_html(  $address_bottom )  ?></span>
 							</span></a
 						>
 						<a
 							class="contacts__link contacts__link--with-text contacts__link--dark"
-							href="tel:+14782543220"
+							href="tel:+1<?php echo esc_html(  $phone_without_brackets )  ?>"
 							><svg role="img" aria-hidden="true" width="24" height="24">
 								<use xlink:href="#phone-icon"></use></svg
-							><span>(478) 254-3220</span></a
+							><span><?php echo esc_html(  $phone )  ?></span></a
 						>
 					</div>
 					<div class="contacts__media">
@@ -91,24 +104,32 @@ $block] ); return; } ?>
 			</div>
 
 			<div class="col col-12 col-md-12 col-xl-4">
+			<?php if (have_rows('footer_photo_list')) : ?>
+
 				<div class="photo-4">
-					<img
-						src="/wp-content/themes/testproject/resources/images/previews/girl-1.jpg"
-						alt="girl-1"
-					/>
-					<img
-						src="/wp-content/themes/testproject/resources/images/previews/girl-2.jpg"
-						alt="girl-2"
-					/>
-					<img
-						src="/wp-content/themes/testproject/resources/images/previews/girl-3.jpg"
-						alt="girl-3"
-					/>
-					<img
-						src="/wp-content/themes/testproject/resources/images/previews/girl-4.jpg"
-						alt="girl-4"
-					/>
-				</div>
+
+				<?php 
+							
+							foreach ($photo_list as $index=>$photo) {
+								$img_id = $photo['image'];
+								 $img =wp_get_attachment_image_url($img_id, 'full');
+								?>
+								
+								<img
+									src="<?= esc_url( $img) ?>"
+									alt="foter-photo-<?php echo esc_html(  $index)  ?>"
+								/>
+				
+							
+
+							<?php 
+
+							}
+					?>
+					
+					</div>
+				
+				<?php endif ?>
 			</div>
 		</div>
 		<hr class="footer__hr" />
@@ -144,122 +165,9 @@ $block] ); return; } ?>
 		</div>
 	</div>
 
-	<div
-		class="modal fade"
-		id="book-consultation"
-		tabindex="-1"
-		role="dialog"
-		aria-labelledby="Book consultation"
-		aria-hidden="true"
-	>
-		<div
-			class="modal-dialog modal-dialog-centered modal-dialog--with-form"
-			role="document"
-		>
-			<div class="modal-content">
-				<button
-					type="button"
-					class="close popup__close"
-					data-dismiss="modal"
-					aria-label="Close"
-				>
-					<span aria-hidden="true"
-						><svg role="img" aria-hidden="true" width="24" height="24">
-							<use xlink:href="#menu-icon-cross"></use></svg
-					></span>
-				</button>
-				<h2 class="h2 modal__h2">Book<br />Consultation</h2>
-				<div class="p modal__p">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis
-					nullam pretium lectus est non arcu diam in varius.
-				</div>
-				<form class="form" action="#" name="consultation">
-					<div class="form__inputs">
-						<div class="form__div" data-placeholder="First Name"><label class="visually-hidden" for="first-name">First Name</label>
-						<input
-							class="form__input"
-							type="text"
-							placeholder="First Name"
-							name="first-name"
-							id="first-name"
-						/></div>
-						<div class="form__div" data-placeholder="Last Name">	<label class="visually-hidden" for="last-name">Last Name</label>
-						<input
-							class="form__input"
-							type="text"
-							placeholder="Last Name"
-							name="last-name"
-							id="last-name"
-						/></div>
-					
-						<div class="form__div" data-placeholder="Email"><label class="visually-hidden" for="email">Email</label>
-						<input
-							class="form__input"
-							type="email"
-							placeholder="Email"
-							name="email"
-							id="email"
-						/></div>
-						
-						<div class="form__div" data-placeholder="Phone Number"><label class="visually-hidden" for="phone">Phone Number</label>
-						<input
-							class="form__input"
-							type="phone"
-							placeholder="Phone Number"
-							name="phone"
-							id="phone"
-						/></div>
-						
-						<div class="form__div" data-placeholder="Message"><label class="visually-hidden" for="message">Message</label>
-						<textarea
-							class="form__input"
-							name="message"
-							id="message"
-							placeholder="Message"
-						></textarea></div>
-						
-					</div>
 
-					<button type="submit" class="button button--colored form__button">
-						Submit
-					</button>
-				</form>
-			</div>
-		</div>
-	</div>
 
-	<div
-		class="modal modal-video js-modal-video fade"
-		id="open-video"
-		tabindex="-1"
-		role="dialog"
-		aria-labelledby="Training video"
-		aria-hidden="true"
-	>
-		<div
-			class="modal-dialog modal-dialog-centered"
-			role="document"
-		>
-			<div class="modal-content">
-				<button
-					type="button"
-					class="close popup__close js-modal-video-close"
-					data-dismiss="modal"
-					aria-label="Close"
-				>
-					<span aria-hidden="true"
-						><svg role="img" aria-hidden="true" width="24" height="24">
-							<use xlink:href="#menu-icon-cross"></use></svg
-					></span>
-				</button>
-				<div class="modal-video__content background-video js-modal-video__content">			
-					<div id="youtube-player" class="background-video"></div>
-					<video id="self-hosted-player" class="self-hosted-video" src="" controls autoplay webkit-playsinline playisinline ></video>
-				</div>
-	
-			</div>
-		</div>
-	</div>
+
 
 	<script
 		src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

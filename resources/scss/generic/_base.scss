@@ -178,21 +178,21 @@ p:empty {
 .edit-site-block-editor__block-list {
 	margin: 0;
 	padding: 0;
-	width: 100%;
+	width: 100vw;
 	min-width: 360px;
 	position: relative;
 	// height: calc(var(--vh, 1vh) * 100);
 	overflow-x: hidden;
-	overflow-y: auto;
+	overflow-y: visible;
 	-webkit-overflow-scrolling: touch;
 
-	.admin-bar & {
-		height: calc((var(--vh, 1vh) * 100) - 32px);
+	// .admin-bar & {
+	// 	// height: calc((var(--vh, 1vh) * 100) - 32px);
 
-		@include breakpoint-down(admin-bar) {
-			height: calc((var(--vh, 1vh) * 100) - 46px);
-		}
-	}
+	// 	@include breakpoint-down(admin-bar) {
+	// 		height: calc((var(--vh, 1vh) * 100) - 46px);
+	// 	}
+	// }
 }
 
 .edit-site-block-editor__block-list {
@@ -438,4 +438,12 @@ tbody.collapse.show {
 	.container {
 		max-width: 1700px;
 	}
+}
+
+.scale-to-bottom {
+	transform: scaleY(1);
+}
+
+.unscale-to-top {
+	transform: scaleY(0);
 }

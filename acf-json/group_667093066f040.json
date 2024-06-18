@@ -1,11 +1,31 @@
 {
-    "key": "group_63e230f191803",
-    "title": "Block: Markets",
+    "key": "group_667093066f040",
+    "title": "Block: Galery",
     "fields": [
         {
-            "key": "field_63e231a375c1b",
+            "key": "field_66709306f62bd",
             "label": "Title",
-            "name": "markets_section_title",
+            "name": "galery_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6670932ef62be",
+            "label": "Description",
+            "name": "galery_description",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -23,29 +43,9 @@
             "append": ""
         },
         {
-            "key": "field_63e231be75c1c",
-            "label": "Description",
-            "name": "markets_section_description",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
-            "key": "field_63e231e875c1d",
-            "label": "Markets",
-            "name": "markets_section_props",
+            "key": "field_66709453b78ea",
+            "label": "Galery List",
+            "name": "galery_list",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -56,7 +56,8 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
+            "acfe_repeater_stylised_button": 0,
+            "layout": "table",
             "pagination": 0,
             "min": 0,
             "max": 0,
@@ -65,9 +66,9 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_63e233b375c20",
+                    "key": "field_66709484b78eb",
                     "label": "Image",
-                    "name": "img",
+                    "name": "image",
                     "aria-label": "",
                     "type": "image",
                     "instructions": "",
@@ -78,8 +79,9 @@
                         "class": "",
                         "id": ""
                     },
+                    "uploader": "",
                     "return_format": "id",
-                    "library": "all",
+                    "acfe_thumbnail": 0,
                     "min_width": "",
                     "min_height": "",
                     "min_size": "",
@@ -88,12 +90,13 @@
                     "max_size": "",
                     "mime_types": "",
                     "preview_size": "medium",
-                    "parent_repeater": "field_63e231e875c1d"
+                    "library": "all",
+                    "parent_repeater": "field_66709453b78ea"
                 },
                 {
-                    "key": "field_63e2324c75c1e",
-                    "label": "Name",
-                    "name": "name",
+                    "key": "field_667094aab78ec",
+                    "label": "Description",
+                    "name": "description",
                     "aria-label": "",
                     "type": "text",
                     "instructions": "",
@@ -109,14 +112,14 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_63e231e875c1d"
+                    "parent_repeater": "field_66709453b78ea"
                 },
                 {
-                    "key": "field_63e2325875c1f",
-                    "label": "Description",
-                    "name": "description",
+                    "key": "field_667094c1b78ed",
+                    "label": "Quantity of photos",
+                    "name": "quantity_of_photos",
                     "aria-label": "",
-                    "type": "wysiwyg",
+                    "type": "number",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -126,18 +129,45 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1,
-                    "delay": 0,
-                    "parent_repeater": "field_63e231e875c1d"
-                },
+                    "min": 1,
+                    "max": "",
+                    "placeholder": "",
+                    "step": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_66709453b78ea"
+                }
+            ]
+        },
+        {
+            "key": "field_667099191ff51",
+            "label": "Carousel List",
+            "name": "carousel_list",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_repeater_stylised_button": 0,
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
                 {
-                    "key": "field_63e23576decb7",
-                    "label": "Link",
-                    "name": "link",
+                    "key": "field_6670993d1ff52",
+                    "label": "Image",
+                    "name": "image",
                     "aria-label": "",
-                    "type": "link",
+                    "type": "image",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -146,8 +176,19 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array",
-                    "parent_repeater": "field_63e231e875c1d"
+                    "uploader": "",
+                    "return_format": "id",
+                    "acfe_thumbnail": 0,
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "parent_repeater": "field_667099191ff51"
                 }
             ]
         }
@@ -157,18 +198,25 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/markets"
+                "value": "acf\/galery"
             }
         ]
     ],
     "menu_order": 0,
     "position": "normal",
     "style": "default",
-    "label_placement": "top",
+    "label_placement": "left",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675769894
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1718656530
 }

@@ -1,0 +1,245 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+@import "../../../../resources/scss/generic/swiper";
+@import "../../../../resources/scss/bootstrap/bootstrap-grid";
+@import "../../../../resources/scss/components/buttons";
+@import "../../../../resources/scss/components/links";
+@import "../../../../resources/scss/components/carousel";
+
+/* ------------------------------------------------------------ *\
+	Blocks: Section Hero
+\* ------------------------------------------------------------ */
+
+.results {
+	padding-top: 120px;
+	padding-bottom: 120px;
+	background-image: linear-gradient(to right, $white 50%, $color-background 0);
+
+	@include breakpoint-down(small-desktop) {
+		padding-top: 70px;
+		padding-bottom: 70px;
+		background-image: linear-gradient(
+			to top,
+			$color-background 130px,
+			$white 0
+		);
+	}
+
+	@include breakpoint-down(mobile) {
+		padding-top: 50px;
+		padding-bottom: 50px;
+		background-image: linear-gradient(to top, $color-background 90px, $white 0);
+	}
+}
+
+.results__container {
+	@include flex(row, space-between, center);
+
+	@include breakpoint-down(large-desktop) {
+		column-gap: 40px;
+	}
+
+	@include breakpoint-down(small-desktop) {
+		flex-direction: column;
+		row-gap: 30px;
+	}
+
+	@include breakpoint-down(mobile) {
+		row-gap: 40px;
+	}
+}
+
+.results__p {
+	max-width: 683px;
+	margin-top: 20px;
+	margin-bottom: 100px;
+
+	@include breakpoint-down(small-desktop) {
+		margin-bottom: 50px;
+		max-width: 511px;
+	}
+
+	@include breakpoint-down(mobile) {
+		margin-bottom: 30px;
+	}
+}
+
+.results-swiper {
+	max-width: 967px;
+	max-height: 800px;
+	background-color: $color-accent;
+	border-radius: 2px;
+	flex: 1 0 auto;
+
+	@include breakpoint-down(large-desktop) {
+		max-width: 60%;
+	}
+
+	@include breakpoint-down(small-desktop) {
+		width: 100%;
+		max-width: 100%;
+		max-height: fit-content;
+	}
+}
+
+.results-swiper__left {
+	max-width: 540px;
+
+	@include breakpoint-down(large-desktop) {
+		max-width: 32%;
+	}
+
+	@include breakpoint-down(small-desktop) {
+		max-width: 100%;
+	}
+}
+
+.results__swiper-wrapper {
+	background-color: $color-accent;
+}
+
+.results-swiper__controls {
+	@include flex(row, flex-start, center);
+
+	@include breakpoint-down(mobile) {
+		justify-content: center;
+	}
+}
+
+.results .swiper-button-prev,
+.results .swiper-button-next,
+.results .swiper-pagination {
+	position: static !important;
+	flex: 0 0 auto;
+	width: fit-content !important;
+}
+
+.results .swiper-button-prev,
+.results .swiper-button-next {
+	margin-top: 0 !important;
+}
+
+.results .swiper-button-prev::after,
+.results .swiper-button-next::after {
+	content: "";
+}
+
+.results .swiper-pagination-bullet {
+	margin: 0 !important;
+}
+
+.results .swiper-pagination-bullet-active {
+	pointer-events: none;
+}
+
+.results-swiper .swiper-slide-prev,
+.results-swiper .swiper-slide-next {
+	pointer-events: none;
+
+	& .results__img-container:before,
+	& .results__img-container:after {
+		display: none;
+	}
+
+	& .twentytwenty-handle {
+		visibility: hidden;
+	}
+
+	& .twentytwenty-handle:before,
+	& .twentytwenty-handle:after {
+		visibility: visible;
+		top: -1000px;
+		height: 9999px;
+	}
+}
+
+.results-swiper .swiper-slide-prev {
+	transform: translateZ(0) translateX(73%) scale(0.8) !important;
+}
+
+.results-swiper .swiper-slide-next {
+	transform: translateZ(0) translateX(-73%) scale(0.8) !important;
+	z-index: -1;
+}
+
+.results .results__slide {
+	max-width: 967px;
+	@include flex(row, center, center);
+	padding-top: 60px;
+	padding-bottom: 60px;
+	overflow: hidden;
+
+	@include breakpoint-down(small-desktop) {
+		padding-top: 56px;
+		padding-bottom: 56px;
+	}
+
+	@include breakpoint-down(mobile) {
+		padding-top: 10px;
+		padding-bottom: 31px;
+	}
+}
+
+.results__img-container {
+	position: relative;
+	width: 47.57%;
+	height: calc(100% - 120px);
+	margin-left: auto;
+	margin-right: auto;
+	aspect-ratio: 0.6765;
+	@include flex(row, center, flex-start);
+	background-color: $color-accent;
+	border-radius: 2px;
+
+	img {
+		object-fit: cover;
+		object-position: top center;
+	}
+
+	@include breakpoint-down(small-desktop) {
+		width: 47.33%;
+		height: calc(100% - 112px);
+	}
+
+	@include breakpoint-down(mobile) {
+		width: 55%;
+		height: calc(100% - 41.35px);
+	}
+}
+
+.results__img-container:before {
+	content: "Before";
+	left: 0;
+}
+.results__img-container:after {
+	content: "After";
+	right: 0;
+}
+
+.results__img-container:before,
+.results__img-container:after {
+	position: absolute;
+	bottom: -34px;
+	z-index: 10;
+	font-family: "Bank Gothic", "sans-serif";
+	font-size: 14px;
+	line-height: 1.4;
+	color: $white;
+	letter-spacing: -0.05 * 14px;
+
+	@include breakpoint-down(mobile) {
+		bottom: -21px;
+		font-size: 12px;
+		line-height: 1;
+		letter-spacing: -0.05 * 12px;
+	}
+}
+
+.text-swiper {
+	overflow: hidden;
+}
