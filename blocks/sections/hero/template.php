@@ -131,32 +131,8 @@ $form = get_field( 'book_form' );
                     <?= esc_html( $form_description) ?>
                 </div>
                 <?php endif ?>
-                <?php if ( (have_rows('book_form'))) : ?>
-                <form class="form" action="#" name="consultation">
-                    <div class="form__inputs">
-                        <?php 
-                     foreach ($form as $index=>$form_item) {
-						    $label=$form_item['label'];
-                            $type=$form_item['type'];
-                            $id=$form_item['id'];
-					?>
-                        <div class="form__div" data-placeholder="<?php echo esc_html(  $label )  ?>">
-                            <label class="visually-hidden" for="<?php echo esc_html(  $id )  ?>">
-                                <?php echo esc_html(  $label )  ?>
-                            </label>
-                            <input class="form__input" type="<?php echo esc_html(  $type )  ?>"
-                                placeholder="<?php echo esc_html(  $label )  ?>" name="<?php echo esc_html(  $id )  ?>"
-                                id="<?php echo esc_html(  $id )  ?>" />
-                        </div>
-                        <?php 
-						}
-						?>
-                    </div>
-                    <button type="submit" class="button button--colored form__button">
-                        Submit
-                    </button>
-                </form>
-                <?php endif ?>
+                <?php echo do_shortcode('[ninja_form id=3]'); ?>
+
             </div>
         </div>
     </div>

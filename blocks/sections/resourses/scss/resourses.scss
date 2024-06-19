@@ -135,6 +135,7 @@
 
 .blog-item__content {
 	padding: 20px;
+	position: relative;
 }
 
 .blog-item__h5 {
@@ -142,7 +143,7 @@
 	font-size: 16px;
 	line-height: 1.4;
 	font-weight: 700;
-	overflow: hidden;
+	overflow-y: hidden;
 	display: -webkit-box;
 	height: 1.4em * 2;
 	-webkit-line-clamp: 2;
@@ -151,6 +152,28 @@
 	@include breakpoint-down(small-desktop) {
 		font-size: 14px;
 	}
+}
+
+.blog-item__tooltip {
+	position: absolute;
+	width: fit-content;
+	padding: 20px;
+	bottom: calc(50% + 10px);
+	left: 20px;
+	right: 20px;
+	height: auto;
+	font-size: 14px;
+	background-color: $white;
+	border: 1px solid $color-dark-s;
+	border-radius: 2px;
+	color: $color-dark-s-50;
+	transform: scaleY(0);
+	transition: $transition-default;
+	transform-origin: bottom;
+}
+
+.blog-item__h5:hover + .blog-item__tooltip {
+	transform: scaleY(1);
 }
 
 .blog-item__p {

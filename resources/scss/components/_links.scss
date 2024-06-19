@@ -143,3 +143,21 @@
 		}
 	}
 }
+
+.link--pay {
+	@include flex(row, center, center);
+	column-gap: 10px;
+	padding-top: 13px;
+	padding-bottom: 13px;
+	text-decoration: none;
+
+	@include breakpoint-down(small-desktop) {
+		padding-top: 12px;
+		padding-bottom: 12px;
+
+		svg {
+			width: 85px;
+			height: 20px;
+		}
+	}
+}

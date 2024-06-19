@@ -24,9 +24,26 @@ $phone=get_field( 'phone' );
 $phone_link=$phone['url'];
 $phone_title=$phone['title'];
 $photo_list=get_field( 'footer_photo_list' );
+$form_title=get_field( 'footer_form_title' );
 ?>
 
 <footer class="footer">
+    <div class="subscription">
+        <div class="container subscription__content">
+            <div class="row">
+                <div class="col col-12 col-md-6">
+                    <?php if (!empty($form_title)) : ?>
+                    <h3 class="subscription__h3"><?= esc_html( $form_title) ?></h3>
+                    <?php endif ?>
+                </div>
+                <div class="col col-12 col-md-6">
+                    <?php echo do_shortcode('[ninja_form id=2]'); ?>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
     <div class="container">
         <div class="row footer__content">
             <nav class="col col-12 col-md-6 col-xl-4 nav--extra-small footer__nav">
@@ -133,16 +150,65 @@ $photo_list=get_field( 'footer_photo_list' );
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
+
+    <div class="modal fade" id="send-form-result" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog--send-form-result" role="document">
+            <div class="modal-content send-form-result__content">
+                <button type="button" class="close popup__close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><svg role="img" aria-hidden="true" width="24" height="24">
+                            <use xlink:href="#menu-icon-cross"></use>
+                        </svg></span>
+                </button>
+                <div class="send-form-result__left">
+                    <svg class="send-form-result__svg js-send-form-result__svg" role="img" aria-hidden="true"
+                        width="200" height="300">
+                        <use xlink:href="#success-icon"></use>
+                    </svg>
+                    <svg class="send-form-result__svg--mobile js-send-form-result__svg" role="img" aria-hidden="true"
+                        width="300" height="230">
+                        <use xlink:href="#success-icon-mobile"></use>
+                    </svg>
+                    <svg id="error-icon" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+                        xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+                        <g sketch:type="MSLayerGroup" stroke="#fab7d8" stroke-width="2" fill="none"
+                            transform="scale(5)">
+                            <path sketch:type="MSShapeGroup"
+                                d="M48 58v3c0 1.1-.9 2-2 2h-43c-1.1 0-2-.9-2-2v-58c0-1.1.9-2 2-2h25.9l19.1 18.1v26.5" />
+                            <path sketch:type="MSShapeGroup" d="M48 19.9h-17c-1.1 0-2-.9-2-2v-15.9" />
+                            <path sketch:type="MSShapeGroup" d="M10 18h13" />
+                            <path sketch:type="MSShapeGroup" d="M10 28h31" />
+                            <path sketch:type="MSShapeGroup" d="M10 35h31" />
+                            <path sketch:type="MSShapeGroup" d="M10 44h26" />
+                            <path sketch:type="MSShapeGroup" d="M10 50h18" />
+                            <path sketch:type="MSShapeGroup"
+                                d="M42.6 59.8l3.5-3.6 3.4 3.5 4.3-4.2-3.5-3.5 3.5-3.5-4.3-4.3-3.5 3.5-3.5-3.5-4.2 4.3 3.5 3.4-3.6 3.5 4.4 4.4z" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="send-form-result__right">
+                    <h2 class="h2 send-form-result__h2 js-send-form-result__h2">Success</h2>
+                    <div class="p p--small send-form-result__p js-send-form-result__p">Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit.
+                        Facilisis nullam
+                        pretium lectus est non arcu diam in varius.</div>
+                    <a class="button button--colored link--pay" href="javascript:void(0)"> <svg role="img"
+                            aria-hidden="true" width="124" height="30">
+                            <use xlink:href="#paypal-icon"></use>
+                        </svg><span>Pay Now</span></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
-
 
 
 </footer>

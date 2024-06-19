@@ -62,6 +62,7 @@ $background=wp_get_attachment_image_url($background_id, 'full');
                                 <?php endif ?>
                                 <?php if ( !empty( $title )) : ?>
                                 <h5 class="blog-item__h5"> <?= esc_html( $title) ?></h5>
+                                <div class="blog-item__tooltip"> <?= esc_html( $title) ?></div>
                                 <?php endif ?>
                             </div>
                         </a>
@@ -92,7 +93,10 @@ $background=wp_get_attachment_image_url($background_id, 'full');
                                     <div class="blog-item__p"><?= esc_html( $date) ?></div>
                                     <?php endif ?>
                                     <?php if ( !empty( $title )) : ?>
-                                    <h5 class="blog-item__h5"> <?= esc_html( $title) ?></h5>
+                                    <h5 class="blog-item__h5" data-tooltip="<?= esc_html( $title) ?>">
+                                        <?= esc_html( $title) ?>
+                                    </h5>
+                                    <div class="blog-item__tooltip"> <?= esc_html( $title) ?></div>
                                     <?php endif ?>
                                 </div>
                             </a>
