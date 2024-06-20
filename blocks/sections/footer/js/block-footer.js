@@ -12,6 +12,7 @@ const init = function () {
 	const successIcons = [
 		...document.querySelectorAll(".js-send-form-result__svg"),
 	];
+	const forms = [...document.querySelectorAll("form")];
 
 	document.addEventListener(
 		"nfFormReady",
@@ -73,10 +74,10 @@ const init = function () {
 					mutation.target.textContent = "";
 					successIcons.forEach((icon) => (icon.style.display = "none"));
 					errorIcon.style.display = "block";
-					// const submitButton = document.querySelector(
-					// 	".js-subscription__submit"
-					// );
-					// submitButton.textContent = "Submit";
+					const submitButton = document.querySelector(
+						".js-subscription__submit"
+					);
+					submitButton.textContent = "Submit";
 					if (submitMessage.textContent) {
 						if ($("#book-consultation").is(":visible"))
 							$("#book-consultation").modal("hide");

@@ -105,6 +105,7 @@
 	line-height: 1;
 	background-color: $color-background;
 	border-bottom: 2px solid $color-accent;
+	text-decoration: none;
 
 	@include transitions();
 
