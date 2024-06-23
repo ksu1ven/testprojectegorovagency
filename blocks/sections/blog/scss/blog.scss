@@ -291,6 +291,11 @@
 
 	img {
 		border-color: $color-accent;
+
+		@include breakpoint-down(mobile) {
+			border-width: 10px;
+			width: 100%;
+		}
 	}
 
 	details {
@@ -374,7 +379,7 @@
 .blog__content
 	*:not(.blog__h2, .blog p:has(.featured-image), .blog
 		.featured-image, .blog-footer, .blog-footer-links, .blog-footer-h4, .blog__button--underline, .blog__button--underline
-		span) {
+		span, ol ol, ul ul, ol ul, ul ol) {
 	max-width: 855px;
 	margin-left: auto !important;
 	margin-right: auto !important;

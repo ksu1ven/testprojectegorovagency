@@ -12,51 +12,38 @@ const init = function () {
 	const successIcons = [
 		...document.querySelectorAll(".js-send-form-result__svg"),
 	];
-	const forms = [...document.querySelectorAll("form")];
 
-	document.addEventListener(
-		"nfFormReady",
-		function (event) {
-			console.log("Форма готова:", event.detail);
-		},
-		false
-	);
+	// jQuery(document).on("nfFormSubmitResponse", function (event, obj) {
+	// 	event.preventDefault();
+	// 	submitResult.textContent = "Success";
+	// 	submitResult.classList.remove("send-form-result__h2--error");
+	// 	submitMessage.textContent = obj.response.data.actions.success_message;
+	// 	successIcons.forEach((icon) => icon.removeAttribute("style"));
+	// 	errorIcon.style.display = "none";
 
-	document.addEventListener(
-		"nfBeforeFormSubmit",
-		function (event) {
-			console.log("Перед отправкой формы:", event.detail);
-		},
-		false
-	);
+	// 	if (submitMessage.textContent) {
+	// 		if ($("#book-consultation").is(":visible"))
+	// 			$("#book-consultation").modal("hide");
 
-	document.addEventListener(
-		"nfFormSubmit",
-		function (event) {
-			console.log("Форма отправляется:", event.detail);
-		},
-		false
-	);
+	// 		$("#send-form-result").modal("show");
+	// 	}
+	// });
 
-	document.addEventListener(
-		"nfFormSubmitResponse",
-		function (event) {
-			if (event.detail.result === "success") {
-				console.log("Форма успешно отправлена!", event.detail);
-			} else {
-				console.log("Ошибка при отправке формы:", event.detail);
-			}
-		},
-		false
-	);
+	// jQuery(document).on("nfFormSubmitError", function (event, obj) {
+	// 	event.preventDefault();
+	// 	submitResult.textContent = "Success";
+	// 	submitResult.classList.remove("send-form-result__h2--error");
+	// 	submitMessage.textContent = obj.response.data.actions.success_message;
+	// 	successIcons.forEach((icon) => icon.removeAttribute("style"));
+	// 	errorIcon.style.display = "none";
 
-	document.addEventListener(
-		"nfFormSubmitError",
-		function (event) {
-			console.log("Ошибка отправки формы:", event.detail);
-		},
-		false
-	);
+	// 	if (submitMessage.textContent) {
+	// 		if ($("#book-consultation").is(":visible"))
+	// 			$("#book-consultation").modal("hide");
+
+	// 		$("#send-form-result").modal("show");
+	// 	}
+	// });
 
 	function checkResultMessage(mutationsList) {
 		for (let mutation of mutationsList) {
