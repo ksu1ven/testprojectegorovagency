@@ -70,3 +70,13 @@
 		}
 	}
 }
+
+@mixin transitions {
+	@media (pointer: coarse) {
+		transition-duration: $transition-mobile-default;
+	}
+
+	@media (hover: hover) and (pointer: fine) {
+		transition-duration: $transition-default;
+	}
+}

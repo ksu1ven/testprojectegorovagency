@@ -5,13 +5,23 @@
 @import "../../../../resources/scss/generic/variables";
 @import "../../../../resources/scss/generic/functions";
 @import "../../../../resources/scss/generic/mixins";
+@import "../../../../resources/scss/generic/typography";
+@import "../../../../resources/scss/generic/base";
+@import "../../../../resources/scss/bootstrap/bootstrap-grid";
+@import "../../../../resources/scss/components/buttons";
+@import "../../../../resources/scss/components/links";
+@import "../../../../resources/scss/components/nav";
+@import "../../../../resources/scss/components/contacts";
 
 /* ------------------------------------------------------------ *\
 	Blocks: Section Header
 \* ------------------------------------------------------------ */
 
 .header {
-	position: relative;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
 	z-index: 15;
 	padding-top: 12px;
 	padding-bottom: 12px;
@@ -49,7 +59,7 @@
 	right: 0;
 	background-color: $color-dark-s;
 
-	@include breakpoint-down(mobile) {
+	@include breakpoint-down(admin-bar) {
 		top: $adminbarHeightMobile;
 	}
 
@@ -208,6 +218,7 @@
 .burger-menu__input:checked + .burger-menu__content {
 	transform: translateY(0);
 }
+
 .burger-menu__content {
 	position: fixed;
 	top: $adminbarHeightDesktop;
@@ -217,18 +228,23 @@
 	z-index: -1;
 	padding-top: 275px;
 	background-color: $color-dark-s;
-	transform: translateY(calc(-100% - $adminbarHeightDesktop));
+	transform: translateY(-100%);
 	transform-origin: top;
 	transition: $transition-default;
 	transition-delay: $transition-delay-default;
 
-	@include breakpoint-down(tablet) {
-		padding-top: 372px;
+	@include breakpoint-down(large-desktop) {
+		padding-top: 0;
+		@include flex(row, flex-start, center);
 	}
 
 	@include breakpoint-down(admin-bar) {
 		top: $adminbarHeightMobile;
-		transform: translateY(calc(-100% - $adminbarHeightMobile));
+		transform: translateY(-100%);
+	}
+
+	@include breakpoint-down(tablet) {
+		padding-top: 372px;
 	}
 
 	@include breakpoint-down(mobile) {

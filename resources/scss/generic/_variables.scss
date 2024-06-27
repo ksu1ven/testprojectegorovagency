@@ -18,6 +18,7 @@ $color-dark-s-20: rgb(19, 89, 120, 0.2);
 $color-overlay: rgb(11, 39, 51, 0.8);
 $color-grey: rgb(196, 196, 196);
 $color-background: rgb(238, 243, 246);
+$color-error: rgb(146, 2, 2);
 
 $border-radius: 2px;
 
@@ -28,7 +29,8 @@ $font-main: "Montserrat", "sans-serif";
 // Transitions
 $transition-duration-default: 0.3s;
 $transition-delay-default: 0.15s;
-$transition-default: 0.3s ease-in-out;
+$transition-default: 0.3s;
+$transition-mobile-default: 0.1s;
 
 $breakpoints: (
 	mobile-small: 575px,

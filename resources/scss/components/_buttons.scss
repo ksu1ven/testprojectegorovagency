@@ -1,5 +1,5 @@
 .button {
-	color: white;
+	color: $white;
 	border-radius: $border-radius;
 	font-size: 16px;
 	line-height: 1;
@@ -12,8 +12,31 @@
 }
 
 .button--square {
-	@extend %square-button-link;
+	@include flex(row, center, center);
+	width: 60px;
+	height: 56px;
+	border: 3px solid $color-accent;
 	background-color: $color-accent;
+	transform-origin: center;
+
+	@include breakpoint-down(large-desktop) {
+		width: 44px;
+		height: 44px;
+	}
+
+	@include hover-device {
+		&:hover {
+			background-color: $color-accent-light;
+			border: 3px solid $color-accent-light;
+		}
+	}
+
+	@include mobile-device {
+		&:active {
+			background-color: $color-accent-light;
+			border: 3px solid $color-accent-light;
+		}
+	}
 }
 
 .button--colored {
@@ -42,6 +65,7 @@
 	padding: 15.6px 37px;
 	@include flex(row, center, center);
 	column-gap: 15px;
+	color: $white;
 	border: 3px solid $color-accent;
 	background-color: $white-5;
 
@@ -67,5 +91,29 @@
 		@include breakpoint-down(large-desktop) {
 			height: 16px;
 		}
+	}
+}
+
+.button--underline {
+	position: relative;
+	display: block;
+	width: fit-content;
+	border: none;
+	color: $color-accent;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1;
+	background-color: $color-background;
+	border-bottom: 2px solid $color-accent;
+	text-decoration: none;
+
+	@include transitions();
+
+	@include hover-active {
+		color: $color-accent-light;
+	}
+
+	@include breakpoint-down(small-desktop) {
+		font-size: 14px;
 	}
 }

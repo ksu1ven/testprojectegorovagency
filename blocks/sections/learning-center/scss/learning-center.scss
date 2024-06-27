@@ -1,0 +1,305 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Blocks: Section Blog
+\* ------------------------------------------------------------ */
+.learning-center {
+	padding-top: 120px;
+	padding-bottom: 193px;
+
+	@include breakpoint-down(small-desktop) {
+		padding-top: 65px;
+		padding-bottom: 100px;
+	}
+
+	@include breakpoint-down(mobile) {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+}
+
+.learning-center__h2 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.learning-center__p {
+	text-align: center;
+	max-width: 397px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+
+	@include breakpoint-down(small-desktop) {
+		margin-bottom: 30px;
+	}
+}
+
+.learning-center__swipers {
+	width: 100%;
+	@include flex(row, flex-end, stretch);
+	column-gap: 25px;
+	position: relative;
+	padding-bottom: 70px;
+
+	@include breakpoint-down(small-desktop) {
+		justify-content: center;
+	}
+
+	@include breakpoint-down(small-desktop) {
+		padding-bottom: 20px;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: calc(100% - 80px);
+		height: calc(100% - 97px);
+		background-color: $color-accent;
+
+		@include breakpoint-down(small-desktop) {
+			left: -20px;
+			width: calc(100% + 40px);
+		}
+	}
+}
+
+.learning-center-left-col {
+	flex: 1 1 auto;
+	max-width: 907px;
+	overflow: hidden;
+
+	@include breakpoint-down(large-desktop) {
+		max-width: 61.9%;
+		width: 61.9%;
+		margin-left: 60px;
+	}
+
+	@include breakpoint-down(small-desktop) {
+		margin-left: 0;
+	}
+
+	@include breakpoint-down(mobile) {
+		display: none;
+	}
+}
+
+.learning-center-right-col {
+	flex: 0 1 auto;
+	max-width: 688px;
+	overflow: hidden;
+
+	@include breakpoint-down(small-desktop) {
+		max-width: 35.17%;
+	}
+
+	@include breakpoint-down(mobile) {
+		max-width: 100%;
+	}
+}
+
+.learning-center-left-swiper {
+	height: 100%;
+}
+
+.learning-center-left-swiper__wrapper {
+	aspect-ratio: 1.7784;
+}
+
+.learning-center-right-swiper {
+	aspect-ratio: 1.6037;
+
+	@include breakpoint-down(small-desktop) {
+		aspect-ratio: 1.21;
+	}
+}
+
+.learning-center-right-swiper__wrapper {
+	max-width: 688px;
+
+	@include breakpoint-down(small-desktop) {
+		max-width: 35.17%;
+	}
+
+	@include breakpoint-down(mobile) {
+		max-width: 100%;
+	}
+
+	.trainer__video-wrapper-bg {
+		aspect-ratio: 0.77855;
+
+		@include breakpoint-down(small-desktop) {
+			aspect-ratio: 1.21;
+		}
+	}
+}
+
+.learning-center-swiper__controls {
+	@include flex(row, flex-start, center);
+	margin-top: 56px;
+	height: 25px;
+
+	@include breakpoint-down(small-desktop) {
+		margin-top: 16px;
+	}
+
+	@include breakpoint-down(mobile) {
+		justify-content: center;
+	}
+}
+
+.learning-center .swiper-button-prev,
+.learning-center .swiper-button-next,
+.learning-center .swiper-pagination {
+	position: static !important;
+	flex: 0 0 auto;
+	width: fit-content !important;
+	color: $white-50 !important;
+}
+
+.learning-center .swiper-button-prev,
+.learning-center .swiper-button-next {
+	margin-top: 0 !important;
+
+	@include hover-active {
+		color: $white !important;
+	}
+}
+
+.learning-center .swiper-button-prev::after,
+.learning-center .swiper-button-next::after {
+	content: "";
+}
+
+.learning-center .swiper-pagination-bullet {
+	margin: 0 !important;
+	background-color: transparent !important;
+	border-color: $white-50 !important;
+
+	@include hover-active {
+		background-color: $white-50 !important;
+	}
+}
+
+.learning-center .swiper-pagination-bullet-active {
+	pointer-events: none;
+	background-color: $white !important;
+}
+
+.play__icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	@include flex(row, center, center);
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: $white;
+	z-index: 7;
+	transition: background-color ease-in-out;
+	border: none;
+
+	@include breakpoint-down(small-desktop) {
+		width: 40px;
+		height: 40px;
+
+		svg {
+			width: 19px;
+			height: 20px;
+		}
+	}
+
+	@include transitions();
+
+	@include hover-active {
+		background-color: $color-accent-light;
+	}
+}
+
+.trainer__video-wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: $color-accent;
+}
+
+.trainer__video-wrapper-bg {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	@include flex(row, flex-start, flex-end);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+	&:after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background-image: linear-gradient(transparent, black);
+		opacity: 60%;
+		z-index: 4;
+	}
+}
+
+.trainer__info {
+	position: relative;
+	z-index: 5;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 27px;
+	color: $white;
+
+	@include breakpoint-down(small-desktop) {
+		padding-left: 16px;
+		padding-right: 16px;
+		padding-bottom: 16px;
+	}
+}
+
+.trainer__name {
+	margin-bottom: 10px;
+	font-family: "Bank Gothic", "sans-serif";
+	line-height: 1.2;
+	font-size: 36px;
+
+	@include breakpoint-down(small-desktop) {
+		font-size: 18px;
+		margin-bottom: 4px;
+	}
+}
+
+.trainer__job {
+	font-family: "Montserrat", "sans-serif";
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 26px;
+
+	@include breakpoint-down(small-desktop) {
+		font-size: 14px;
+		line-height: 1;
+	}
+}
+
+.trainer__name--small {
+	font-size: 24px;
+	line-height: 30px;
+	margin-bottom: 5px;
+
+	@include breakpoint-down(small-desktop) {
+		font-size: 18px;
+		line-height: 1;
+	}
+}

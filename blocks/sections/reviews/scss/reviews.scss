@@ -1,0 +1,324 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+@import "../../../../resources/scss/generic/typography";
+@import "../../../../resources/scss/generic/swiper";
+@import "../../../../resources/scss/bootstrap/bootstrap-grid";
+@import "../../../../resources/scss/components/buttons";
+@import "../../../../resources/scss/components/links";
+@import "../../../../resources/scss/components/carousel";
+
+/* ------------------------------------------------------------ *\
+	Blocks: Section Hero
+\* ------------------------------------------------------------ */
+
+.reviews-swiper__controls {
+	@include flex(row, flex-start, center);
+
+	@include breakpoint-down(mobile) {
+		justify-content: center;
+	}
+}
+
+.reviews .swiper-button-prev,
+.reviews .swiper-button-next,
+.reviews .swiper-pagination {
+	position: static !important;
+	flex: 0 0 auto;
+	width: fit-content !important;
+}
+
+.reviews .swiper-button-prev,
+.reviews .swiper-button-next {
+	margin-top: 0 !important;
+}
+
+.reviews .swiper-button-prev::after,
+.reviews .swiper-button-next::after {
+	content: "";
+}
+
+.reviews .swiper-pagination-bullet {
+	margin: 0 !important;
+}
+
+.reviews .swiper-pagination-bullet-active {
+	pointer-events: none;
+}
+
+.reviews {
+	padding-top: 361px;
+	padding-bottom: 50px;
+	background-image: linear-gradient(to right, $color-background 50%, $white 0);
+
+	@include breakpoint-down(desktop) {
+		padding-top: 280px;
+	}
+
+	@include breakpoint-down(small-desktop) {
+		padding-top: 0;
+		padding-bottom: 70px;
+		background-image: none;
+	}
+
+	@include breakpoint-down(mobile) {
+		padding-bottom: 50px;
+	}
+}
+
+.reviews__main-container {
+	@include breakpoint-down(small-desktop) {
+		padding: 0;
+		max-width: 100%;
+	}
+}
+
+.reviews__inner-container {
+	max-width: 100%;
+	padding: 0;
+
+	@include breakpoint-down(small-desktop) {
+		max-width: 880px;
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+
+	@include breakpoint-down(tablet) {
+		max-width: 708px;
+	}
+
+	@include breakpoint-down(mobile) {
+		max-width: 560px;
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+}
+
+.reviews__inner-container--left {
+	@include breakpoint-down(mobile) {
+		@include flex(column-reverse, flex-start, center);
+	}
+}
+
+.reviews__left-col {
+	padding-top: 180px;
+	position: relative;
+
+	@include breakpoint-down(large-desktop) {
+		padding-top: 90px;
+	}
+
+	@include breakpoint-down(desktop) {
+		padding-top: 150px;
+	}
+
+	@include breakpoint-down(small-desktop) {
+		padding-top: 30px;
+		padding-bottom: 100px;
+		background-color: $color-background;
+	}
+
+	@include breakpoint-down(mobile) {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+
+.reviews__left-content {
+	@include breakpoint-down(large-desktop) {
+		width: 70%;
+	}
+
+	@include breakpoint-down(small-desktop) {
+		max-width: 393px;
+		width: 100%;
+	}
+}
+
+.reviews__img {
+	top: auto;
+	bottom: -50px;
+	left: auto;
+	right: 0;
+
+	img {
+		object-fit: contain;
+		object-position: bottom right;
+	}
+
+	@include breakpoint-down(large-desktop) {
+		width: 40%;
+		height: 100%;
+	}
+
+	@include breakpoint-down(small-desktop) {
+		bottom: 0;
+		width: 42vw;
+		max-height: 427px;
+
+		img {
+			object-fit: contain;
+		}
+	}
+
+	@include breakpoint-down(mobile) {
+		position: static;
+		max-width: 368px;
+		width: 100%;
+		aspect-ratio: 1.067;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+.reviews__right-content {
+	width: fit-content;
+
+	@include breakpoint-down(large-desktop) {
+		width: 80%;
+	}
+
+	@include breakpoint-down(desktop) {
+		width: 90%;
+		margin-left: auto;
+		margin-right: 0;
+	}
+
+	@include breakpoint-down(small-desktop) {
+		width: 100%;
+		margin-right: auto;
+		padding-top: 100px;
+	}
+
+	@include breakpoint-down(mobile) {
+		padding-top: 70px;
+	}
+}
+
+.reviews__right-col {
+	@include flex(row, flex-end, flex-start);
+
+	@include breakpoint-down(small-desktop) {
+		justify-content: flex-start;
+	}
+}
+
+.reviews__buttons {
+	margin-top: 50px;
+	@include flex(row, flex-start, center);
+	column-gap: 10px;
+
+	@include breakpoint-down(small-desktop) {
+		flex-direction: column;
+		align-items: flex-start;
+		row-gap: 10px;
+		margin-top: 30px;
+	}
+}
+
+.reviews__h2 {
+	margin-bottom: 30px;
+	line-height: 1.2;
+
+	@include breakpoint-down(small-desktop) {
+		margin-bottom: 20px;
+		letter-spacing: 0;
+	}
+}
+
+.reviews__button--transparent {
+	color: $color-accent !important;
+
+	@include hover-active {
+		color: $white !important;
+	}
+}
+
+.rewiews__h2--right {
+	max-width: 620px;
+	margin-bottom: 50px;
+	line-height: 1;
+
+	@include breakpoint-down(large-desktop) {
+		width: 80%;
+	}
+
+	@include breakpoint-down(small-desktop) {
+		width: 70%;
+		margin-bottom: 30px;
+	}
+
+	@include breakpoint-down(mobile) {
+		width: 100%;
+	}
+}
+
+.reviews__p {
+	max-width: 390px;
+	margin-bottom: 10px;
+	line-height: 1.23;
+	transition: $transition-default;
+}
+
+.reviews-swiper {
+	max-width: 544px;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+
+.reviews-swiper__wrapper {
+	margin-bottom: 55px;
+
+	@include breakpoint-down(small-desktop) {
+		margin-bottom: 30px;
+	}
+}
+
+.review {
+	padding-left: 16px;
+	max-height: 400px;
+	overflow-y: auto;
+	direction: rtl;
+	text-align: left;
+}
+
+.review__content {
+	direction: ltr;
+}
+
+.review__author {
+	color: $color-dark-s;
+	font-weight: 900;
+	font-size: 18px;
+	line-height: 1.2;
+	letter-spacing: -0.05 * 18px;
+	margin-bottom: 6px;
+	direction: ltr;
+
+	@include breakpoint-down(small-desktop) {
+		line-height: 1;
+	}
+}
+
+.stars {
+	margin-bottom: 30px;
+	@include flex(row, flex-start, center);
+	column-gap: 5px;
+	color: $color-accent;
+	direction: ltr;
+
+	@include breakpoint-down(small-desktop) {
+		margin-bottom: 20px;
+	}
+}
+
+.reviews-swiper__controls {
+	justify-content: flex-start;
+}

@@ -1,43 +1,136 @@
-.form__inputs {
-	margin-bottom: 30px;
-	@include flex(row, flex-start, flex-start);
-	flex-wrap: wrap;
-	column-gap: 21px;
-	row-gap: 30px;
+.nf-field-container {
+	margin-bottom: 0 !important;
+}
 
-	@include breakpoint-down(small-desktop) {
-		margin-bottom: 20px;
+.nf-response-msg {
+	display: none !important;
+}
+
+.nf-field {
+	position: relative;
+}
+
+.nf-error .ninja-forms-field {
+	border: 1px solid $color-error !important;
+}
+
+.nf-error-msg {
+	font-family: "Bank Gothic", "sans-serif";
+	font-size: 16px;
+	line-height: 1;
+	color: $color-error;
+
+	@include breakpoint-down(mobile) {
+		bottom: -16px;
+		font-size: 14px;
+	}
+}
+
+.book-form nf-rows-wrap {
+	@include flex(row, space-between, stretch);
+	flex-wrap: wrap;
+	row-gap: 30px;
+	column-gap: 21px;
+
+	@include breakpoint-down(mobile) {
+		flex-direction: column;
 		row-gap: 20px;
 	}
 }
 
-.form__div {
-	position: relative;
-	flex: 1 0 calc(50% - 30px);
-	max-width: 685px;
+.book-form .nf-row {
 	height: 56px;
+	flex: 1 1 calc(50% - 21px);
 
-	@include breakpoint-down(small-desktop) {
+	&:last-child {
+		flex: 1 1 100%;
+	}
+
+	@include breakpoint-down(large-desktop) {
 		height: 44px;
 	}
 
 	@include breakpoint-down(mobile) {
-		flex-basis: 100%;
+		width: 100%;
+		flex: 1 1 100%;
 	}
 }
 
-.form__div::before {
-	content: "";
-	transition: $transition-default;
+.book-form .nf-cell {
+	padding: 0 !important;
+
+	@include breakpoint-down(mobile) {
+		width: 100% !important;
+	}
 }
 
-.form__input {
+.book-form nf-field {
+	height: 56px;
+
+	@include breakpoint-down(large-desktop) {
+		height: 44px;
+	}
+}
+
+.book-form .nf-error-msg {
+	position: absolute;
+	bottom: -20px;
+	left: 0;
+	width: 1000px;
+}
+
+.book-form .nf-field .nf-field-label {
+	position: absolute;
+	top: 9px;
+	left: 20px;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 1;
+	color: $color-dark-s-50;
+	transform: translateY(5px);
+	transition: transform $transition-default;
+	z-index: 5;
+
+	span {
+		display: none !important;
+	}
+}
+
+.book-form .nf-field {
+	position: relative;
+}
+
+.book-form .nf-field:has(input:not(:placeholder-shown)) .nf-field-label,
+.book-form .nf-field:has(textarea:not(:placeholder-shown)) .nf-field-label {
+	height: auto !important;
+	visibility: visible !important;
+	transform: translateY(0);
+	color: $color-dark-s-50;
+
+	@include breakpoint-down(large-desktop) {
+		font-size: 10px;
+		top: 5px;
+	}
+}
+
+.book-form .nf-field:has(input:not(:placeholder-shown)) input,
+.book-form .nf-field:has(textarea:not(:placeholder-shown)) textarea {
+	padding-top: 27px;
+	padding-bottom: 11px;
+
+	@include breakpoint-down(large-desktop) {
+		padding-top: 23px;
+		padding-bottom: 9px;
+	}
+}
+
+.book__input {
 	display: inline-block;
-	width: 100%;
-	height: 100%;
-	padding: 20px;
+	max-height: 56px;
+	padding: 19px 20px;
 	color: $color-dark-s;
 	border: 1px solid $color-dark-s-50;
+	border-radius: 2px;
 	font-size: 16px;
 	font-weight: bold;
 	line-height: 1;
@@ -46,40 +139,14 @@
 		color: $color-dark-s-50;
 	}
 
-	@include breakpoint-down(small-desktop) {
+	@include breakpoint-down(large-desktop) {
 		font-size: 14px;
-		padding: 15px;
+		padding: 14px 15px;
+		max-height: 44px;
 	}
 }
 
-.form__div:has(input:not(:placeholder-shown))::before,
-.form__div:has(textarea:not(:placeholder-shown))::before {
-	position: absolute;
-	top: 9px;
-	left: 20px;
-	font-size: 12px;
-	font-weight: 700;
-	line-height: 1;
-	content: attr(data-placeholder);
-
-	@include breakpoint-down(small-desktop) {
-		font-size: 10px;
-		top: 5px;
-	}
-}
-
-.form__div:has(input:not(:placeholder-shown)) input,
-.form__div:has(textarea:not(:placeholder-shown)) textarea {
-	padding-top: 28px;
-	padding-bottom: 12px;
-
-	@include breakpoint-down(small-desktop) {
-		padding-top: 24px;
-		padding-bottom: 10px;
-	}
-}
-
-.form__input:-webkit-autofill {
+.book__input:-webkit-autofill {
 	-webkit-text-fill-color: $color-dark-s !important;
 }
 
@@ -88,8 +155,116 @@ textarea::-webkit-scrollbar {
 	height: 0px;
 }
 
-.form__button {
+.book__button {
 	display: block;
 	margin-left: auto;
 	margin-right: 0;
+
+	svg {
+		display: none;
+	}
+}
+
+.subscription__input {
+	display: inline-block;
+	width: 497px !important;
+	padding: 19px 20px;
+	max-height: 56px;
+	border: 1px solid $white-50;
+	border-radius: 2px;
+	color: $white;
+	background-color: $color-accent;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1;
+
+	@include breakpoint-down(large-desktop) {
+		max-height: 44px;
+		padding: 14px;
+		font-size: 14px;
+	}
+
+	@include breakpoint-down(small-desktop) {
+		width: 100% !important;
+	}
+}
+
+.subscription__input-container {
+	width: 497px !important;
+
+	@include breakpoint-down(large-desktop) {
+		margin-bottom: 10px !important;
+	}
+
+	@include breakpoint-down(small-desktop) {
+		width: 100% !important;
+	}
+}
+
+.subscription__input::placeholder {
+	color: $white-50;
+}
+
+.subscription__input:-webkit-autofill {
+	-webkit-text-fill-color: $white !important;
+	-webkit-box-shadow: 0 0 0px 1000px $color-accent inset;
+}
+
+.subscription__submit {
+	background-color: $white !important;
+	height: 56px;
+	padding: 20px 40px;
+	border: none !important;
+	border-radius: 2px !important;
+
+	svg {
+		display: none;
+	}
+
+	@include hover-active {
+		border: none !important;
+		background-color: $color-accent-light !important;
+	}
+
+	@include breakpoint-down(large-desktop) {
+		display: block;
+		margin-left: auto;
+		margin-right: 0;
+		font-size: 14px;
+		padding: 15px 30px !important;
+		height: 44px;
+	}
+}
+
+.subscription .nf-row {
+	@include breakpoint-down(large-desktop) {
+		width: 497px !important;
+	}
+
+	@include breakpoint-down(small-desktop) {
+		width: 100% !important;
+		margin-left: auto;
+		margin-right: 0;
+	}
+}
+
+.subscription .nf-cell {
+	width: fit-content !important;
+	padding: 0 !important;
+
+	&:first-child {
+		@include breakpoint-down(small-desktop) {
+			width: 100% !important;
+		}
+	}
+
+	&:last-child {
+		margin-left: 10px;
+
+		@include breakpoint-down(large-desktop) {
+			width: 100% !important;
+			margin-left: auto;
+			margin-right: 0;
+		}
+	}
 }

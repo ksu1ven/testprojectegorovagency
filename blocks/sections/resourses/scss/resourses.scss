@@ -1,0 +1,186 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Blocks: Section Hero
+\* ------------------------------------------------------------ */
+
+.resourses {
+	padding-top: 120px;
+	background-color: $color-background;
+
+	@include breakpoint-down(desktop) {
+		padding-top: 70px;
+		padding-bottom: 100px;
+	}
+
+	@include breakpoint-down(mobile) {
+		padding-top: 50px;
+		padding-bottom: 70px;
+	}
+}
+
+.resourses__left-bg {
+	@include flex(column, flex-end, flex-start);
+	width: 100%;
+	height: 100%;
+	position: relative;
+
+	img {
+		object-fit: cover;
+		object-position: left bottom;
+	}
+
+	@include breakpoint-down(large-desktop) {
+		width: 80%;
+	}
+
+	@include breakpoint-down(small-desktop) {
+		display: none;
+	}
+}
+
+.resourses__right-col {
+	padding-bottom: 53px;
+	@include flex(column, flex-end, flex-start);
+
+	@include breakpoint-down(small-desktop) {
+		padding-bottom: 0;
+	}
+}
+
+.resourses__h2 {
+	margin-top: 26px;
+	margin-bottom: 20px;
+	line-height: 1;
+
+	@include breakpoint-down(small-desktop) {
+		margin-top: 0;
+		margin-bottom: 9px;
+	}
+}
+
+.resourses__p {
+	margin-bottom: 50px;
+
+	@include breakpoint-down(small-desktop) {
+		margin-bottom: 30px;
+	}
+}
+
+.blog-content {
+	margin-left: auto;
+	margin-right: auto;
+	align-self: center;
+}
+
+.blog__button {
+	display: block;
+	margin-left: auto;
+	margin-right: 0;
+	margin-top: 77px;
+	color: $color-accent;
+
+	@include breakpoint-down(small-desktop) {
+		margin-right: auto;
+
+		margin-top: 20px;
+	}
+
+	@include hover-active {
+		color: $white;
+	}
+}
+
+.blog__grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 10px;
+	justify-content: center;
+
+	@include breakpoint-down(mobile) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.blog-item {
+	background-color: $white;
+	border: 2px solid $color-background;
+	border-radius: 2px;
+	text-decoration: none;
+
+	@include transitions();
+	transition: border-color ease-out;
+
+	@include hover-active {
+		border-color: $color-dark-s;
+	}
+
+	@include breakpoint-down(small-desktop) {
+		max-width: 339px;
+	}
+}
+
+.blog-item__img {
+	display: block;
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+}
+
+.blog-item__content {
+	padding: 20px;
+	position: relative;
+}
+
+.blog-item__h5 {
+	color: $color-dark-s;
+	font-size: 16px;
+	line-height: 1.4;
+	font-weight: 700;
+	overflow-y: hidden;
+	display: -webkit-box;
+	height: 1.4em * 2;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+
+	@include breakpoint-down(small-desktop) {
+		font-size: 14px;
+	}
+}
+
+.blog-item__tooltip {
+	position: absolute;
+	width: fit-content;
+	padding: 20px;
+	bottom: calc(50% + 10px);
+	left: 20px;
+	right: 20px;
+	height: auto;
+	font-size: 14px;
+	background-color: $white;
+	border: 1px solid $color-dark-s;
+	border-radius: 2px;
+	color: $color-dark-s-50;
+	transform: scaleY(0);
+	transition: $transition-default;
+	transform-origin: bottom;
+}
+
+.blog-item__h5:hover + .blog-item__tooltip {
+	transform: scaleY(1);
+}
+
+.blog-item__p {
+	margin-bottom: 10px;
+	color: $color-dark-s-50;
+	font-family: "Bank Gothic", "sans-serif";
+	font-size: 14px;
+	line-height: 1.4;
+	letter-spacing: -0.05 * 14px;
+}

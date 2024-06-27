@@ -1,15 +1,22 @@
 .popup__close {
 	position: absolute;
-	z-index: 50;
+	z-index: 120;
 	right: 4px;
 	top: 4px;
 	width: 56px;
 	height: 56px;
 	@include flex(row, center, center);
-	background-color: $white;
+	background-color: $white !important;
+	line-height: 0;
 	color: $color-dark-s-50;
-	border: 2px solid transparent;
-	transition: $transition-default;
+	border: 2px solid $white;
+	border-radius: 2px;
+	transition: color $transition-default, border $transition-default;
+
+	@include breakpoint-down(large-desktop) {
+		width: 44px;
+		height: 44px;
+	}
 
 	@include hover-device {
 		&:hover {
@@ -58,6 +65,7 @@
 
 	@include breakpoint-down(small-desktop) {
 		font-size: 30px;
+		max-width: 300px;
 	}
 }
 
@@ -74,4 +82,127 @@
 	@include breakpoint-down(mobile) {
 		margin-bottom: 25px;
 	}
+}
+
+.modal-video__content {
+	aspect-ratio: 1.778;
+	position: relative;
+	background-color: $white;
+	z-index: 100;
+}
+
+.modal-video .modal-dialog {
+	width: 70.95vw;
+	margin-left: auto;
+	margin-right: auto;
+
+	@include breakpoint-down(small-desktop) {
+		width: 90vw;
+	}
+}
+
+.modal-video .modal-content {
+	padding: 0;
+}
+
+.modal-video .self-hosted-video {
+	padding: 0;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: auto;
+	height: 100%;
+	transform: translateX(-50%);
+	object-fit: contain;
+}
+
+.modal-dialog--send-form-result {
+	max-width: 825px;
+	margin-left: auto;
+	margin-right: auto;
+
+	@include breakpoint-down(small-desktop) {
+		max-width: 688px;
+	}
+
+	@include breakpoint-down(mobile) {
+		max-width: 100%;
+	}
+}
+
+.send-form-result__content {
+	padding: 0;
+	border-radius: 2px;
+	@include flex(row, flex-start, stretch);
+
+	@include breakpoint-down(mobile) {
+		max-width: 360px;
+		max-height: 640px;
+		margin-left: auto;
+		margin-right: auto;
+		flex-direction: column;
+	}
+}
+
+.send-form-result__left {
+	padding: 50px 0 50px 70px;
+	flex: 0 0 270px;
+	max-width: 270px;
+	@include flex(row, flex-end, center);
+	background-color: $color-accent;
+	color: $color-accent-light;
+	overflow: hidden;
+
+	@include breakpoint-down(mobile) {
+		max-width: 100%;
+		flex: 0 0 300px;
+		padding: 0;
+		justify-content: center;
+		align-items: flex-end;
+	}
+}
+
+.send-form-result__svg {
+	@include breakpoint-down(mobile) {
+		display: none;
+	}
+}
+
+.send-form-result__svg--mobile {
+	display: none;
+
+	@include breakpoint-down(mobile) {
+		display: block;
+	}
+}
+
+.send-form-result__right {
+	padding: 70px;
+	@include flex(column, center, flex-start);
+
+	@include breakpoint-down(mobile) {
+		padding: 50px 20px;
+	}
+}
+
+.send-form-result__h2 {
+	margin-bottom: 20px;
+}
+
+.send-form-result__h2--error {
+	color: $color-error !important;
+}
+
+.send-form-result__p {
+	margin-bottom: 50px;
+
+	@include breakpoint-down(small-desktop) {
+		margin-bottom: 30px;
+	}
+}
+
+#error-icon g {
+	display: inline-block;
+	width: 300px;
+	height: 300px;
 }

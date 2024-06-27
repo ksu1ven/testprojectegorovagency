@@ -1,0 +1,207 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Blocks: Section Hero
+\* ------------------------------------------------------------ */
+
+.offer {
+	padding-top: 110px;
+	padding-bottom: 110px;
+	background-color: $color-background;
+
+	@include breakpoint-down(small-desktop) {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+
+	@include breakpoint-down(mobile) {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+}
+
+.offer__row {
+	margin: auto;
+	max-width: 1580px;
+	justify-content: space-between;
+}
+
+.offer__h5 {
+	color: $color-dark-s;
+	text-transform: uppercase;
+	font-family: "Bank Gothic", "sans-serif";
+	font-size: 24px;
+	line-height: 1;
+
+	@include breakpoint-down(small-desktop) {
+		font-size: 20px;
+	}
+}
+
+.offer__h2 {
+	margin-top: 20px;
+	margin-bottom: 30px;
+	line-height: 1;
+
+	@include breakpoint-down(small-desktop) {
+		margin-bottom: 20px;
+	}
+}
+
+.offer__left-col {
+	max-width: 670px;
+
+	@include breakpoint-down(small-desktop) {
+		max-width: 100%;
+		margin-bottom: 45px;
+	}
+
+	@include breakpoint-down(mobile) {
+		margin-bottom: 37px;
+	}
+}
+
+.offer__right-col {
+	padding-right: 10px;
+	margin-left: auto;
+	margin-right: 0;
+}
+
+.offer__left-content {
+	position: relative;
+	padding-left: 16px;
+
+	@include breakpoint-down(large-desktop) {
+		width: 80%;
+	}
+
+	@include breakpoint-down(small-desktop) {
+		width: 100%;
+	}
+
+	@include breakpoint-down(mobile) {
+		padding-left: 8px;
+	}
+}
+
+.offer__left-content::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 3px;
+	height: 100%;
+	background-color: $color-accent;
+}
+
+.offer__right-content {
+	max-width: 682px;
+	padding-right: 10px;
+	margin-left: auto;
+	margin-right: 0;
+
+	@include breakpoint-down(small-desktop) {
+		margin: 0;
+		max-width: 100%;
+	}
+
+	@include breakpoint-down(mobile) {
+		padding-right: 0;
+	}
+}
+
+.offer__nav {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 376px;
+
+	@include breakpoint-down(mobile) {
+		max-width: 100vw;
+	}
+
+	@include breakpoint-down(mobile-small) {
+		position: relative;
+		left: -20px;
+		width: 100vw;
+	}
+}
+
+.offer__nav-tabs-wrapper {
+	max-width: 100%;
+	overflow-x: scroll;
+}
+
+.offer__nav-tabs {
+	margin: auto;
+	@include flex(row, flex-start, center);
+	flex-wrap: nowrap;
+	width: max-content;
+	border-bottom: 2px solid $black-10;
+}
+
+.offer__nav-link {
+	padding: 0 16px 8px;
+	flex: 0 0 auto;
+	text-decoration: none;
+	color: $color-dark-s;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 1;
+}
+
+.offer__tab-content {
+	background-color: $white;
+}
+
+.tab-info {
+	@include flex(row, flex-start, stretch);
+	flex-wrap: wrap;
+}
+
+.tab-info__block {
+	padding: 54px 24px;
+	flex: 1 1 33%;
+	@include flex(row, flex-start, center);
+	border: 1px solid $black-10;
+	text-decoration: none;
+	color: $color-accent;
+
+	svg {
+		transition: $transition-default;
+	}
+
+	@include breakpoint-down(large-desktop) {
+		padding: 54px 16px;
+	}
+
+	@include breakpoint-down(mobile) {
+		padding-left: 10px;
+		padding-right: 10px;
+		flex: 1 1 49%;
+	}
+
+	@include hover-active {
+		svg {
+			color: $color-accent-light;
+		}
+	}
+}
+
+.tab-info__name {
+	margin-left: 10px;
+	color: $color-dark-l;
+	font-size: 16px;
+	line-height: 1;
+	font-weight: 700;
+	text-transform: uppercase;
+
+	@include breakpoint-down(mobile) {
+		font-size: 14px;
+	}
+}

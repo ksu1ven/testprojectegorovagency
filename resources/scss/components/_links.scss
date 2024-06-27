@@ -6,8 +6,31 @@
 }
 
 .link--square {
-	@extend %square-button-link;
+	@include flex(row, center, center);
+	width: 60px;
+	height: 56px;
+	border: 3px solid $color-accent;
 	background-color: $white-5;
+	transform-origin: center;
+
+	@include breakpoint-down(large-desktop) {
+		width: 44px;
+		height: 44px;
+	}
+
+	@include hover-device {
+		&:hover {
+			background-color: $color-accent-light;
+			border: 3px solid $color-accent-light;
+		}
+	}
+
+	@include mobile-device {
+		&:active {
+			background-color: $color-accent-light;
+			border: 3px solid $color-accent-light;
+		}
+	}
 }
 
 .link--phone {
@@ -34,7 +57,14 @@
 
 	span:last-child {
 		position: relative;
-		@extend %text-header-small;
+		font-family: "Montserrat", "sans-serif";
+		font-weight: 900;
+		font-size: 22px;
+		line-height: 1.2;
+
+		@include breakpoint-down(desktop) {
+			font-size: 18px;
+		}
 		color: $white;
 
 		@include breakpoint-down(mobile) {
@@ -81,7 +111,7 @@
 	padding: 17.6px 37.6px;
 	display: block;
 	width: fit-content;
-	background-color: $white;
+	background-color: transparent;
 	color: $color-accent;
 	border: 3px solid $color-accent;
 	text-decoration: none;
@@ -110,6 +140,24 @@
 			border: 3px solid $color-accent-light;
 			background-color: $color-accent-light;
 			color: $white;
+		}
+	}
+}
+
+.link--pay {
+	@include flex(row, center, center);
+	column-gap: 10px;
+	padding-top: 13px;
+	padding-bottom: 13px;
+	text-decoration: none;
+
+	@include breakpoint-down(small-desktop) {
+		padding-top: 12px;
+		padding-bottom: 12px;
+
+		svg {
+			width: 85px;
+			height: 20px;
 		}
 	}
 }

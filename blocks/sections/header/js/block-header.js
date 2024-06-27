@@ -62,6 +62,14 @@ const init = function () {
 		removeActiveColor(navUlHeader, ".js-nav__ul--header");
 		removeActiveColor(navUlHero, ".js-nav__ul--hero");
 	}
+
+	let navLis = document.querySelectorAll(".js-nav__li nav__li--active");
+	if (navLis)
+		navLis.forEach((el) => {
+			if (el.scrollHeight <= el.clientHeight) {
+				el.classList.add("border-left");
+			}
+		});
 };
 
 initScript(".header", "header", init);

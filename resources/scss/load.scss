@@ -5,7 +5,7 @@
 .preloader {
 	position: fixed;
 	inset: 0;
-	z-index: 90;
+	z-index: 9999;
 	width: 100vw;
 	height: 100vh;
 	background-color: rgb(250, 183, 216);
@@ -46,6 +46,7 @@
 @import "bootstrap/bootstrap-grid";
 @import "bootstrap/bootstrap-modals";
 @import "bootstrap/bootstrap-tabs";
+@import "bootstrap/bootstrap-collapse";
 @import "twentytwenty/twentytwenty";
 @import "components/links";
 @import "components/buttons";

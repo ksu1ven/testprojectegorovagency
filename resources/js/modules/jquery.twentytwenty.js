@@ -79,7 +79,8 @@
 						"rect(0," + offset.w + "," + offset.h + "," + offset.cw + ")"
 					);
 				}
-				container.css("height", offset.h);
+
+				// container.css("height", offset.h);
 			};
 
 			var adjustSlider = function (pct) {
@@ -108,6 +109,18 @@
 
 			$(window).on("resize.twentytwenty", function (e) {
 				adjustSlider(sliderPct);
+			});
+
+			let intervalId = null;
+
+			$(window).on("resize", function () {
+				if (intervalId) {
+					clearInterval(intervalId);
+				}
+
+				intervalId = setTimeout(() => {
+					adjustSlider(sliderPct);
+				}, 300);
 			});
 
 			var offsetX = 0;
